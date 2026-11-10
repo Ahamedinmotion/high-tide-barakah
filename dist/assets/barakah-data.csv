@@ -1,0 +1,66 @@
+class,parameter,key,value,source_links
+public construction record,marineConstruction,period,2011–2016,https://www.nmdc-dredgingmarine.com/ar/projects/barakah-npp-marine-works/
+public construction record,marineConstruction,scope,"Combined cooling-water intake, discharge and navigation works",https://www.nmdc-dredgingmarine.com/ar/projects/barakah-npp-marine-works/
+public construction record,marineConstruction,depthBelowMeanSeaLevelM,"{""low"": 5.5, ""high"": 9.5}",https://www.nmdc-dredgingmarine.com/ar/projects/barakah-npp-marine-works/
+public construction record,marineConstruction,dredgedAreaKm2,2.35,https://www.nmdc-dredgingmarine.com/ar/projects/barakah-npp-marine-works/
+public construction record,marineConstruction,dredgedMaterialM3LowerBound,9000000,https://www.nmdc-dredgingmarine.com/ar/projects/barakah-npp-marine-works/
+in situ observation summarized in a publication,offshoreCurrent,period,2017–2018,https://www.sciencedirect.com/science/article/pii/S1463500323001142 | https://bibliotekanauki.pl/articles/2078874.pdf
+in situ observation summarized in a publication,offshoreCurrent,scope,"ADOOS Buoy 9, offshore Barakah, depth-averaged current speed",https://www.sciencedirect.com/science/article/pii/S1463500323001142 | https://bibliotekanauki.pl/articles/2078874.pdf
+in situ observation summarized in a publication,offshoreCurrent,meanSpeedMS,0.05,https://www.sciencedirect.com/science/article/pii/S1463500323001142 | https://bibliotekanauki.pl/articles/2078874.pdf
+in situ observation summarized in a publication,offshoreCurrent,approximateWaterDepthMChartDatum,20,https://www.sciencedirect.com/science/article/pii/S1463500323001142 | https://bibliotekanauki.pl/articles/2078874.pdf
+in situ observation summarized in a publication,offshoreCurrent,caveat,Neither a peak speed nor an intake channel measurement.,https://www.sciencedirect.com/science/article/pii/S1463500323001142 | https://bibliotekanauki.pl/articles/2078874.pdf
+published validation statistics,offshoreModel,scope,"Buoy 9, observations and model values at hourly resolution over the depicted validation intervals",https://www.sciencedirect.com/science/article/pii/S1463500323001142
+published validation statistics,offshoreModel,nearSiteModelGridMApprox,100,https://www.sciencedirect.com/science/article/pii/S1463500323001142
+published validation statistics,offshoreModel,waterLevelRmsdM,0.26,https://www.sciencedirect.com/science/article/pii/S1463500323001142
+published validation statistics,offshoreModel,currentSpeedRmsdMS,0.044,https://www.sciencedirect.com/science/article/pii/S1463500323001142
+published validation statistics,offshoreModel,currentSpeedCorrelation,0.352,https://www.sciencedirect.com/science/article/pii/S1463500323001142
+published validation statistics,offshoreModel,tideOnlyCurrentVelocityRmsdMS,0.048,https://www.sciencedirect.com/science/article/pii/S1463500323001142
+published validation statistics,offshoreModel,tideOnlyCurrentVelocityCorrelation,0.501,https://www.sciencedirect.com/science/article/pii/S1463500323001142
+published validation statistics,offshoreModel,constituentAmplitudesMS,"{""M2"": 0.0428, ""K1"": 0.0227, ""S2"": 0.021, ""S1"": 0.0194, ""N2"": 0.0112}",https://www.sciencedirect.com/science/article/pii/S1463500323001142
+historical analyzed surface climatology,coastalTemperature,period,2003–2019,https://bibliotekanauki.pl/articles/2078874.pdf
+historical analyzed surface climatology,coastalTemperature,scope,Published Barakah coastal GHRSST grid cell; seasonal average °C,https://bibliotekanauki.pl/articles/2078874.pdf
+historical analyzed surface climatology,coastalTemperature,sourceLocator,Table A.2,https://bibliotekanauki.pl/articles/2078874.pdf
+historical analyzed surface climatology,coastalTemperature,meanC,"{""winter"": 21.6, ""spring"": 25.3, ""summer"": 32.7, ""autumn"": 30.6, ""annual"": 27.6}",https://bibliotekanauki.pl/articles/2078874.pdf
+historical analyzed surface climatology,coastalTemperature,dailyPercentileC,"{""p05"": 19.5, ""p50"": 28.5, ""p95"": 34.2}",https://bibliotekanauki.pl/articles/2078874.pdf
+historical analyzed surface climatology,coastalTemperature,historicalLocalMeanTrendCPerYear,0.014,https://bibliotekanauki.pl/articles/2078874.pdf
+historical analyzed surface climatology,coastalTemperature,caveat,"A surface climate summary, not an intake thermometer or a 2026 forecast.",https://bibliotekanauki.pl/articles/2078874.pdf
+historical field observations,offshoreTemperature,scope,"ADOOS Buoy 9, seasonal percentiles of daily averaged sea surface temperature",https://bibliotekanauki.pl/articles/2078874.pdf
+historical field observations,offshoreTemperature,period,2018–2019,https://bibliotekanauki.pl/articles/2078874.pdf
+historical field observations,offshoreTemperature,sourceLocator,Table A.1,https://bibliotekanauki.pl/articles/2078874.pdf
+historical field observations,offshoreTemperature,seasonalP05P95C,"{""winter"": [18.9, 25.2], ""spring"": [20.1, 31], ""summer"": [31.5, 35.5], ""autumn"": [26.5, 34.7]}",https://bibliotekanauki.pl/articles/2078874.pdf
+historical Barakah water-quality summary,waterQuality,year,2017,https://www.scad.gov.ae/documents/20122/2312466/AgEnv_ENR_Publication_Annual_Annual_2017_v7.pdf/1121254d-441c-c2e8-9397-24d43756bda2?t=1684163043119
+historical Barakah water-quality summary,waterQuality,sourceLocator,Table 3.5,https://www.scad.gov.ae/documents/20122/2312466/AgEnv_ENR_Publication_Annual_Annual_2017_v7.pdf/1121254d-441c-c2e8-9397-24d43756bda2?t=1684163043119
+historical Barakah water-quality summary,waterQuality,temperatureC,28.76,https://www.scad.gov.ae/documents/20122/2312466/AgEnv_ENR_Publication_Annual_Annual_2017_v7.pdf/1121254d-441c-c2e8-9397-24d43756bda2?t=1684163043119
+historical Barakah water-quality summary,waterQuality,salinityPsu,43.97,https://www.scad.gov.ae/documents/20122/2312466/AgEnv_ENR_Publication_Annual_Annual_2017_v7.pdf/1121254d-441c-c2e8-9397-24d43756bda2?t=1684163043119
+historical Barakah water-quality summary,waterQuality,pH,8.04,https://www.scad.gov.ae/documents/20122/2312466/AgEnv_ENR_Publication_Annual_Annual_2017_v7.pdf/1121254d-441c-c2e8-9397-24d43756bda2?t=1684163043119
+historical Barakah water-quality summary,waterQuality,dissolvedOxygenMgL,4.92,https://www.scad.gov.ae/documents/20122/2312466/AgEnv_ENR_Publication_Annual_Annual_2017_v7.pdf/1121254d-441c-c2e8-9397-24d43756bda2?t=1684163043119
+historical Barakah water-quality summary,waterQuality,secchiDepthM,6.25,https://www.scad.gov.ae/documents/20122/2312466/AgEnv_ENR_Publication_Annual_Annual_2017_v7.pdf/1121254d-441c-c2e8-9397-24d43756bda2?t=1684163043119
+historical Barakah water-quality summary,waterQuality,biochemicalOxygenDemandMgL,3.18,https://www.scad.gov.ae/documents/20122/2312466/AgEnv_ENR_Publication_Annual_Annual_2017_v7.pdf/1121254d-441c-c2e8-9397-24d43756bda2?t=1684163043119
+historical Barakah water-quality summary,waterQuality,year,2019,https://scad.gov.ae/documents/d/guest/water-20statistics_2019_annual_yearly_en-pdf-1
+historical Barakah water-quality summary,waterQuality,sourceLocator,Table 1.2,https://scad.gov.ae/documents/d/guest/water-20statistics_2019_annual_yearly_en-pdf-1
+historical Barakah water-quality summary,waterQuality,temperatureC,26.94,https://scad.gov.ae/documents/d/guest/water-20statistics_2019_annual_yearly_en-pdf-1
+historical Barakah water-quality summary,waterQuality,salinityPsu,45.01,https://scad.gov.ae/documents/d/guest/water-20statistics_2019_annual_yearly_en-pdf-1
+historical Barakah water-quality summary,waterQuality,pH,8.04,https://scad.gov.ae/documents/d/guest/water-20statistics_2019_annual_yearly_en-pdf-1
+historical Barakah water-quality summary,waterQuality,dissolvedOxygenMgL,5.09,https://scad.gov.ae/documents/d/guest/water-20statistics_2019_annual_yearly_en-pdf-1
+published design maximum,wholePlantFlow,sourceLocator,"§§1, 2.2.3",https://www.sciencedirect.com/science/article/pii/S1463500323001142
+published design maximum,wholePlantFlow,valueM3S,690,https://www.sciencedirect.com/science/article/pii/S1463500323001142
+published design maximum,wholePlantFlow,sustainedEquivalentM3Day,59616000,https://www.sciencedirect.com/science/article/pii/S1463500323001142
+published design maximum,wholePlantFlow,caveat,All four units together. Actual flow and timing are unverified.,https://www.sciencedirect.com/science/article/pii/S1463500323001142
+challenge design reference,targetOrganism,name,Catostylus mosaicus,https://challengeon.atrc.ae/en/challenges/atp2026/pages/enec-challenge-statement?lang=en
+challenge design reference,targetOrganism,bellDiameterCm,"{""low"": 30, ""high"": 45}",https://challengeon.atrc.ae/en/challenges/atp2026/pages/enec-challenge-statement?lang=en
+challenge design reference,targetOrganism,localSpeciesConfirmed,False,https://challengeon.atrc.ae/en/challenges/atp2026/pages/enec-challenge-statement?lang=en
+challenge design reference,targetOrganism,localComparator,Catostylus perezi,https://challengeon.atrc.ae/en/challenges/atp2026/pages/enec-challenge-statement?lang=en
+challenge design reference,targetOrganism,comparatorSource,"[""taxonomy"", ""wormsPerezi""]",https://challengeon.atrc.ae/en/challenges/atp2026/pages/enec-challenge-statement?lang=en
+unknown,historicalPeakWetTonnesPerDay,value,,
+unknown,historicalPeakWetTonnesPerDay,caveat,No public site peak or event logging method verified.,
+illustrative stress scenario,massLoad,wetMetricTonnes,200,
+illustrative stress scenario,massLoad,formula,wetMetricTonnes * 1000 / (durationHours * 3600),
+illustrative stress scenario,massLoad,cases,"[{""durationHours"": 24, ""wetTonnesPerHour"": 8.333333333333334, ""wetKgPerSecond"": 2.314814814814815}, {""durationHours"": 6, ""wetTonnesPerHour"": 33.333333333333336, ""wetKgPerSecond"": 9.25925925925926}, {""durationHours"": 2, ""wetTonnesPerHour"": 100, ""wetKgPerSecond"": 27.77777777777778}]",
+idealized transport example,transport,alongPathM,50,
+idealized transport example,transport,lateralShiftM,10,
+idealized transport example,transport,observedOffshoreMeanUsedAsBaselineMS,0.05,
+idealized transport example,transport,testAlongFlowSpeedsMS,"[{""speedMS"": 0.05, ""kind"": ""published offshore reference used as scenario"", ""secondsToAlongPathEnd"": 1000, ""requiredLateralSpeedMS"": 0.01}, {""speedMS"": 0.15, ""kind"": ""stress scenario"", ""secondsToAlongPathEnd"": 333.33333333333337, ""requiredLateralSpeedMS"": 0.03}, {""speedMS"": 0.3, ""kind"": ""stress scenario"", ""secondsToAlongPathEnd"": 166.66666666666669, ""requiredLateralSpeedMS"": 0.06}, {""speedMS"": 0.6, ""kind"": ""stress scenario"", ""secondsToAlongPathEnd"": 83.33333333333334, ""requiredLateralSpeedMS"": 0.12}]",
+idealized transport example,transport,additionalConditions,"[""slack"", ""reversal"", ""adverse cross-flow"", ""waves"", ""asymmetric observations"", ""partial equipment loss""]",
+proposed conditions pending marine specialist review,laboratoryFactors,temperaturesC,"[22, 27, 34]",
+proposed conditions pending marine specialist review,laboratoryFactors,salinitiesPsu,"[44, 45, 46]",
+proposed conditions pending marine specialist review,laboratoryFactors,noBenefitAssumedFromCue,True,

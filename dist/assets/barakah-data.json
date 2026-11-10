@@ -1,0 +1,242 @@
+{
+  "metadata": {
+    "asOf": "2026-11-10",
+    "title": "Barakah public environmental evidence and High Tide stress cases",
+    "note": "No operating telemetry. Sources use different measurement boundaries, datums and periods. Values in scenarios are illustrative, not site design or demonstrated performance."
+  },
+  "sources": {
+    "challenge": "https://challengeon.atrc.ae/en/challenges/atp2026/pages/enec-challenge-statement?lang=en",
+    "marineWorks": "https://www.nmdc-dredgingmarine.com/ar/projects/barakah-npp-marine-works/",
+    "hydro": "https://www.sciencedirect.com/science/article/pii/S1463500323001142",
+    "sst": "https://bibliotekanauki.pl/articles/2078874.pdf",
+    "scad2017": "https://www.scad.gov.ae/documents/20122/2312466/AgEnv_ENR_Publication_Annual_Annual_2017_v7.pdf/1121254d-441c-c2e8-9397-24d43756bda2?t=1684163043119",
+    "scad2019": "https://scad.gov.ae/documents/d/guest/water-20statistics_2019_annual_yearly_en-pdf-1",
+    "ead2023": "https://www.ead.gov.ae/-/media/Project/EAD/EAD/Documents/KnowledgeHub/Resources-and-Materials/MWQ-ANNUAL-REPORT-2024-EN.pdf",
+    "taxonomy": "https://doi.org/10.1017/S0025315424000687",
+    "wormsPerezi": "https://www.marinespecies.org/aphia.php?id=220492&p=taxdetails",
+    "uaeObservations": "https://doi.org/10.53256/COSE_230102",
+    "swimming": "https://doi.org/10.1242/jeb.191148",
+    "flume": "https://doi.org/10.1115/OMAE2023-101058",
+    "analog": "https://www.edf.fr/actualites-des-unites-de-production"
+  },
+  "parameters": {
+    "marineConstruction": {
+      "kind": "public construction record",
+      "period": "2011–2016",
+      "scope": "Combined cooling-water intake, discharge and navigation works",
+      "depthBelowMeanSeaLevelM": {
+        "low": 5.5,
+        "high": 9.5
+      },
+      "dredgedAreaKm2": 2.35,
+      "dredgedMaterialM3LowerBound": 9000000,
+      "source": "marineWorks"
+    },
+    "offshoreCurrent": {
+      "kind": "in situ observation summarized in a publication",
+      "period": "2017–2018",
+      "scope": "ADOOS Buoy 9, offshore Barakah, depth-averaged current speed",
+      "meanSpeedMS": 0.05,
+      "approximateWaterDepthMChartDatum": 20,
+      "source": [
+        "hydro",
+        "sst"
+      ],
+      "caveat": "Neither a peak speed nor an intake channel measurement."
+    },
+    "offshoreModel": {
+      "kind": "published validation statistics",
+      "scope": "Buoy 9, observations and model values at hourly resolution over the depicted validation intervals",
+      "nearSiteModelGridMApprox": 100,
+      "waterLevelRmsdM": 0.26,
+      "currentSpeedRmsdMS": 0.044,
+      "currentSpeedCorrelation": 0.352,
+      "tideOnlyCurrentVelocityRmsdMS": 0.048,
+      "tideOnlyCurrentVelocityCorrelation": 0.501,
+      "constituentAmplitudesMS": {
+        "M2": 0.0428,
+        "K1": 0.0227,
+        "S2": 0.021,
+        "S1": 0.0194,
+        "N2": 0.0112
+      },
+      "source": "hydro"
+    },
+    "coastalTemperature": {
+      "kind": "historical analyzed surface climatology",
+      "period": "2003–2019",
+      "scope": "Published Barakah coastal GHRSST grid cell; seasonal average °C",
+      "source": "sst",
+      "sourceLocator": "Table A.2",
+      "meanC": {
+        "winter": 21.6,
+        "spring": 25.3,
+        "summer": 32.7,
+        "autumn": 30.6,
+        "annual": 27.6
+      },
+      "dailyPercentileC": {
+        "p05": 19.5,
+        "p50": 28.5,
+        "p95": 34.2
+      },
+      "historicalLocalMeanTrendCPerYear": 0.014,
+      "caveat": "A surface climate summary, not an intake thermometer or a 2026 forecast."
+    },
+    "offshoreTemperature": {
+      "kind": "historical field observations",
+      "scope": "ADOOS Buoy 9, seasonal percentiles of daily averaged sea surface temperature",
+      "period": "2018–2019",
+      "source": "sst",
+      "sourceLocator": "Table A.1",
+      "seasonalP05P95C": {
+        "winter": [
+          18.9,
+          25.2
+        ],
+        "spring": [
+          20.1,
+          31
+        ],
+        "summer": [
+          31.5,
+          35.5
+        ],
+        "autumn": [
+          26.5,
+          34.7
+        ]
+      }
+    },
+    "waterQuality": [
+      {
+        "year": 2017,
+        "kind": "historical Barakah water-quality summary",
+        "source": "scad2017",
+        "sourceLocator": "Table 3.5",
+        "temperatureC": 28.76,
+        "salinityPsu": 43.97,
+        "pH": 8.04,
+        "dissolvedOxygenMgL": 4.92,
+        "secchiDepthM": 6.25,
+        "biochemicalOxygenDemandMgL": 3.18
+      },
+      {
+        "year": 2019,
+        "kind": "historical Barakah water-quality summary",
+        "source": "scad2019",
+        "sourceLocator": "Table 1.2",
+        "temperatureC": 26.94,
+        "salinityPsu": 45.01,
+        "pH": 8.04,
+        "dissolvedOxygenMgL": 5.09
+      }
+    ],
+    "wholePlantFlow": {
+      "kind": "published design maximum",
+      "source": "hydro",
+      "sourceLocator": "§§1, 2.2.3",
+      "valueM3S": 690,
+      "sustainedEquivalentM3Day": 59616000,
+      "caveat": "All four units together. Actual flow and timing are unverified."
+    },
+    "targetOrganism": {
+      "kind": "challenge design reference",
+      "source": "challenge",
+      "name": "Catostylus mosaicus",
+      "bellDiameterCm": {
+        "low": 30,
+        "high": 45
+      },
+      "localSpeciesConfirmed": false,
+      "localComparator": "Catostylus perezi",
+      "comparatorSource": [
+        "taxonomy",
+        "wormsPerezi"
+      ]
+    },
+    "historicalPeakWetTonnesPerDay": {
+      "kind": "unknown",
+      "value": null,
+      "caveat": "No public site peak or event logging method verified."
+    }
+  },
+  "scenarios": {
+    "massLoad": {
+      "kind": "illustrative stress scenario",
+      "wetMetricTonnes": 200,
+      "formula": "wetMetricTonnes * 1000 / (durationHours * 3600)",
+      "cases": [
+        {
+          "durationHours": 24,
+          "wetTonnesPerHour": 8.333333333333334,
+          "wetKgPerSecond": 2.314814814814815
+        },
+        {
+          "durationHours": 6,
+          "wetTonnesPerHour": 33.333333333333336,
+          "wetKgPerSecond": 9.25925925925926
+        },
+        {
+          "durationHours": 2,
+          "wetTonnesPerHour": 100,
+          "wetKgPerSecond": 27.77777777777778
+        }
+      ]
+    },
+    "transport": {
+      "kind": "idealized transport example",
+      "alongPathM": 50,
+      "lateralShiftM": 10,
+      "observedOffshoreMeanUsedAsBaselineMS": 0.05,
+      "testAlongFlowSpeedsMS": [
+        {
+          "speedMS": 0.05,
+          "kind": "published offshore reference used as scenario",
+          "secondsToAlongPathEnd": 1000,
+          "requiredLateralSpeedMS": 0.01
+        },
+        {
+          "speedMS": 0.15,
+          "kind": "stress scenario",
+          "secondsToAlongPathEnd": 333.33333333333337,
+          "requiredLateralSpeedMS": 0.03
+        },
+        {
+          "speedMS": 0.3,
+          "kind": "stress scenario",
+          "secondsToAlongPathEnd": 166.66666666666669,
+          "requiredLateralSpeedMS": 0.06
+        },
+        {
+          "speedMS": 0.6,
+          "kind": "stress scenario",
+          "secondsToAlongPathEnd": 83.33333333333334,
+          "requiredLateralSpeedMS": 0.12
+        }
+      ],
+      "additionalConditions": [
+        "slack",
+        "reversal",
+        "adverse cross-flow",
+        "waves",
+        "asymmetric observations",
+        "partial equipment loss"
+      ]
+    },
+    "laboratoryFactors": {
+      "kind": "proposed conditions pending marine specialist review",
+      "temperaturesC": [
+        22,
+        27,
+        34
+      ],
+      "salinitiesPsu": [
+        44,
+        45,
+        46
+      ],
+      "noBenefitAssumedFromCue": true
+    }
+  }
+}

@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Engineering, cost and judge defence · High Tide</title><link rel="stylesheet" href="./style.css"></head>
+<body class="article-body"><header class="article-nav"><a class="brand" href="./index.html">HIGH TIDE</a><nav aria-label="Evidence navigation"><a href="./index.html">Pitch ↗</a><a href="./evidence.html">Evidence index</a></nav></header><main class="article"><h1>High Tide | Engineering, costs and judge defence</h1>
+<p>This brief ties the physical response and biochemical research together for ENEC’s Advanced Technology Pioneers challenge. The system starts with the existing offshore alert. It evaluates a possible path away from seawater intake flow, runs a physical diversion within tested limits, and verifies where the animals go. A separate, contained research program asks whether a chemical cue can improve clearance. The cue would enter a later decision only if it improves measured outcomes and clears selectivity and containment gates.</p>
+<table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>What is in hand</th>
+<th>Next evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A team can compare operating decisions and failure cases</td>
+<td>High Tide v1.0 deterministic simulator, 165 archived runs, selectable control modes and a CSV export.</td>
+<td>Reproduce laboratory water and surrogate trajectories before adjusting model coefficients.</td>
+</tr>
+<tr>
+<td>A physical corridor can plausibly use local flow</td>
+<td>Published field and flume experiments on other jellyfish and settings.</td>
+<td>Compare matched, instrumented channel tests including a passive guide, active bubbles, distributed flow and no actuation.</td>
+</tr>
+<tr>
+<td>The target can be guided by a chemical cue</td>
+<td>Chemical-side preference reported in other medusae. The lead molecule altered contact feeding in Japanese sea nettles.</td>
+<td>Verify local species and measure sustained directional response against water drift, followed by selectivity and fate studies in containment.</td>
+</tr>
+<tr>
+<td>Barakah suitability</td>
+<td>Public construction, historical marine observations and modeling context.</td>
+<td>Operator-provided geometry, intake and bloom records, permissions and a viable exit.</td>
+</tr>
+</tbody>
+</table>
+<p>Read the <a href="./barakah-research.html">Barakah dossier</a> and the <a href="./biochemistry-research.html">chemical ecology dossier</a> for source methods and full quantitative boundaries. <a href="https://challengeon.atrc.ae/en/challenges/atp2026/pages/enec-challenge-statement?lang=en">ENEC challenge</a> · <a href="https://doi.org/10.1016/j.aquaculture.2020.735915">Published bubble experiments</a> · <a href="https://high-tide-enec-4555.vercel.app/references.html">Submitted simulator archive</a></p>
+<h2>Translate site conditions into a design envelope</h2>
+<p>The marine approach is the first study zone because it can provide time and space for sideways clearance. An intake-side structure may help shape the route or create a dead end. A channel trial would need operator review of minimum flow, maintenance access, navigation, equipment retrieval and consequences of a fault. A contained flume is the first physical test location.</p>
+<table>
+<thead>
+<tr>
+<th>Field input</th>
+<th>What to request</th>
+<th>What it changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Geometry</td>
+<td>Permitted coarse plan, depths by datum and tide, approach cross-sections, bed, anchors and candidate routes out.</td>
+<td>Diffuser length, deployment depth, corridor shape and clearance time.</td>
+</tr>
+<tr>
+<td>Current and waves</td>
+<td>Speed and direction at multiple depths near approach and exits, percentile and reversal duration, winds and wave window.</td>
+<td>Seasonal and reversal presets, when to run and how far a jelly can move.</td>
+</tr>
+<tr>
+<td>Actual plant duty</td>
+<td>Hourly operating flow ranges, pump-state bands, priority channels and protected water-supply limits. Request ranges that can be shared.</td>
+<td>Intake capture assumptions and stop thresholds. The published design maximum is context only.</td>
+</tr>
+<tr>
+<td>Bloom load</td>
+<td>Dated wet mass, collection basis, hourly or shorter bins, observer coverage, uncollected fraction, morphotypes, sizes and depths.</td>
+<td>Arrival scenarios, mass balance and whether a peak came as a sustained front or short pulse.</td>
+</tr>
+<tr>
+<td>Return path</td>
+<td>Drifter or approved particle-tracking runs across wind and tide, discharge influence and ecological receptors.</td>
+<td>Whether an apparent release meets the clearance definition.</td>
+</tr>
+<tr>
+<td>Marine work</td>
+<td>Seasonal restrictions, navigation, maintenance logistics, water-quality and wildlife monitoring, relevant permits.</td>
+<td>Candidate site, operating window, recovery plan and trial acceptance.</td>
+</tr>
+<tr>
+<td>Historical response</td>
+<td>Methods, labor hours, response delay, collection and disposal volumes, observed failure modes.</td>
+<td>Baseline for economics and the decision to proceed or pivot.</td>
+</tr>
+</tbody>
+</table>
+<p>The first request to ENEC can be a coarse site sketch plus de-identified ranges. A combined dataset would ideally contain <code>timestamp</code>, <code>source</code>, <code>location_class</code>, <code>depth_datum</code>, <code>current_u</code>, <code>current_v</code>, <code>depth</code>, <code>wave</code>, <code>temperature</code>, <code>salinity</code>, <code>intake_state</code>, <code>wet_mass_kg</code>, <code>measurement_basis</code>, <code>species_confidence</code>, <code>weather</code>, and <code>response_state</code>. Store missing as null, document the clock and units, and record coverage so missing data does not imply no bloom.</p>
+<h2>Calculations the judges can inspect</h2>
+<ol>
+<li><strong>Load window.</strong> <code>wet kg/s = 1,000 × tonnes / (3,600 × hours)</code>. For 200 hypothetical tonnes, 24 h is 2.31 kg/s, 6 h is 9.26 kg/s, and 2 h is 27.78 kg/s. Wet catch mass is not total offshore arrival. If mass is estimated from counts, use a measured distribution of individual drained wet mass and report uncertainty.</li>
+<li><strong>Time to reach the exit.</strong> A screening approximation is <code>t = L/u</code> and <code>v_side = y/t</code>, where <code>L</code> is available downstream travel, <code>u</code> is mean along-flow speed and <code>y</code> is lateral travel. Over an illustrative 50 m reach with a 10 m side exit, increasing along-flow from 0.05 to 0.30 m/s cuts available time from 1,000 to 167 s and increases required mean net sideways speed from 0.01 to 0.06 m/s. This simple geometry needs measured flow and trajectories.</li>
+<li><strong>Wet load from a transect.</strong> An initial estimate is <code>rate = ∫ c × u_n × dA</code>, with local wet biomass density <code>c</code> and water velocity normal to the cross-section <code>u_n</code>. Separate cross-sectional sample uncertainty, species-specific swimming and accumulation at the screens. Report intervals instead of false precision.</li>
+<li><strong>Mass accounting.</strong> Use common tracking rules for arrivals, intake entries, outside at the final sample, retained, and other boundaries. Count returns separately because they can overlap final outcomes. In the field, define “cleared” as passing a surveyed clearance line with a follow-up check for recirculation. A simulation boundary is only a proxy.</li>
+<li><strong>Pressure at depth.</strong> <code>p_gauge ≈ ρgh + line losses + diffuser losses</code>. For assumed seawater density 1,025 kg/m³, 5.5 m and 9.5 m water columns give roughly 55 and 96 kPa of static gauge head before losses. Public dredged bed elevations are relative to MSL. Actual water level and selected depth supply the real head. Request compressor curves, duty cycles and commissioning measurement before sizing.</li>
+<li><strong>Thermal scale.</strong> <code>P = ρ c_p Q ΔT</code>. At 1 m³/s, 1 °C costs approximately 4.09 MW thermal before losses using assumed seawater properties. At the published 690 m³/s design scenario, the arithmetic is around 2.82 GW thermal per °C. Study thermal preferences in containment and use temperature as a seasonal predictor. Open-water heating is outside the concept.</li>
+<li><strong>Chemical scale.</strong> The chemistry dossier compares the arithmetic for a contained loop and an aggregate design-flow example. This illustrates dilution and inventory. No waterborne concentration has been established as effective or safe for the target.</li>
+<li><strong>Cost and energy.</strong> Convert actual electrical power and duty to kWh before comparing energy. The simulator’s actuation index is an internal relative metric. Derive any predicted savings from observed labor and avoided service work at comparable load, and include inspection and replacement. An unmeasured outage cost or avoided outage should stay outside the ROI calculation.</li>
+</ol>
+<h2>Deployment logic and acceptance</h2>
+<ul>
+<li><strong>Observe.</strong> Confirm the incoming bloom, watch the exit and measure local conditions. The operator retains control and uses current procedures.</li>
+<li><strong>Select.</strong> Test a verified route against the live flow direction and accepted operating range. Approve one physical mode for the envelope and keep a safe fallback.</li>
+<li><strong>Actuate and monitor.</strong> Stage removable segments where appropriate. Check that upstream retention does not grow and that the outside route clears at a rate that holds under sustained arrival.</li>
+<li><strong>Stop and escalate.</strong> Unavailable exit, unacceptable return, loss of water supply margin, equipment fault or effects outside agreed welfare limits stop the trial. Recovery and removal should be possible without interrupting existing screens or plant operation.</li>
+</ul>
+<p>Use a measurement and acceptance plan jointly defined with ENEC before a marine pilot. Proposed starting comparison metrics are clearance fraction, approach-to-exit time, final intake fraction, retention at fixed times, repeat returns, contact, water-supply impact, actuator duty, inspection time, and maintenance hours. Separate biological effects from engineering performance. A provisional laboratory target might be an absolute increase of 15 percentage points in verified exits for the combined cue and physical method versus the physical method alone. A threshold that matters at Barakah must be agreed from the site’s requirements and uncertainty.</p>
+<h2>Stage budget and decision gates</h2>
+<p>All amounts below are planning allowances in AED. None is a supplier quote or a capital budget for plant installation. Cost buckets are separated to avoid adding bench hardware twice. Taxes, civil works at the plant, operational downtime, major permits and permanent equipment require separate scoping.</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th style="text-align:right">Low</th>
+<th style="text-align:right">High</th>
+<th>Decision before spending more</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Student bench demonstrator with neutral surrogates, basic pumps, flow observation, controls and reserve</td>
+<td style="text-align:right">2,160</td>
+<td style="text-align:right">8,640</td>
+<td>Confirm repeatable flow and tracking in both branches and reproducible physical baseline.</td>
+</tr>
+<tr>
+<td>Contained feasibility with qualified partner, identification, care, analytical chemistry, preliminary non-target endpoints and reserve</td>
+<td style="text-align:right">35,625</td>
+<td style="text-align:right">125,000</td>
+<td>Reproduce a directional effect, recovery and an initial selectivity window. Proceed separately from marine deployment.</td>
+</tr>
+<tr>
+<td>Combined planning envelope for the two stages above</td>
+<td style="text-align:right">37,785</td>
+<td style="text-align:right">133,640</td>
+<td>Refine with written quotes and partner availability. Shared items and contributions can reduce the combined cost.</td>
+</tr>
+<tr>
+<td>Marine pilot or permanent system</td>
+<td style="text-align:right">Quote after design</td>
+<td style="text-align:right">Quote after design</td>
+<td>Approve survey, route, environmental study, exact work scope, operating/maintenance model and retrieval plan.</td>
+</tr>
+</tbody>
+</table>
+<p>A later field work breakdown needs hydrodynamic survey and model validation, structural and mooring design, fabrication and compression or pumping equipment, instrument calibration, civil and marine installation, inspections, fouling management, power, specialist labor, seasonal demobilization and decommissioning. Ask for itemized prices, warranty, life and deliverable dates. Compare passive and active configurations on equal geometry, flow and clearance criteria.</p>
+<h2>Questions to practise aloud</h2>
+<table>
+<thead>
+<tr>
+<th>Judge question</th>
+<th>A defensible answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“What’s proprietary here?”</td>
+<td>“The components have prior art. Our engineering contribution is the integration of a tested exit, selectable actuation, continuous clearance accounting and a biochemical assay with a real decision gate.”</td>
+</tr>
+<tr>
+<td>“Is the cue a pheromone?”</td>
+<td>“We’re testing a candidate cue. The identified molecule changed contact feeding in a different species. We still have to demonstrate directional behavior in the animals ENEC encounters.”</td>
+</tr>
+<tr>
+<td>“Won’t other animals react?”</td>
+<td>“They might. We measure the target response and compare it with relevant non-target endpoints at verified exposures. Containment and recovery are part of the trial design.”</td>
+</tr>
+<tr>
+<td>“Why not just catch them at the screen?”</td>
+<td>“That remains an operational baseline. We would measure whether clearing upstream reduces retained mass and handling load without moving the problem into another accumulation point.”</td>
+</tr>
+<tr>
+<td>“Can you deal with a 200-tonne day?”</td>
+<td>“We use that figure as a stress scenario. The same mass over two hours is twelve times the average rate over a day. We need the actual peak time series and clearance geometry before making a capacity claim.”</td>
+</tr>
+<tr>
+<td>“Does your zero-intake run prove it works?”</td>
+<td>“It shows a model behavior under stated assumptions. We need flume calibration, repeated sustained arrivals, a no-actuation comparison and an operator-agreed clearance line before making performance claims.”</td>
+</tr>
+<tr>
+<td>“What if the power fails?”</td>
+<td>“The design premise is a fail-to-stop actuation system with the existing operator response intact. We test fault outcomes and review passive equipment, retrieval and obstruction risks before any pilot.”</td>
+</tr>
+<tr>
+<td>“What if no route exits safely?”</td>
+<td>“That layout fails the corridor gate. We would assess a different zone or a separate collection-and-relocation concept with ENEC.”</td>
+</tr>
+<tr>
+<td>“What would you build with AED 10,000?”</td>
+<td>“A recirculating bench demonstrator, neutral surrogates, flow and video measurements, and a documented validation dataset. A target-species chemistry study requires a qualified partner and a separate budget.”</td>
+</tr>
+<tr>
+<td>“What would make you abandon chemistry?”</td>
+<td>“Failure to produce useful directional movement beyond flow, or evidence that recovery, selectivity, containment or operating practicality is inadequate.”</td>
+</tr>
+</tbody>
+</table>
+<h2>Five-minute delivery</h2>
+<table>
+<thead>
+<tr>
+<th>Time</th>
+<th>Speaker</th>
+<th>Beat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00–01:00</td>
+<td>Syed</td>
+<td>Team, ENEC context, and the question posed after detection.</td>
+</tr>
+<tr>
+<td>01:00–01:45</td>
+<td>Usman</td>
+<td>Exact compound and observed result. Show 2D, then the optional PubChem conformer.</td>
+</tr>
+<tr>
+<td>01:45–02:20</td>
+<td>Usman</td>
+<td>Identity, direction and non-target gates.</td>
+</tr>
+<tr>
+<td>02:20–03:00</td>
+<td>Syed</td>
+<td>Barakah context. Start with offshore current, then contrast reported depth and stress load.</td>
+</tr>
+<tr>
+<td>03:00–03:45</td>
+<td>Syed</td>
+<td>Walk through the exit route and control logic.</td>
+</tr>
+<tr>
+<td>03:45–04:40</td>
+<td>Syed</td>
+<td>Run the reversal preset, compare baseline and show closed exit if asked.</td>
+</tr>
+<tr>
+<td>04:40–05:00</td>
+<td>Both</td>
+<td>Ask for a contained assay partnership and an intake-approach survey envelope.</td>
+</tr>
+</tbody>
+</table>
+<p>For a longer session, use the evidence drawer to answer budget, ecology and model questions. Switch to the arrival window calculator to make peak-rate assumptions explicit. Keep a copy of the presentation files available on the presentation laptop for offline use.</p>
+</main></body></html>

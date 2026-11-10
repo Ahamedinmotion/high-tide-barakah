@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#050c10">
+<meta name="description" content="High Tide. A site-specific marine diversion concept and contained biochemical research program for the ENEC challenge at Advanced Technology Pioneers 2026.">
+<title>HIGH TIDE / Give the bloom a way out</title>
+<link rel="stylesheet" href="./style.css">
+<script defer src="./deck.js"></script>
+</head>
+<body>
+<a class="skip" href="#slide-title">Skip to slide</a>
+<div class="frame">
+<header class="mast">
+  <a href="#opening" class="brand" aria-label="High Tide opening"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M2 23C8 23 8 9 14 9S20 23 26 23H30M2 17C8 17 9 3 15 3S22 17 28 17H30M2 29C9 29 8 15 14 15S20 29 26 29H30"/></svg><span>HIGH TIDE<small>42 ABU DHABI</small></span></a>
+  <div class="mast-topic">ADVANCED TECHNOLOGY PIONEERS <span>/</span> ENEC CHALLENGE</div>
+  <div class="mast-actions">
+    <button id="notes-toggle" class="utility" aria-controls="notes" aria-expanded="false"><span aria-hidden="true">◫</span> <b>Notes</b></button>
+    <button id="evidence-toggle" class="utility" aria-controls="evidence" aria-haspopup="dialog"><span aria-hidden="true">⌘</span> <b>Evidence</b></button>
+    <button id="full-toggle" class="utility square" aria-label="Enter fullscreen" title="Enter fullscreen (F)">⛶</button>
+  </div>
+</header>
+<main id="stage" class="stage" aria-label="High Tide presentation"></main>
+<footer class="deck-footer">
+  <div class="deck-state"><span id="slide-number">01</span><i></i><span id="slide-total">07</span><small id="slide-label">OPENING</small></div>
+  <nav class="deck-nav" id="slide-nav" aria-label="Slides"></nav>
+  <div class="deck-buttons"><button id="prev" aria-label="Previous slide" title="Previous slide (←)">←</button><button id="next" aria-label="Next slide" title="Next slide (→)"><b>Next</b> →</button></div>
+</footer>
+</div>
+<aside id="notes" class="notes" hidden aria-label="Presenter notes"><div class="drawer-head"><div><div class="eyebrow">PRESENTER VIEW</div><h2 id="notes-title">Speaking notes</h2></div><button id="notes-close" class="close" aria-label="Close notes">×</button></div><div class="clock"><span id="clock-value">00:00</span><button id="clock-toggle">Start timer</button><button id="clock-reset" aria-label="Reset timer">↻</button></div><div id="notes-body"></div></aside>
+<dialog id="evidence" class="evidence"><div class="drawer-head"><div><div class="eyebrow">HIGH TIDE / TECHNICAL APPENDIX</div><h2>Evidence room</h2></div><button id="evidence-close" class="close" aria-label="Close evidence">×</button></div><nav id="evidence-tabs" class="tabs" aria-label="Evidence sections"></nav><div id="evidence-body" class="evidence-body"></div></dialog>
+<noscript><div class="no-script">High Tide needs JavaScript for the deck controls. The <a href="./evidence.html">technical brief</a> can be read without it.</div></noscript>
+<script defer src="./content.js"></script>
+<script defer src="./sim-data.js"></script>
+<script defer src="./molecule-data.js"></script>
+
+<script defer src="./simulator.js"></script>
+</body>
+</html>
