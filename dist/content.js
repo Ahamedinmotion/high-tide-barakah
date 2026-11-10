@@ -40,10 +40,10 @@ const slides = [
         <article class="cue-card push">
           <div class="panel-tag"><b>−</b><span>THE STICK<br><strong>Candidate avoidance cue</strong></span></div>
           <div class="molecule-art" id="molecule-art">${molecule}</div>
-          <div class="cue-result"><h2>(E)-2-nonenal</h2><p>Japanese sea nettles let go sooner after contact with treated krill. The compound also rose <b>23×</b> in water from injured <i>S. saltatrix</i> versus sham samples.</p></div>
+          <div class="cue-result"><h2>(E)-2-nonenal</h2><p>Japanese sea nettles released treated dried krill sooner. The compound also rose <b>23×</b> in water from injured <i>S. saltatrix</i> versus sham samples.</p></div>
           <div class="cue-use"><b>OUR DESIGN</b> Test for turning away from the intake-side arm.</div>
           <div class="cue-source">${source('chemistry')} ${source('molecule')} <button class="text-button" id="molecule-more" aria-expanded="false" aria-controls="molecule-extra">Assay detail ↓</button></div>
-          <div id="molecule-extra" class="molecule-extra" hidden>Miura Fig. 5: shorter prey holding at 5% and 50% bait pretreatment; 0.5% had no significant result. Fig. 4: n = 10 per group for the 23× chemical comparison, p = 0.00094.</div>
+          <div id="molecule-extra" class="molecule-extra" hidden>Miura Fig. 5: shorter holding of dried krill at 5% and 50% bait pretreatment; 0.5% had no significant result. Fig. 4: n = 10 per group for the 23× chemical comparison, p = 0.00094.</div>
         </article>
         <article class="cue-card pull">
           <div class="panel-tag"><b>+</b><span>THE CARROT<br><strong>Candidate attraction cue</strong></span></div>
@@ -53,12 +53,12 @@ const slides = [
             <path d="M309 61l12 12-12 12m33-27 15 15-15 15m34-31 16 16-16 16" fill="none" stroke="currentColor" stroke-width="4"/>
             <text x="19" y="111" fill="currentColor" font-size="10" font-family="monospace">TRACK</text>
           </svg>
-          <div class="cue-result"><h2>Prey-conditioned water</h2><p>In a two-inflow tank, moon jellies (<i>Aurelia</i>) favored the side carrying water conditioned by brine shrimp.</p></div>
-          <div class="cue-use"><b>OUR DESIGN</b> Test for swimming toward the open-water arm.</div>
+          <div class="cue-result"><h2>Brine shrimp (<i>Artemia</i>)</h2><p>In a two-inflow tank, moon jellies (<i>Aurelia aurita</i>) favored the side supplied with water that had held brine shrimp.</p></div>
+          <div class="cue-use"><b>OUR DESIGN</b> Test whether that water draws blue blubbers toward the exit.</div>
           <div class="cue-source">${source('preference')}</div>
         </article>
       </div></section>`,
-    notes: `The Japanese sea nettle, Chrysaora pacifica, was the animal in the contact study. The compound came from a different jellyfish, Spirocodon saltatrix. Miura’s Figure 4 found 23 times as much (E)-2-nonenal in injured-tissue samples as sham water, n = 10 per group, p = 0.00094. Figure 5 is a separate endpoint: holding time for treated prey. The two higher pretreatment formulations shortened holding; the lowest did not. No seawater dose comes from those percentages. Arai showed preference in moon jellies for Artemia-conditioned water. The mixture’s active component is unresolved. Our innovation is the combination: use the avoidance candidate on the intake side and the attraction candidate on the exit side, and measure the net trajectory of the challenge species.`
+    notes: `The Japanese sea nettle, Chrysaora pacifica, was the animal in the contact study. The compound came from a different jellyfish, Spirocodon saltatrix. Miura’s Figure 4 found 23 times as much (E)-2-nonenal in injured-tissue samples as sham water, n = 10 per group, p = 0.00094. Figure 5 is a separate endpoint: holding time for treated dried krill. The two higher pretreatment formulations shortened holding; the lowest did not. No seawater dose comes from those percentages. Arai showed that moon jellies favored water that had held brine shrimp (Artemia). That water carries the candidate cue into our assay. The mixture’s active component is unresolved. Our innovation is the combination: use the avoidance candidate on the intake side and the attraction candidate on the exit side, and measure the net trajectory of the challenge species.`
   },
   {
     id: 'gates', name: 'Cue experiment', span: '01:22–02:10',
@@ -160,7 +160,7 @@ const talkTrack = [
   { speaker:'Syed', text:`ENEC’s alert tells you the bloom is coming. We’re working on what happens next. High Tide gives the blue blubber jellyfish a route away from the intake. We’re building a corridor that adapts to the water, and we’re testing whether we can use the jellyfish’s own senses to help it take that route.` },
   { speaker:'Usman', text:`Here’s what makes High Tide different. We want to give the jellyfish two reasons to move in the same direction: something to move away from, and something to move toward.
 
-In one study, Japanese sea nettles released treated prey sooner after contact with (E)-2-nonenal. That’s our candidate for the intake side. In a different study, moon jellies chose the side of a tank that carried prey-conditioned water. That’s our candidate for the exit side.
+In one study, Japanese sea nettles released dried krill treated with (E)-2-nonenal sooner. That’s our candidate for the intake side. In a different study, moon jellies favored water that had held brine shrimp, called Artemia. That brine shrimp cue is what we’ll test on the exit side.
 
 We’re taking those two observations and asking a new question: can you get adult blue blubbers to turn and swim toward the exit in flowing water? If they do, the animal’s own movement can contribute to clearance.` },
   { speaker:'Usman', text:`Here’s how we find out. [Select Carrot, then swap sides.] Both arms carry the same flow. We move the cue to the other side and ask whether the jellyfish’s choice follows it. We test the two cues alone, together, and against a blank. We subtract the water’s motion from the track so we can tell swimming from drifting.

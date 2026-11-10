@@ -9,8 +9,8 @@ window.addEventListener('DOMContentLoaded', () => {
   let evidenceInvoker;
   const questions = [
     ['Why another bubble system?', 'The corridor compares several methods and only counts an exit if animals clear the intake area. The biochemical program tests whether we can add a measured directional response. Published bubble experiments justify testing, and Barakah calibration determines what works.', ['bubble']],
-    ['Does the molecule repel jellyfish?', 'In a contact assay, Japanese sea nettles held treated prey for less time. We propose a blinded directional test in identified local adults. We need evidence of sustained movement and recovery, not simply a feeding or stress response.', ['chemistry', 'molecule']],
-    ['Why think chemicals can guide any medusa?', 'A two-inflow aquarium study found side preference under prey-conditioned water in moon jellies. It motivates an attraction arm with matched flow. The active compound and response in Catostylus remain unknown.', ['preference']],
+    ['Does the molecule repel jellyfish?', 'In a contact assay, Japanese sea nettles held treated dried krill for less time. We propose a blinded directional test in identified local adults. We need evidence of sustained movement and recovery, not simply a feeding or stress response.', ['chemistry', 'molecule']],
+    ['Why think chemicals can guide any medusa?', 'In a two-inflow aquarium, moon jellies favored the side supplied with water that had held brine shrimp (Artemia). It motivates an attraction arm with matched flow. The active compound and response in Catostylus remain unknown.', ['preference']],
     ['How do you isolate behavior from water movement?', 'Map flow in both arms first, match temperature and salinity, alternate the cue side, use a vehicle blank and score video blind. Subtract measured water velocity from animal motion. Compare a spatial gradient with uniform exposure and record nonchoices.', ['chemistry']],
     ['What about fish, larvae, corals and other species?', 'We have no local dose-response margin yet. A marine partner would select non-target endpoints and test at measured exposures in a contained system. A repeatable target response, recovery, no unacceptable non-target effects and proven effluent containment are gates for any next stage.', ['chemistry', 'faq']],
     ['Is the chemistry necessary for the physical corridor?', 'The physical corridor has its own controls, tests and stop conditions. If the cue fails on direction, selectivity or containment, the chemical workstream stops and physical development can continue.', []],
@@ -114,7 +114,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   function mountAssay(){
     const pairs={carrot:['blank','carrot'],stick:['stick','blank'],combined:['stick','carrot'],blank:['blank','blank']};
-    const names={blank:'Matched blank',carrot:'Prey-conditioned water',stick:'(E)-2-nonenal'};
+    const names={blank:'Matched blank',carrot:'Brine shrimp cue water',stick:'(E)-2-nonenal'};
     const box=$('assay-console'), controls=$('assay-presets');
     let trial='combined', swapped=false;
     function paint(){
