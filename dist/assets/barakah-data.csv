@@ -51,11 +51,13 @@ challenge design reference,targetOrganism,bellDiameterCm,"{""low"": 30, ""high""
 challenge design reference,targetOrganism,localSpeciesConfirmed,False,https://challengeon.atrc.ae/en/challenges/atp2026/pages/enec-challenge-statement?lang=en
 challenge design reference,targetOrganism,localComparator,Catostylus perezi,https://challengeon.atrc.ae/en/challenges/atp2026/pages/enec-challenge-statement?lang=en
 challenge design reference,targetOrganism,comparatorSource,"[""taxonomy"", ""wormsPerezi""]",https://challengeon.atrc.ae/en/challenges/atp2026/pages/enec-challenge-statement?lang=en
-unknown,historicalPeakWetTonnesPerDay,value,,
-unknown,historicalPeakWetTonnesPerDay,caveat,No public site peak or event logging method verified.,
-illustrative stress scenario,massLoad,wetMetricTonnes,200,
-illustrative stress scenario,massLoad,formula,wetMetricTonnes * 1000 / (durationHours * 3600),
-illustrative stress scenario,massLoad,cases,"[{""durationHours"": 24, ""wetTonnesPerHour"": 8.333333333333334, ""wetKgPerSecond"": 2.314814814814815}, {""durationHours"": 6, ""wetTonnesPerHour"": 33.333333333333336, ""wetKgPerSecond"": 9.25925925925926}, {""durationHours"": 2, ""wetTonnesPerHour"": 100, ""wetKgPerSecond"": 27.77777777777778}]",
+mentor-reported historical benchmark,historicalPeakWetTonnesPerDay,reportedApproximateTonsPerDay,200,"ENEC mentoring discussion, 30 October 2026, recorded excerpt ~07:28–08:04"
+mentor-reported historical benchmark,historicalPeakWetTonnesPerDay,caveat,"Underlying event, weighing method, exact mass convention, and time-resolved load unavailable. Metric wet tonnes assumed for design-screening calculations only.","ENEC mentoring discussion, 30 October 2026, recorded excerpt ~07:28–08:04"
+screening cases built around a mentor-reported benchmark,massLoad,wetMetricTonnes,200,
+screening cases built around a mentor-reported benchmark,massLoad,formula,wetMetricTonnes * 1000 / (durationHours * 3600),
+screening cases built around a mentor-reported benchmark,massLoad,cases,"[{""durationHours"": 24, ""wetTonnesPerHour"": 8.333333333333334, ""wetKgPerSecond"": 2.314814814814815}, {""durationHours"": 6, ""wetTonnesPerHour"": 33.333333333333336, ""wetKgPerSecond"": 9.25925925925926}, {""durationHours"": 2, ""wetTonnesPerHour"": 100, ""wetKgPerSecond"": 27.77777777777778}]",
+screening cases built around a mentor-reported benchmark,massLoad,upperCaseTonnes,300,
+screening cases built around a mentor-reported benchmark,massLoad,capacityCases,"[{""assumedMetricWetTonnes"": 100, ""durationHours"": 24, ""wetKgPerSecond"": 1.157407}, {""assumedMetricWetTonnes"": 100, ""durationHours"": 6, ""wetKgPerSecond"": 4.62963}, {""assumedMetricWetTonnes"": 100, ""durationHours"": 2, ""wetKgPerSecond"": 13.888889}, {""assumedMetricWetTonnes"": 200, ""durationHours"": 24, ""wetKgPerSecond"": 2.314815}, {""assumedMetricWetTonnes"": 200, ""durationHours"": 6, ""wetKgPerSecond"": 9.259259}, {""assumedMetricWetTonnes"": 200, ""durationHours"": 2, ""wetKgPerSecond"": 27.777778}, {""assumedMetricWetTonnes"": 300, ""durationHours"": 24, ""wetKgPerSecond"": 3.472222}, {""assumedMetricWetTonnes"": 300, ""durationHours"": 6, ""wetKgPerSecond"": 13.888889}, {""assumedMetricWetTonnes"": 300, ""durationHours"": 2, ""wetKgPerSecond"": 41.666667}]",
 idealized transport example,transport,alongPathM,50,
 idealized transport example,transport,lateralShiftM,10,
 idealized transport example,transport,observedOffshoreMeanUsedAsBaselineMS,0.05,
