@@ -227,3 +227,6 @@ h1 em{font-style:normal;color:var(--accent)}.lede{max-width:48ch;font-size:clamp
   .sizing-grid article{border-right:0;border-bottom:1px solid #6b6b6b}
   .sizing-grid article:last-child{border-bottom:0}
 }
+
+/* Four team members, aligned for the opening slide. */
+.crew{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 24px;max-width:760px}.crew div{min-width:0}.crew span{display:block;line-height:1.25}@media(max-width:520px){.crew{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px}.crew b{font-size:14px}.crew span{font-size:11px}}

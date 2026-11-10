@@ -28,9 +28,9 @@ const molecule = `<svg viewBox="0 0 630 230" role="img" aria-label="Skeletal str
 const slides = [
   {
     id: 'opening', name: 'Opening', span: '00:00–00:25',
-    html: `<section class="scene opening"><div class="hero-film" aria-hidden="true"></div><div class="hero-contours" aria-hidden="true"></div><div class="hero-copy"><div class="eyebrow"><i class="live-dot"></i> 01 / THE ENEC CHALLENGE</div><h1 id="slide-title" tabindex="-1">Give the bloom<br>a way <em>out.</em></h1><p class="lede">High Tide · A post-alert response for blue blubber jellyfish (<i>Catostylus mosaicus</i>) at Barakah.</p><div class="crew"><div><b>Syed Ahamed</b><span>President of Robotics · 42 Abu Dhabi</span></div><div><b>Usman Mohammad</b><span>Applied Computer Science &amp; AI · Molecular Biology background</span></div></div><button class="start" data-jump="molecule">Enter the pitch <span>↗</span></button></div><div class="hero-index" aria-hidden="true">HIGH TIDE<br>FIG. 01 <i></i> AQUARIUM FOOTAGE</div></section>`,
+    html: `<section class="scene opening"><div class="hero-film" aria-hidden="true"></div><div class="hero-contours" aria-hidden="true"></div><div class="hero-copy"><div class="eyebrow"><i class="live-dot"></i> 01 / THE ENEC CHALLENGE</div><h1 id="slide-title" tabindex="-1">Give the bloom<br>a way <em>out.</em></h1><p class="lede">High Tide · A post-alert response for blue blubber jellyfish (<i>Catostylus mosaicus</i>) at Barakah.</p><div class="crew"><div><b>Syed Ahamed</b><span>Founder &amp; President · 42 Abu Dhabi Robotics</span></div><div><b>Usman Mohammad</b><span>Applied Computer Science &amp; AI · Molecular Biology background</span></div><div><b>Randall Lutuciri</b><span>Embedded Systems &amp; Controls Director · 42 Abu Dhabi Robotics</span></div><div><b>Mustafa Muhammed</b><span>Director of Software Engineering · 42 Abu Dhabi Robotics</span></div></div><button class="start" data-jump="molecule">Enter the pitch <span>↗</span></button></div><div class="hero-index" aria-hidden="true">HIGH TIDE<br>FIG. 01 <i></i> AQUARIUM FOOTAGE</div></section>`,
 
-    notes: `Introduce yourself and Usman, name Barakah and the target, then hand over to chemistry. The ENEC brief specifies the blue blubber jellyfish, Catostylus mosaicus, with a 30–45 cm bell diameter.`
+    notes: `Introduce the four team members, name Barakah and the target, then hand over to chemistry. The ENEC brief specifies the blue blubber jellyfish, Catostylus mosaicus, with a 30–45 cm bell diameter.`
   },
   {
     id: 'molecule', name: 'Carrot & stick', span: '00:22–01:12',
@@ -109,7 +109,7 @@ const slides = [
   }
 ];
 const talkTrack = [
-  { speaker:'Syed', text:`I’m Syed Ahamed, President of Robotics at 42 Abu Dhabi. This is Usman Mohammad. He brings molecular biology to the team. At Barakah, we want to turn blue blubber jellyfish away from the cooling intake. Our idea is to use the jellyfish’s own senses to guide it.` },
+  { speaker:'Syed', text:`I’m Syed Ahamed, Founder and President of 42 Abu Dhabi Robotics. Our team includes Usman Mohammad, who brings molecular biology, Randall Lutuciri, our Embedded Systems and Controls Director, and Mustafa Muhammed, our Director of Software Engineering. At Barakah, we want to turn blue blubber jellyfish away from the cooling intake. Our idea is to use the jellyfish’s own senses to guide it.` },
   { speaker:'Usman', text:`Push away from the intake. Pull toward the exit.
 
 For the push, Japanese sea nettles let go of dried krill sooner when it was treated with (E)-2-nonenal. For the pull, moon jellies favored water that had held brine shrimp, called Artemia.
