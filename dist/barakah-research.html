@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Barakah data and site fit · High Tide</title><link rel="stylesheet" href="./style.css"></head>
 <body class="article-body"><header class="article-nav"><a class="brand" href="./index.html">HIGH TIDE</a><nav aria-label="Evidence navigation"><a href="./index.html">Pitch ↗</a><a href="./evidence.html">Evidence index</a></nav></header><main class="article"><h1>High Tide | Barakah engineering evidence dossier</h1>
-<p>10 November 2026 · ENEC Advanced Technology Pioneers · Public sources and labeled engineering scenarios</p>
+<p>10 November 2026 · ENEC Advanced Technology Pioneers · Public observations, construction records and site design</p>
 <p>The ENEC challenge starts after its existing offshore alert. High Tide would test whether a marine diversion corridor can carry incoming jellyfish past a seawater intake approach and into a verified exit. Its biological research asks whether an authenticated target jellyfish can respond to a directional cue strongly and safely enough to improve that corridor. Actual channel conditions, bloom loads and operating limits need operator validation. The challenge explicitly says participants will not receive detailed facility design or internal operating data. <a href="https://challengeon.atrc.ae/en/challenges/atp2026/pages/enec-challenge-statement?lang=en">ENEC challenge brief</a></p>
 <h2>1. What the numbers mean</h2>
 <table>
@@ -39,11 +39,6 @@
 <td>Harmonic analysis at Buoy 9. Together they account for over 85% of the calculated tidal energy. Their amplitudes cannot be summed to reconstruct a peak without phases and vector orientation. Tide-only reconstruction had 4.8 cm/s RMSD and correlation 0.501, which supports checking non-tidal forcing and flow before intervention. <a href="https://www.sciencedirect.com/science/article/pii/S1463500323001142">Nesterov et al., 2023 §3.1</a></td>
 </tr>
 <tr>
-<td>Water-level variability</td>
-<td style="text-align:right"><strong>Order of 2 m</strong></td>
-<td>At Buoy 9, water-level validation RMSD was 0.26 m. The authors report water-level errors of ~10–12% of measured ranges across the four illustrated stations. Dividing gives an indicative ~2.2–2.6 m range for that comparison, rather than a directly reported site range. Chart datum, MSL, water elevation and actual depth must remain separate. <a href="https://www.sciencedirect.com/science/article/pii/S1463500323001142">Nesterov et al., 2023 §3.1, Fig. 6</a></td>
-</tr>
-<tr>
 <td>Barakah surface temperature</td>
 <td style="text-align:right"><strong>21.6 °C winter, 25.3 °C spring, 32.7 °C summer, 30.6 °C autumn</strong></td>
 <td>2003–2019 GHRSST coastal cell climatology at Barakah. Mean 27.6 °C, daily P05/P50/P95 19.5/28.5/34.2 °C. The winter-to-summer mean spread is 11.1 °C. The historical local mean trend is +0.014 °C/year across this period. The surface product does not resolve intake depth or a small cue plume. <a href="https://bibliotekanauki.pl/articles/2078874.pdf">Nesterov et al., 2021 Table A.2</a></td>
@@ -78,10 +73,10 @@
 <td style="text-align:right"><strong>30–45 cm bell</strong></td>
 <td>ENEC's large, firm-bodied <em>Catostylus mosaicus</em> reference for the challenge. This is a geometry and handling target, not a stock estimate or a verified biological specimen from the plant. <a href="https://challengeon.atrc.ae/en/challenges/atp2026/pages/enec-challenge-statement?lang=en">ENEC challenge brief</a></td>
 </tr>
-<tr>
-<td>Peak jellyfish wet mass</td>
-<td style="text-align:right"><strong>Around 200 tons in a day, reported by an ENEC mentor</strong></td>
-<td>The 30 October mentoring discussion (~07:28–08:04 in the recording) gave an approximate historical peak. The underlying event record, weighing method, mass convention and reporting boundary are unavailable. Use 200 metric wet tonnes for arithmetic pending confirmation. EDF’s Gravelines incident is a separate example. <a href="https://www.edf.fr/actualites-des-unites-de-production">EDF operator update</a></td>
+<tr id="field-brief">
+<td>Historical jellyfish load</td>
+<td style="text-align:right"><strong>Around 200 tons per day, cited in ENEC mentoring</strong></td>
+<td>30 October ENEC mentoring discussion, 07:37–07:40. Use the historical daily load to design for continuous clearance. Timestamped arrival or collection records are needed to size the corridor.</td>
 </tr>
 </tbody>
 </table>
@@ -125,115 +120,6 @@
 </tbody>
 </table>
 <p>ENEC describes a breakwater design that separates the intake and discharge structures to limit warm-water recirculation. High Tide should assess candidate exits by full route and return probability over relevant current states. It should avoid assuming the warm outfall or a stagnant pocket is a suitable exit. Check local sediment and habitat exposure, seagrass, corals, fish, turtle pathways and seasonal wildlife before suggesting a field trial. ENEC and EAD already monitor marine habitats and water quality. <a href="https://www.enec.ae/barakah-plant/frequently-asked-questions/">ENEC FAQ</a> · <a href="https://www.enec.ae/our-subsidiaries/enec-operations/environment-permit/">ENEC environmental permit</a> · <a href="https://www.ead.gov.ae/-/media/Project/EAD/EAD/Documents/KnowledgeHub/Resources-and-Materials/MWQ-ANNUAL-REPORT-2024-EN.pdf">EAD marine monitoring</a></p>
-<h2>4. Turn a reported daily peak into a throughput requirement</h2>
-<p>The mentoring discussion supports a <strong>~200 tons/day planning benchmark</strong>. Adopt metric wet tonnes as a stated working assumption. Use 100 t as a sensitivity case, 200 t as the benchmark scenario, and 300 t as the upper test case, a 50% margin to investigate. None establishes system capacity. Exact event and weighing records would change the test envelope.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:right">Assumed event mass</th>
-<th style="text-align:right">24-hour average</th>
-<th style="text-align:right">Six-hour pulse</th>
-<th style="text-align:right">Two-hour pulse</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right">100 t</td>
-<td style="text-align:right">1.16 kg/s</td>
-<td style="text-align:right">4.63 kg/s</td>
-<td style="text-align:right">13.89 kg/s</td>
-</tr>
-<tr>
-<td style="text-align:right">200 t</td>
-<td style="text-align:right">2.31 kg/s</td>
-<td style="text-align:right">9.26 kg/s</td>
-<td style="text-align:right">27.78 kg/s</td>
-</tr>
-<tr>
-<td style="text-align:right">300 t</td>
-<td style="text-align:right">3.47 kg/s</td>
-<td style="text-align:right">13.89 kg/s</td>
-<td style="text-align:right">41.67 kg/s</td>
-</tr>
-</tbody>
-</table>
-<p>Use wet metric tonnes and the actual sampling boundary. “Arrived offshore,” “crossed the monitoring plane,” “diverted,” “collected by boats,” and “removed at screens” are different denominators. For captured wet mass, record drainage duration, retained debris and containers, then subtract tare. Collection cannot estimate total arrivals unless the fraction captured and observation uncertainty are reported.</p>
-<table>
-<thead>
-<tr>
-<th>Scenario, same 200 t event</th>
-<th style="text-align:right">Rate</th>
-<th>What the design must establish</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Spread over 24 h</td>
-<td style="text-align:right"><strong>8.33 t/h = 2.31 kg/s</strong></td>
-<td>Can the exit sustain the load without a growing retained inventory?</td>
-</tr>
-<tr>
-<td>Main pulse over 6 h</td>
-<td style="text-align:right"><strong>33.3 t/h = 9.26 kg/s</strong></td>
-<td>Can the design respond in time and still avoid accumulation as the current changes?</td>
-</tr>
-<tr>
-<td>Short pulse over 2 h</td>
-<td style="text-align:right"><strong>100 t/h = 27.78 kg/s</strong></td>
-<td>Can the controller recognize that conditions exceed the tested envelope and hand back to existing procedures?</td>
-</tr>
-</tbody>
-</table>
-<p>For an illustrative 200 t/24 h steady event, if a route passes only 1.50 kg/s and nothing else leaves the interception area, about 0.81 kg/s remains. Six hours would add <strong>~17.6 t</strong> to the retained inventory. Use <code>incoming = safe exits + intake-side entries + other exits + change in retained inventory</code>, with separate tracking of return or re-entry to avoid double counting. Log direct passage, time to clear, and body condition. Distinguish unique individuals from repeated crossings.</p>
-<p>The mass rate in an idealized flow is <code>R = C × U⊥ × A</code>, where <code>C</code> is local wet biomass concentration in kg/m³, <code>U⊥</code> is velocity normal to an observation plane in m/s and <code>A</code> is the occupied wet area in m². An illustrative sheet 20 m wide and 3 m deep at 0.15 m/s moves 9 m³/s. Under a uniform-advection assumption the 200 t/24 h load requires <strong>0.257 kg/m³</strong> across that sheet. That result scales inversely with velocity and occupied cross-section. Real blooms have patchiness, vertical structure, active movement and concentration peaks. Calibrate the flow and sampling plane before interpreting inferred mass flux. No individual wet mass has been assigned from bell size alone.</p>
-<h2>5. Transport, timing and test design</h2>
-<p>The scenarios below use <strong>0.05 m/s</strong> as an offshore reference and <strong>0.15, 0.30 and 0.60 m/s</strong> as proposed progressively stronger tests. Only the first is a published observed mean. The other speeds do not assign a Barakah intake range. A conference flume study reports testing 0.1–0.6 m/s with 5 cm and 18 cm silicone surrogates, which helps justify exercising the upper sensitivity without transferring its performance. <a href="https://www.sciencedirect.com/science/article/pii/S1463500323001142">Nesterov et al. 2023</a> · <a href="https://doi.org/10.1115/OMAE2023-101058">Thodi et al. 2023</a></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:right">Along-path current</th>
-<th style="text-align:right">Ideal 100 m transit</th>
-<th style="text-align:right">Ideal 500 m transit</th>
-<th style="text-align:right">Ideal 1 km transit</th>
-<th style="text-align:right">Lateral speed for 10 m shift over 50 m along-path</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right">0.05 m/s</td>
-<td style="text-align:right">33.3 min</td>
-<td style="text-align:right">2 h 47 min</td>
-<td style="text-align:right">5 h 33 min</td>
-<td style="text-align:right"><strong>0.010 m/s</strong></td>
-</tr>
-<tr>
-<td style="text-align:right">0.15 m/s</td>
-<td style="text-align:right">11.1 min</td>
-<td style="text-align:right">55.6 min</td>
-<td style="text-align:right">1 h 51 min</td>
-<td style="text-align:right"><strong>0.030 m/s</strong></td>
-</tr>
-<tr>
-<td style="text-align:right">0.30 m/s</td>
-<td style="text-align:right">5.56 min</td>
-<td style="text-align:right">27.8 min</td>
-<td style="text-align:right">55.6 min</td>
-<td style="text-align:right"><strong>0.060 m/s</strong></td>
-</tr>
-<tr>
-<td style="text-align:right">0.60 m/s</td>
-<td style="text-align:right">2.78 min</td>
-<td style="text-align:right">13.9 min</td>
-<td style="text-align:right">27.8 min</td>
-<td style="text-align:right"><strong>0.120 m/s</strong></td>
-</tr>
-</tbody>
-</table>
-<p>These are constant straight-line cases with <code>time = distance ÷ along-path speed</code>. At slack or reversal, a straight-line travel time is undefined or misleading. The lateral column uses <code>required lateral speed = lateral shift × along-path speed ÷ along-path distance</code>. The hypothetical geometry is a dimensional example, not a site layout. Test adverse cross-flow, delayed reaction and recovery time after the cue ends. A first screening model can credit <code>measured lateral water velocity + measured net directional animal response</code>. Set the cue term to zero until a controlled assay can justify a value and uncertainty interval. Use 0.01/0.03 m/s only as selectable test sensitivities and clearly label their status. The example shows why transport provides the basic capacity as a current strengthens.</p>
-<p><strong>Start gate.</strong> Receive the existing ENEC alert. Characterize bearing, speed and depth profile with independent environmental observations, verify the tested exit, and run only within the validated envelope. Use current direction and accumulation observations during operation because the nearest published buoy shows a material non-tidal component. A tide table can inform planning without acting as the controller. Test demand and arrival as separate variables. <a href="https://challengeon.atrc.ae/en/challenges/atp2026/pages/enec-challenge-statement?lang=en">ENEC challenge brief</a> · <a href="https://www.sciencedirect.com/science/article/pii/S1463500323001142">Barakah hydrodynamics</a></p>
-<p><strong>Coverage.</strong> Exercise low and high water depth in a model, with still water, reversals, competing cross-currents, waves, and partial actuation loss. Keep seabed survey datum separate from water-level elevation. For a pressure illustration, <code>Δp = ρgh</code> at hypothetical submergence 5.5–9.5 m gives <strong>~55–96 kPa gauge</strong> before line and diffuser losses. These assumed water depths happen to span the dredging envelope, but a candidate equipment depth and the pressure/flow duty must come from the survey and tested equipment. An 8 m high-air-flow experimental curtain at 5 m depth deflected one large species in Irish aquaculture, while an ~800 m low-air-flow deployment did not significantly separate small hydromedusae. Their flume results also showed wave-driven crossing. These contrasting cases support testing the mechanism and its weak points. <a href="https://www.nmdc-dredgingmarine.com/ar/projects/barakah-npp-marine-works/">NMDC</a> · <a href="https://doi.org/10.1016/j.aquaculture.2020.735915">Haberlin et al. 2021</a></p>
-<p><strong>Compare like with like.</strong> Use an untreated path, physical guide, bubble corridor, and water-flow corridor where possible. Test matched carrier versus candidate cue in a separate contained lab study first. Repeat environmental states and randomize trial order. Pair the lowest and highest flow with the same incoming distribution. Do not credit untested biochemical efficacy or count temporarily retained particles as successes. For a controlled survival study track contact, tissue damage, pulsation and post-exposure recovery. A no-return monitoring interval and an allowable damage threshold should be defined with specialists before the experiment. Test non-target behavior as its own measured endpoint and examine maintenance burden, fouling, cleaning time and retrieval. <a href="https://doi.org/10.1016/j.aquaculture.2020.735915">Haberlin et al. 2021</a> · <a href="https://challengeon.atrc.ae/en/challenges/atp2026/pages/enec-challenge-statement?lang=en">ENEC evaluation criteria</a></p>
-<p><strong>Stop gate.</strong> Disable the experimental intervention if the exit is unverified, flow exceeds its measured bounds, accumulation increases, equipment/observations fail, marine-life welfare indicators breach agreed limits, or ENEC's required hydraulic safeguards could be affected. Retain existing operator response as the fallback. No lab or surrogate demo can substitute for an approved operational test.</p>
 <h2>6. What would settle the unknowns</h2>
 <table>
 <thead>
@@ -257,7 +143,7 @@
 <tr>
 <td>What is their actual bloom loading distribution?</td>
 <td>Timestamped wet mass or counts at the observation boundary, logging interval, route, size bins and sampling method. Even an approved percentile range would help.</td>
-<td>Confirm the mentor-reported peak and choose realistic surge/continuous cases</td>
+<td>Confirm the historical daily load cited in mentoring and choose realistic surge/continuous cases</td>
 </tr>
 <tr>
 <td>How much post-alert time is available?</td>

@@ -4,7 +4,7 @@ const links = {
   brief: ['ENEC challenge statement', 'https://challengeon.atrc.ae/en/challenges/atp2026/pages/enec-challenge-statement?lang=en'],
   chemistry: ['Miura et al. · J. Chemical Ecology', 'https://doi.org/10.1007/s10886-026-01740-4'],
   molecule: ['PubChem · CID 5283335', 'https://pubchem.ncbi.nlm.nih.gov/compound/5283335'],
-  preference: ['Arai · Chemical-side preference in medusae', 'https://doi.org/10.1007/978-94-011-3240-4_52'],
+  preference: ['Arai · Chemical-side preference in medusae', 'https://link.springer.com/chapter/10.1007/978-94-011-3240-4_52'],
   larva: ['Larval settlement experiment · J. Animal Ecology', 'https://doi.org/10.1111/1365-2656.70357'],
   taxonomy: ['Integrative Catostylus taxonomy', 'https://doi.org/10.1017/S0025315424000687'],
   dna: ['Species-specific jellyfish eDNA field study', 'https://doi.org/10.1002/edn3.70071'],
@@ -16,89 +16,166 @@ const links = {
   faq: ['ENEC · Barakah FAQ', 'https://enec.ae/barakah-plant/frequently-asked-questions/'],
   air: ['Beelen et al. · Measured air flux in a bubble curtain', 'https://doi.org/10.1007/s00348-022-03568-6'],
   bubble: ['Haberlin et al. · Field and flume experiments', 'https://doi.org/10.1016/j.aquaculture.2020.735915'],
+  swim: ['Neil &amp; Askew · Blue blubber swimming kinematics', 'https://doi.org/10.1242/jeb.191148'],
+  sst: ['Nesterov et al. · Table A.2', 'https://bibliotekanauki.pl/articles/2078874.pdf'],
+  mentor: ['ENEC mentoring · 30 October', './barakah-research.html#field-brief'],
   original: ['High Tide · Submitted prototype references', 'https://high-tide-enec-4555.vercel.app/references.html'],
 };
 const source = (id) => `<a class="source-link" href="${links[id][1]}" target="_blank" rel="noopener">${links[id][0]} <span aria-hidden="true">↗</span></a>`;
 const label = (text, tone = '') => `<span class="tag ${tone}">${text}</span>`;
 const header = (chapter, title, desc = '') => `<div class="scene-head"><div class="eyebrow">${chapter}</div><h1 id="slide-title" tabindex="-1">${title}</h1>${desc ? `<p class="lede">${desc}</p>` : ''}</div>`;
-const flow = `<svg class="flow-map" viewBox="0 0 730 404" role="img" aria-label="Conceptual plan view of a diversion corridor upstream of the intake, with a possible exit to open water. This is a schematic, not the Barakah layout.">
-  <defs><pattern id="chart-grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#17313a" stroke-width="1"/></pattern><marker id="flow-tip" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L8 4L0 8Z" fill="#7adcc9"/></marker><linearGradient id="land" x2="1" y2="1"><stop stop-color="#252e2d"/><stop offset="1" stop-color="#101e20"/></linearGradient></defs>
-  <rect x="0" y="0" width="730" height="404" rx="10" fill="#07171e"/><rect x="0" y="0" width="730" height="404" rx="10" fill="url(#chart-grid)"/>
-  <g class="map-contours" stroke="#294a50" fill="none"><path d="M0 112C110 135 162 27 295 50S495 114 575 10"/><path d="M0 128C110 152 167 51 295 73S499 139 599 0"/><path d="M0 145C115 172 174 74 305 96S518 152 622 0"/><path d="M0 314C126 273 188 338 269 343S443 314 560 400"/><path d="M0 336C122 300 180 356 266 365S443 340 531 404"/><path d="M0 357C124 326 171 381 253 388S438 361 491 404"/></g>
-  <path d="M730 0V404H637L565 312 574 249 649 237 651 165 579 150 575 99 654 0Z" fill="url(#land)" stroke="#66827e"/>
-  <path d="M617 174H685V228H616Z" fill="#173039" stroke="#99b2a6" stroke-width="2"/><path d="M627 181v40m9-40v40m9-40v40m9-40v40m9-40v40" stroke="#8baca5" opacity=".55"/>
-  <path d="M341 134L416 277" stroke="#8df5cf" stroke-width="10" stroke-dasharray="1 13" stroke-linecap="round" opacity=".8" class="bubble-line"/>
-  <g class="flow-stream" stroke="#7adcc9" stroke-width="2" fill="none" marker-end="url(#flow-tip)"><path d="M58 161C180 155 233 164 295 184S363 143 402 88"/><path d="M41 195C147 187 229 202 304 222S380 166 417 102"/><path d="M55 232C171 222 241 233 321 256S395 183 438 121"/></g>
-  <path d="M476 211C516 209 558 202 607 202" stroke="#e9c998" stroke-dasharray="4 7" fill="none"/>
-  <circle cx="426" cy="104" r="38" fill="none" stroke="#bafc78" stroke-dasharray="3 5" class="map-pulse"/>
-  <g fill="#e8f4ee" font-size="12" font-family="monospace" font-weight="700"><text x="42" y="145">BLOOM APPROACH</text><text x="385" y="52">CANDIDATE EXIT</text><text x="505" y="190" fill="#f2d6a5">INTAKE SIDE</text><text x="351" y="303">ADJUSTABLE SECTIONS</text><text x="40" y="378" fill="#8baaa9">CONCEPTUAL PLAN VIEW</text></g>
-</svg>`;
+const molecule = `<svg viewBox="0 0 630 230" role="img" aria-label="Skeletal structure of E-2-nonenal, a nine carbon aldehyde with a trans double bond at carbon 2"><defs><linearGradient id="bond" x2="1" y2="1"><stop stop-color="#00ebff"/><stop offset="1" stop-color="#f7f7f4"/></linearGradient></defs><g stroke="url(#bond)" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M55 142L112 109 169 142 226 109 283 142 340 109 397 142 454 109 511 142"/><path d="M402 154L459 121"/><path d="M511 142L564 111M517 152L571 121"/></g><text x="581" y="122" fill="#00ebff" font-size="34" font-family="monospace">O</text><text x="402" y="196" fill="#bfc7ce" font-size="14" font-family="monospace">E GEOMETRY</text><path d="M423 183L430 145" stroke="#bfc7ce" stroke-dasharray="3 4"/></svg>`;
 const slides = [
   {
-    id: 'opening', name: 'Opening', span: '00:00–01:00',
-    html: `<section class="scene opening"><div class="hero-film" aria-hidden="true"></div><div class="hero-contours" aria-hidden="true"></div><div class="hero-copy"><div class="eyebrow"><i class="live-dot"></i> 01 / THE ENEC CHALLENGE</div><h1 id="slide-title" tabindex="-1">Give the bloom<br>a way <em>out.</em></h1><p class="lede">High Tide · A response for jellyfish approaching Barakah’s seawater intake.</p><div class="crew"><div><b>Syed Ahamed</b><span>President of Robotics · 42 Abu Dhabi</span></div><div><b>Usman Mohammad</b><span>Applied Computer Science &amp; AI · Molecular Biology background</span></div></div><button class="start" data-jump="molecule">Enter the pitch <span>↗</span></button></div><div class="hero-index" aria-hidden="true">HIGH TIDE<br>FIG. 01 <i></i> MEDUSA</div></section>`,
-    notes: `I’m Syed Ahamed, President of Robotics at 42 Abu Dhabi. This is Usman Mohammad, who is studying Applied Computer Science and AI after a bachelor’s in Molecular Biology. We’re High Tide.\n\nENEC already has offshore warning. The operational question is what happens next. When a sustained arrival heads toward the intake, can we move it away without building another pile of jellyfish or disturbing the plant’s existing protections?\n\nOur design gives the bloom a route out. We use the current and a controllable diversion corridor to steer arrivals, and we count where they go. Then we ask a separate question that makes our approach different. Can the biology of the animal tell us how to make that route work better?\n\nWe’ll show the molecular hypothesis, the Barakah conditions it must survive, and the simulation that lets you try to break the physical design.`
+    id: 'opening', name: 'Opening', span: '00:00–00:25',
+    html: `<section class="scene opening"><div class="hero-film" aria-hidden="true"></div><div class="hero-contours" aria-hidden="true"></div><div class="hero-copy"><div class="eyebrow"><i class="live-dot"></i> 01 / THE ENEC CHALLENGE</div><h1 id="slide-title" tabindex="-1">Give the bloom<br>a way <em>out.</em></h1><p class="lede">High Tide · A post-alert response for blue blubber jellyfish (<i>Catostylus mosaicus</i>) at Barakah.</p><div class="crew"><div><b>Syed Ahamed</b><span>President of Robotics · 42 Abu Dhabi</span></div><div><b>Usman Mohammad</b><span>Applied Computer Science &amp; AI · Molecular Biology background</span></div></div><button class="start" data-jump="molecule">Enter the pitch <span>↗</span></button></div><div class="hero-index" aria-hidden="true">HIGH TIDE<br>FIG. 01 <i></i> AQUARIUM FOOTAGE</div></section>`,
+
+    notes: `The brief specifies a 30–45 cm bell diameter. The photo on slide 3 is an identified specimen. The opener is atmosphere. Say “post-alert”: High Tide starts when ENEC’s existing alert arrives. Credit the whole team; use names and role text from the opening. Anchor line: every animal held in front of the intake is still part of the problem.`
   },
   {
-    id: 'molecule', name: 'The molecule', span: '01:00–01:45',
-    html: `<section class="scene split molecular">${header('02 / THE BIOCHEMICAL HYPOTHESIS', 'Can a jellyfish<br><em>sense a way out?</em>', 'A published chemical response gives us a candidate to test for directional movement in a contained assay.')}
-      <div class="molecule-card"><div class="card-top"><span>MOLECULAR CANDIDATE A</span>${label('LAB EVIDENCE', 'green')}</div><div id="molecule-art" class="molecule-art"><svg viewBox="0 0 630 230" role="img" aria-label="Skeletal structure of E-2-nonenal, a nine carbon aldehyde with a trans double bond at carbon 2"><defs><linearGradient id="bond" x2="1" y2="1"><stop stop-color="#82f1cc"/><stop offset="1" stop-color="#f2ffe2"/></linearGradient></defs><g stroke="url(#bond)" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M55 142L112 109 169 142 226 109 283 142 340 109 397 142 454 109 511 142"/><path d="M402 154L459 121"/><path d="M511 142L564 111M517 152L571 121"/></g><text x="581" y="122" fill="#befb8b" font-size="34" font-family="monospace">O</text><text x="402" y="196" fill="#91aba8" font-size="14" font-family="monospace">E GEOMETRY</text><path d="M423 183L430 145" stroke="#91aba8" stroke-dasharray="3 4"/></svg></div><div class="molecule-bottom"><div><h2>(E)-2-nonenal</h2><div class="formula">C₉H₁₆O <i></i> PubChem CID 5283335</div></div><button class="text-button" id="molecule-more" aria-expanded="false">What did the study show? <span>↓</span></button></div><div id="molecule-extra" class="molecule-extra" hidden><strong><i>Chrysaora pacifica</i> medusae held treated prey for less time.</strong> The contact feeding study did not measure directional swimming. The attraction arm uses prey-conditioned water, based on chemical-side preference in other medusae. ${source('chemistry')} ${source('preference')} ${source('molecule')}</div></div>
-      <div class="science-note"><span class="micro">OBSERVED RESPONSE</span><strong>Less prey holding</strong><span class="science-line"></span><span class="micro">OUR QUESTION</span><strong>Directional movement?</strong></div></section>`,
-    notes: `This is (E)-2-nonenal, a nine-carbon aldehyde. A study of jellyfish chemical defense found it enriched in damaged tissue samples of one jellyfish species. In a contact feeding experiment, another species held treated prey for less time.\n\nThat makes it a candidate to investigate. The observed result was feeding behavior. Prey-conditioned water is our separate attraction arm. Our experiment asks whether a target animal actually changes its trajectory in a gradient, and whether that movement is strong enough to complement diversion. We would verify local species identity first. The ENEC brief names Catostylus mosaicus. There is also a published record of Catostylus perezi in the UAE, so the Barakah animals need to be identified rather than assumed.\n\nThis is where Usman’s molecular biology background matters. We need a controlled assay with a clean comparison and a clear reason to stop if the effect does not hold.`
+    id: 'molecule', name: 'Carrot & stick', span: '00:25–01:22',
+    html: `<section class="scene feature bio">
+      ${header('02 / BIOCHEMICAL STEERING', 'Give the bloom<br><em>a cue.</em>', 'Use water to open a route. Use chemistry to give the jellyfish a reason to take it.')}
+      <div class="cue-board">
+        <article class="cue-card push">
+          <div class="panel-tag"><b>−</b><span>THE STICK<br><strong>Candidate avoidance cue</strong></span></div>
+          <div class="molecule-art" id="molecule-art">${molecule}</div>
+          <div class="cue-result"><h2>(E)-2-nonenal</h2><p>Japanese sea nettles let go sooner after contact with treated krill. The compound also rose <b>23×</b> in water from injured <i>S. saltatrix</i> versus sham samples.</p></div>
+          <div class="cue-use"><b>OUR DESIGN</b> Test for turning away from the intake-side arm.</div>
+          <div class="cue-source">${source('chemistry')} ${source('molecule')} <button class="text-button" id="molecule-more" aria-expanded="false" aria-controls="molecule-extra">Assay detail ↓</button></div>
+          <div id="molecule-extra" class="molecule-extra" hidden>Miura Fig. 5: shorter prey holding at 5% and 50% bait pretreatment; 0.5% had no significant result. Fig. 4: n = 10 per group for the 23× chemical comparison, p = 0.00094.</div>
+        </article>
+        <article class="cue-card pull">
+          <div class="panel-tag"><b>+</b><span>THE CARROT<br><strong>Candidate attraction cue</strong></span></div>
+          <svg class="plume-art" viewBox="0 0 420 145" role="img" aria-label="Conceptual cue gradient spreading from the exit arm">
+            <path d="M20 73H382M53 31H382M53 115H382" stroke="currentColor" opacity=".32" stroke-dasharray="3 6"/>
+            <path d="M26 73C116 73 172 64 217 36S317 5 398 14M26 73C116 73 172 82 217 110S317 141 398 132M110 73C225 73 263 53 398 39M110 73C225 73 263 93 398 107M195 73H398" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".64"/>
+            <path d="M309 61l12 12-12 12m33-27 15 15-15 15m34-31 16 16-16 16" fill="none" stroke="currentColor" stroke-width="4"/>
+            <text x="19" y="111" fill="currentColor" font-size="10" font-family="monospace">TRACK</text>
+          </svg>
+          <div class="cue-result"><h2>Prey-conditioned water</h2><p>In a two-inflow tank, moon jellies (<i>Aurelia</i>) favored the side carrying water conditioned by brine shrimp.</p></div>
+          <div class="cue-use"><b>OUR DESIGN</b> Test for swimming toward the open-water arm.</div>
+          <div class="cue-source">${source('preference')}</div>
+        </article>
+      </div></section>`,
+    notes: `The Japanese sea nettle, Chrysaora pacifica, was the animal in the contact study. The compound came from a different jellyfish, Spirocodon saltatrix. Miura’s Figure 4 found 23 times as much (E)-2-nonenal in injured-tissue samples as sham water, n = 10 per group, p = 0.00094. Figure 5 is a separate endpoint: holding time for treated prey. The two higher pretreatment formulations shortened holding; the lowest did not. No seawater dose comes from those percentages. Arai showed preference in moon jellies for Artemia-conditioned water. The mixture’s active component is unresolved. Our innovation is the combination: use the avoidance candidate on the intake side and the attraction candidate on the exit side, and measure the net trajectory of the challenge species.`
   },
   {
-    id: 'gates', name: 'The assay', span: '01:45–02:20',
-    html: `<section class="scene assay">${header('03 / A CONTAINED RESEARCH PROGRAM', 'Three gates.<br><em>One decision.</em>', 'Select a gate to see what we have to prove before the chemistry earns a role.')}
-      <div class="gate-layout"><div id="gate-choices" class="gate-choices" role="group" aria-label="Assay gates"></div><div id="gate-detail" class="gate-detail" aria-live="polite"></div></div>
-      <div class="fineprint">Parallel workstream: temperature, salinity and flow are experimental conditions. Target-species cues remain in contained research.</div></section>`,
-    notes: `First, identify the animal. Keep a voucher, photograph it and ask a laboratory to confirm the species. Second, run a blinded two-choice tank test, alternating the cue side and comparing against a vehicle control. Track direction, sustained displacement and bell activity separately so reduced movement cannot masquerade as repulsion. Third, check exposure and responses for non-target organisms with marine ecologists.\n\nIf we only see stress, no directed movement, or a poor selectivity margin, the candidate drops out. The physical corridor continues on its own. Temperature is a test condition. Warming the incoming seawater is not part of this design.`
+    id: 'gates', name: 'Cue experiment', span: '01:22–02:10',
+    html: `<section class="scene feature assay-v3">
+      ${header('03 / THE CONTAINED EXPERIMENT', 'Make the cue<br><em>prove itself.</em>', 'Same flow in both arms. Swap cue sides. Track the blue blubber relative to the water.')}
+      <div class="assay-grid">
+        <div class="assay-console" id="assay-console">
+          <div class="console-head"><span>FIG. 02 / MATCHED-FLOW CHAMBER</span><button id="assay-swap" type="button" class="panel-button">Swap sides ⇄</button></div>
+          <svg viewBox="0 0 610 230" class="assay-map" role="img" aria-labelledby="assay-name">
+            <title id="assay-name">Two-inflow chamber showing the cue and blank positions</title>
+            <path d="M25 76H212L328 19H584V94H345L296 115L345 136H584V211H328L212 154H25Z" fill="#1e1d21" stroke="#7c7c83"/>
+            <path class="arm-a" d="M583 57H339L238 115H25" fill="none" stroke-width="48" stroke-linejoin="round" opacity=".23"/>
+            <path class="arm-b" d="M583 174H339L238 115H25" fill="none" stroke-width="48" stroke-linejoin="round" opacity=".23"/>
+            <path d="M581 57H340L230 115H32M581 174H340L230 115" fill="none" stroke="#fff" stroke-dasharray="4 8" opacity=".6"/>
+            <path d="m376 50-10 7 10 7m0 103-10 7 10 7m-237-66-10 7 10 7" fill="none" stroke="#fff" stroke-width="2"/>
+            <circle cx="250" cy="115" r="16" fill="#fff" stroke="#18171a" stroke-width="2"/>
+            <path d="M242 116Q250 102 258 116Z" fill="#414141"/>
+            <text x="35" y="145">OUTFLOW</text><text x="530" y="46">ARM A</text><text x="530" y="163">ARM B</text>
+          </svg>
+          <div class="assay-status" aria-live="polite"><span><b>A</b> <i id="assay-arm-a"></i></span><span><b>B</b> <i id="assay-arm-b"></i></span></div>
+          <div id="assay-presets" class="assay-presets" aria-label="Assay conditions">
+            <button type="button" data-trial="carrot">Carrot</button><button type="button" data-trial="stick">Stick</button><button type="button" data-trial="combined">Combined</button><button type="button" data-trial="blank">Blank</button>
+          </div>
+        </div>
+        <div class="assay-proof">
+          <figure class="species"><img src="./assets/catostylus-reference.webp" alt="Identified Catostylus mosaicus, the blue blubber jellyfish"><figcaption><i>Catostylus mosaicus</i><strong>30–45 cm</strong><small>Bell diameter · ENEC brief</small></figcaption></figure>
+          <p><b>What we measure:</b> turning, arm choice, and swim velocity after subtracting water drift.</p>
+          <p><b>What earns a place:</b> more exits than the physical corridor alone, with recovery and non-target response measured.</p>
+          <div>${source('brief')} <a class="source-link" href="./assets-credits.html">Specimen credit ↗</a></div>
+        </div>
+      </div></section>`,
+    notes: `Click Carrot, Stick, Combined, or Blank. Swap sides to show why the same plumbing cannot masquerade as a preference. The drawing locates the inlets; arrows depict water direction. Cue identity and side are randomized and observers score the tracks blind. Start with a tracer map and measured exposure; test vehicle blanks, the two cues individually, both cues together and uniform exposure. Report water-relative velocity, arm choice including nonchoices, sustained displacement, pulsation and recovery. Uniform exposure helps tell directional movement apart from a change in activity or distress. Use adult-scale clearance and temperature-matched water. Then compare physical plus cue against physical only in the same contained channel. Deliver the effect size and confidence interval, exit/return counts, welfare and non-target results. A result too small to change clearance is useful: we keep the physical corridor and drop the cue.`
   },
   {
-    id: 'barakah', name: 'Barakah', span: '02:20–03:00',
-    html: `<section class="scene barakah">${header('04 / BARAKAH SITE FIT', 'Start with<br><em>the water.</em>', 'One site, several kinds of evidence. Select a statistic to see exactly what it represents.')}
-      <div class="site-layout"><div id="stats" class="stats" role="group" aria-label="Barakah statistics"></div><div id="stat-detail" class="stat-detail" aria-live="polite"></div></div>
-      <div class="fineprint">Candidate location: marine approach before stronger intake capture. ENEC survey data and a verified exit determine whether the concept fits.</div></section>`,
-    notes: `Barakah has a seawater intake channel and a separate discharge channel. We would investigate the marine approach, looking for a route that passes outside intake capture without becoming a recirculation pocket.\n\nPublic sources give us a starting envelope. The dredged works report depths of 5.5 to 9.5 metres below mean sea level across several channels. A historical offshore buoy recorded a mean current around five centimetres per second. Neither number describes the actual intake approach where our system might go. The 690 cubic metres per second figure is a published design maximum used in a model. It does not tell us the plant’s daily pump duty.\n\nAn ENEC mentor described a historical peak around 200 tons in a day. Assuming metric wet tonnes, that is 2.31 kilograms per second averaged across the day. A two-hour pulse would need nearly 28 kilograms per second. We test an illustrative 300-tonne case for margin. We would ask ENEC for timestamped wet-mass records, current profiles, operational intake flows and a chart of the candidate exit.`
+    id: 'barakah', name: 'Barakah design', span: '02:10–02:55',
+    html: `<section class="scene feature site-v3">
+      ${header('04 / BARAKAH → DESIGN REQUIREMENTS', 'What the water<br><em>makes us build.</em>', 'Start in the marine approach, upstream of intake capture. Verify where an exit leads before activating a route.')}
+      <div class="requirement-grid">
+        <article><div class="panel-tag">01 / CURRENT</div><strong>0.05 <small>m/s</small></strong><p>Mean current magnitude at offshore Buoy 9.</p><h2>Route from live direction</h2><p>Exercise weak flow and reversal. Use local current vectors to choose the exit and log returns.</p><div>${source('currents')}</div></article>
+        <article><div class="panel-tag">02 / BLOOM LOAD</div><strong>≈200 <small>tons</small></strong><p>Historical daily jellyfish load cited in ENEC mentoring.</p><h2>Clear continuously</h2><p>Use an open bypass instead of a storage pocket. Compare exit rate with arrival rate; track retained load.</p><div>${source('mentor')}</div></article>
+        <article><div class="panel-tag">03 / MARINE WORKS</div><strong>5.5–9.5 <small>m</small></strong><p>Dredged bed elevations below mean sea level across marine works.</p><h2>Size sections by depth</h2><p>Survey candidate transects; use water depth to size each diffuser’s pressure and airflow.</p><div>${source('dredge')}</div></article>
+        <article><div class="panel-tag">04 / SEAWATER</div><strong>21.6–32.7 <small>°C</small></strong><p>Winter and summer mean surface temperatures in the Barakah coastal grid cell.</p><h2>Test both seasons</h2><p>Measure cue persistence and animal response at both ends of the observed seasonal range.</p><div>${source('sst')}</div></article>
+      </div>
+    </section>`,
+    notes: `The 0.05 metres per second is a depth-averaged magnitude measured offshore during the 2017–2018 study. It motivates a weak-current case and direction sensing; it never goes in as the intake velocity. Ask ENEC for local current vectors at each candidate outlet and a coarse site plan. The 30 October mentor cited a historical load of about 200 tons per day. The within-day rate and weight basis were not supplied. Design around a continuous clearance balance and request hourly arrivals or collected mass before sizing. The 5.5 to 9.5 metres are the contractor’s combined dredge elevations below mean sea level. Convert a surveyed transect and tide level to diffuser pressure and measure air delivery under load. The 21.6 and 32.7 degrees are winter and summer coastal surface means from the public climatology. Use those to bracket contained tests of cue persistence and target response.`
   },
   {
-    id: 'corridor', name: 'The corridor', span: '03:00–03:45',
-    html: `<section class="scene corridor">${header('05 / THE PHYSICAL SYSTEM', 'Design the exit<br><em>before the barrier.</em>', 'A modular diversion corridor responds to the existing alert, works with a measured cross-current and checks that animals actually leave.')}
-      <div class="corridor-layout"><div class="diagram">${flow}<div class="card-bottom"><span>01 / DIVERSION CONCEPT</span>${label('SCHEMATIC', 'sand')}</div></div><ol class="flow-steps"><li><span>01</span><div><b>Read the approach</b><p>Observe bloom arrival and current direction.</p></div></li><li><span>02</span><div><b>Select a proven route</b><p>Compare adjustable bubbles, angled guide and distributed water flow.</p></div></li><li><span>03</span><div><b>Verify clearance</b><p>Count intake arrivals, exits, retention and returns. Check survival after release.</p></div></li><li><span>04</span><div><b>Stop on unsafe conditions</b><p>Escalate if the route fails, flow reverses outside the tested range, or equipment faults.</p></div></li></ol></div></section>`,
-    notes: `Offshore warning starts the process. Local current and the condition of the exit determine whether the system operates. A shore-fed set of removable underwater diffuser sections is our first active candidate. Its job is to move water in a way that helps an animal reach an open route. We also test a passive porous guide and distributed water outlets.\n\nWe would first investigate the marine approach where there is enough space for lateral movement. A breakwater could help or cause a dead end. The diagram is a conceptual plan view. ENEC needs to confirm the permitted geometry, intake flow margin, anchor restrictions and safe exit.\n\nThe test is a sustained material balance. Count what entered, what cleared, what stayed and what returned. If it piles up or recirculates, we redesign the exit or stand down.`
+    id: 'corridor', name: 'Two exits', span: '02:55–03:37',
+    html: `<section class="scene feature route-v3">
+      ${header('05 / REVERSIBLE DIVERSION', 'Two exits.<br><em>One live route.</em>', 'A fixed angle can send a reversing cross-current toward the wrong side. High Tide can change which route it opens.')}
+      <div class="route-grid">
+        <div class="route-console" id="route-console">
+          <div class="console-head"><span>FIG. 03 / CONTROLLER PLAN VIEW</span><button class="panel-button" id="route-reverse" type="button">Reverse cross-flow ⇄</button></div>
+          <svg viewBox="0 0 650 235" class="route-map" role="img" aria-labelledby="route-name">
+            <title id="route-name">Plan view showing two alternative side exits upstream of the intake</title>
+            <defs><marker id="route-tip" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0l8 4-8 4Z" fill="#00ebff"/></marker></defs>
+            <path d="M25 47H625M25 189H625M25 118H625" fill="none" stroke="#a6a6a6" stroke-dasharray="2 8" opacity=".6"/>
+            <path d="M42 82h132m-132 35h132m-132 35h132" fill="none" stroke="#939393" stroke-width="1.5"/>
+            <path d="m166 76 8 6-8 6m0 23 8 6-8 6m0 23 8 6-8 6" fill="none" stroke="#939393" stroke-width="1.5"/>
+            <g stroke-width="4" fill="none" stroke-dasharray="12 6"><path class="guide-b" d="M281 47l112 142"/><path class="guide-a" d="M393 47L281 189"/></g>
+            <path class="trace-b" d="M197 115C251 117 271 118 306 141S362 195 425 208" fill="none" stroke="#00ebff" stroke-width="4" marker-end="url(#route-tip)"/>
+            <path class="trace-a" d="M197 115C251 113 271 112 306 89S362 35 425 23" fill="none" stroke="#00ebff" stroke-width="4" marker-end="url(#route-tip)"/>
+            <path d="M556 80H616V155H556Z" fill="#2b2b2b" stroke="#b6b6b6"/>
+            <path d="M566 81V154M575 81V154M584 81V154" stroke="#b6b6b6"/>
+            <text x="27" y="30">ARRIVALS →</text><text x="453" y="27">EXIT A</text><text x="453" y="214">EXIT B</text><text x="559" y="178">INTAKE</text>
+          </svg>
+          <div class="route-state" id="route-state" aria-live="polite">Cross-flow toward B ↓ <b>Route B active</b></div>
+        </div>
+        <div class="algorithm">
+          <article><span>01</span><div><h2>Flip the corridor</h2><p>In the model, cross-flow changes sign at 450 s. After a 10 s controller delay, the corridor mirrors from B to A.</p></div></article>
+          <article><span>02</span><div><h2>Power the nearby sections</h2><p>Of six modeled sections, turn on the one next to each approaching track and its neighbors.</p></div></article>
+          <article><span>03</span><div><h2>Check the route stays open</h2><p>Track returns and build-up. A closed outlet or power fault disables the active curtain in the model.</p></div></article>
+        </div>
+      </div>
+    </section>`,
+    notes: `Toggle Reverse cross-flow. A and B are alternative lateral paths, not two mapped construction sites. The prototype mirrors the plume line according to the sign of cross-flow after a delay. With six segments, it marks the current animal’s band and the immediate neighbors when the track is within the 13 m x-distance rule; it takes the union across all active tracks. Particle trajectories combine along-flow, side-current, intake pull, deterministic dispersion and a modeled plume response; the time step is 0.25 s. A field controller would add independently surveyed clearance lines, local velocity measurements, and an operator-defined envelope before activating a path. Return flow matters because an animal can cross a boundary and come back. The prototype’s blocked-outlet and power-loss cases disable active bubbles. The breakwater and marine approach are places to evaluate, not placement promises.`
   },
   {
-    id: 'simulation', name: 'The simulator', span: '03:45–04:40',
-    html: `<section class="scene simulation">${header('06 / LIVE TRANSPORT SIMULATION', 'Try to break it.', 'Switch configuration or current. Then run the same arrivals through the corridor.')}
-      <div id="simulator"></div></section>`,
-    notes: `This is our original deterministic transport prototype with a new presentation interface. It represents movement in a simplified horizontal plane. We compare the same incoming particles and geometry across configurations.\n\nRun the reversal preset with controlled sections, then compare it with fixed bubbles. If they ask for a failure, choose blocked exit or power loss. Watch retained and returned animals as well as intake crossings. The end-of-run exit count measures where the particles are at that moment. An earlier crossing can later return, and particles beyond the computational boundary are counted separately.\n\nThe model does not resolve actual bubble plumes, crowding, animal injury or Barakah’s seabed and pumping. The model’s actuator coefficient is an assumption. We need controlled channel tests and operator data to calibrate it. The chemistry is intentionally absent from the run until a real assay gives us an effect to model.`
+    id: 'simulation', name: 'Transport results', span: '03:37–04:38',
+    html: `<section class="scene feature sim-v3">${header('06 / HIGH TIDE V1.0 · REPRODUCIBLE RUNS', 'Where did the<br><em>bloom go?</em>', 'Same arrivals, seed and flow in each comparison. Change the intervention and count where the tracks end.')}<div id="simulator"></div></section>`,
+    notes: `Start with the completed reversal run. Out of the same 900 simulated arrivals, no diversion sends 338 into the intake and leaves zero outside at the end. The controlled corridor sends 78 into the intake, leaves 266 outside and retains 390. Fixed bubbles send zero into the intake in this run but retain 722 and leave only 33 outside. That is the useful trade-off: protecting the intake alone can hide a pile-up. Select Control delay: increasing switch delay from 10 to 90 seconds reduces outside-at-finish from 266 to 206 for controlled sections. Select Return current: outside falls to 71 and 331 tracks returned at least once. Returns overlap final destinations. These are transport simulations, with no chemical steering coefficient. The archive contains 11 scenarios × 5 configurations × 3 seeds, not 165 field trials. The deliverable is the paired endpoint table, seed-level CSV and a flume comparison that can replace modeled transport with measured trajectories.`
   },
   {
-    id: 'outro', name: 'Closing', span: '04:40–05:00',
-    html: `<section class="scene closing"><div class="hero-film close-film" aria-hidden="true"></div><div class="hero-contours" aria-hidden="true"></div><div class="closing-copy"><div class="eyebrow"><i class="live-dot"></i> 07 / HIGH TIDE</div><h1 id="slide-title" tabindex="-1">Read the water.<br>Test the cue.<br><em>Open the exit.</em></h1><p>One contained assay. One surveyed diversion route.</p><div class="closing-actions"><button class="start" data-evidence="questions">Open judge Q&amp;A <span>↗</span></button><a class="quiet-link" href="./evidence.html">Technical brief ↗</a></div></div><div class="hero-index" aria-hidden="true">HIGH TIDE<br>42 ABU DHABI</div></section>`,
-    notes: `We want two things from this next stage: a contained assay to see whether the cue gives a real directional response, and an ENEC survey envelope to see where a physical route can work.\n\nThe question we leave you with is simple. Can we guide jellyfish to water that carries them clear, and show that they stay clear? That is the result we want High Tide to prove.`
-  },
-];
-const gates = [
-  { title: 'Identify the animal', code: 'GATE 01 / IDENTITY', claim: 'Sample the bloom that Barakah actually sees.', detail: 'Use photographed vouchers and appropriate species identification before transferring evidence between species. eDNA can help confirm presence once the local assay is validated.', measure: 'Pass condition · target identity and life stage established.', sources: ['brief', 'taxonomy', 'dna'] },
-  { title: 'Measure direction', code: 'GATE 02 / BEHAVIOR', claim: 'Track where the animal swims.', detail: 'Use a contained two-choice flow chamber, randomized cue side, clean vehicle controls and blinded trajectory scoring. Separate sideways displacement from a change in pulsation, immobility or feeding.', measure: 'Pass condition · repeatable directed displacement at a tolerable exposure.', sources: ['chemistry', 'preference', 'larva'] },
-  { title: 'Test selectivity', code: 'GATE 03 / ECOLOGY', claim: 'The effect must survive a non-target check.', detail: 'Use a specialist-designed screen for locally relevant fish and early life stages, invertebrates and exposure fate. Compare the useful response with adverse effects and recovery. A weak or nonspecific result ends that candidate.', measure: 'Pass condition · useful selectivity and credible containment.', sources: ['chemistry', 'faq'] },
-];
-const stats = [
-  { value: '0.05', unit: 'm/s', key: 'Offshore mean current', tag: 'HISTORICAL OBSERVATION', color: 'green', title: 'A buoy average off Barakah', detail: 'A 2017–18 offshore buoy record reported about 0.05 m/s mean current. A mean across the sampled period cannot set a trigger, size a device or describe flow at the intake mouth. Survey vertical profiles and the upper tail under changing wind and tide.', sources: ['buoy', 'currents'] },
-  { value: '5.5–9.5', unit: 'm', key: 'Dredged bed levels', tag: 'CONSTRUCTION RECORD', color: 'green', title: 'The range spans multiple channels', detail: 'NMDC gives dredged bed elevations 5.5 to 9.5 metres below mean sea level across the intake, discharge and navigation works. The required diffuser depth must come from a surveyed cross-section and water levels at the selected location.', sources: ['dredge'] },
-  { value: '26.94', unit: '°C', key: '2019 Barakah water statistic', tag: 'HISTORICAL STATISTIC', color: 'green', title: 'Historical water quality at Barakah', detail: 'SCAD/EAD’s Barakah row reports 26.94 °C and salinity 45.01, pH 8.04 and dissolved oxygen 5.09. These are historical reported statistics. Design tests need a seasonal temperature and salinity matrix and direct local measurements.', sources: ['water'] },
-  { value: '690', unit: 'm³/s', key: 'Design maximum in model', tag: 'PUBLISHED MODEL INPUT', color: 'blue', title: 'A design maximum used in a study', detail: 'A Barakah dispersion study uses 690 m³/s as its design maximum. Operational flow and timing at the approach depend on plant conditions, unit and pump states and local flow paths. We need an agreed hydraulic envelope.', sources: ['currents', 'cooling'] },
-  { value: '~200', unit: 'tons/day', key: 'Historical peak, reported', tag: 'ENEC MENTORING', color: 'sand', title: 'From a daily benchmark to a load test', detail: 'An ENEC mentor cited around 200 tons in a day on 30 October. Assuming metric wet tonnes, this is 2.31 kg/s over 24 hours or 27.78 kg/s over a two-hour pulse. Use 300 t as an illustrative 50% margin case. The event log, weighing convention and arrival window need confirmation.', sources: [] },
-  { value: '30–45', unit: 'cm', key: 'Target bell diameter', tag: 'CHALLENGE BRIEF', color: 'blue', title: 'Target geometry from the brief', detail: 'Use the challenge brief’s 30–45 cm bell diameter as a design case. Local animals need to be identified before biological claims transfer to Barakah. Size, depth distribution and wet mass per individual should come from sampled animals.', sources: ['brief', 'taxonomy'] },
+    id: 'outro', name: 'The next test', span: '04:38–05:00',
+    html: `<section class="scene feature closing-v3">
+      <div class="closing-shape" aria-hidden="true"></div>
+      ${header('07 / THE PROPOSAL', 'Give the bloom<br><em>a way out.</em>', 'Build the corridor. Test the cues. Measure how many more blue blubbers clear the approach.')}
+      <div class="deliverable-grid">
+        <article><span>01 / IN HAND</span><h2>Transport comparison</h2><p>Runnable controller and 165 archived scenario runs.</p></article>
+        <article><span>02 / BUILD</span><h2>Instrumented flume</h2><p>Two exits, reversible flow and a measured physical baseline.</p></article>
+        <article><span>03 / TEST</span><h2>Biochemical steering</h2><p>A blinded adult assay, followed by a paired cue-on versus cue-off run.</p></article>
+      </div>
+      <div class="close-ask"><p><b>What we want from ENEC:</b> shareable flow and bloom-load records, and a marine-lab introduction.</p><button class="panel-button" data-evidence="questions">Judge Q&amp;A ↗</button><a class="source-link" href="./evidence.html">Technical brief ↗</a></div>
+    </section>`,
+    notes: `The first build is an instrumented physical flume. We will run identical inflows with no diversion, fixed bubbles and controlled sections, then score clearance, retention and repeat returns. In parallel, a marine-lab partner runs the contained adult behavior study. If the measured cue changes directional swimming and clears the welfare and non-target measurements, compare the combined system against the physical system alone. Ask ENEC for shareable approach flow and event load records and a marine-lab introduction. Closing line: “We want to move the bloom away from the intake, and we want to be able to show exactly where it went.”`
+  }
 ];
 const talkTrack = [
-  { speaker: 'Syed', text: `I’m Syed Ahamed, President of Robotics at 42 Abu Dhabi. This is Usman Mohammad. He’s studying Applied Computer Science and AI after a bachelor’s in Molecular Biology. We’re High Tide.\n\nImagine the offshore alert has just arrived. The jellyfish are already on their way toward a seawater intake. We have a short window to respond. The mentors described lifting jellyfish from the trash racks and asked us to look at survival as well as clearance.\n\nWe want to give the bloom a route out. First we work with the flow and measure where the animals go. Then we ask a question that has to come from biology. Can a jellyfish sense a cue that helps it reach that route?` },
-  { speaker: 'Usman', text: `This is (E)-2-nonenal, a nine-carbon aldehyde. In a published contact-feeding study, Japanese sea nettles released treated prey sooner. Separate aquarium work found that some medusae favored water conditioned by prey. Those observations give us an avoidance candidate and an attraction arm.\n\nWe’ll verify the jellyfish species first, then ask whether either cue changes sustained swimming direction in a matched-flow chamber. For High Tide, the useful result is a measurable change in where the animal goes.` },
-  { speaker: 'Usman', text: `We start with an identified local animal. In the chamber, we match flow and swap the cue side. We track swimming relative to the moving water, then check recovery and relevant non-target effects. The cue earns a role only if it gives a repeatable directional benefit, with acceptable effects and a way to contain the exposure.` },
-  { speaker: 'Syed', text: `Barakah sets the test conditions. The historical offshore mean is around five centimetres per second. The dredging record spans several channels. We still need currents and depths at the actual approach.\n\nAn ENEC mentor cited a peak around 200 tons in a day. Under a wet-tonne assumption, that’s 2.31 kilograms a second averaged over a day, or nearly 28 if it arrived in two hours. We’ll test 300 tonnes as an illustrative margin case.` },
-  { speaker: 'Syed', text: `We’d start at the marine approach, where there may be room to move sideways before stronger intake flow. After the alert, measure the current, verify an exit and select a tested configuration. We compare adjustable bubble sections, an angled physical guide and distributed water flow.\n\nWe measure air demand, count where the animals go and check survival after release. If the route closes or animals keep coming back, the trial stops. The verified exit is what makes this a diversion corridor.` },
-  { speaker: 'Syed', text: `Here’s the submitted transport engine. I’ll keep the arrivals and geometry the same and compare controlled sections with no diversion during a reversal. Watch the intake count and the outside exit count. Also watch what is still retained.\n\nNow close the exit. The model flags the route as unsuitable and records zero exits. The physical coefficients are assumptions. A channel test would let us calibrate them. Any chemical effect would need independent measurements before it enters this model.` },
-  { speaker: 'Both', text: `We’re asking ENEC for two things: a surveyed approach and a partner for a contained assay. We’ll show what reaches the exit, what returns and when to stop. Read the water. Test the cue. Open the exit.` },
+  { speaker:'Syed', text:`ENEC’s alert tells you the bloom is coming. We’re working on what happens next. High Tide gives the blue blubber jellyfish a route away from the intake. We’re building a corridor that adapts to the water, and we’re testing whether we can use the jellyfish’s own senses to help it take that route.` },
+  { speaker:'Usman', text:`Here’s what makes High Tide different. We want to give the jellyfish two reasons to move in the same direction: something to move away from, and something to move toward.
+
+In one study, Japanese sea nettles released treated prey sooner after contact with (E)-2-nonenal. That’s our candidate for the intake side. In a different study, moon jellies chose the side of a tank that carried prey-conditioned water. That’s our candidate for the exit side.
+
+We’re taking those two observations and asking a new question: can you get adult blue blubbers to turn and swim toward the exit in flowing water? If they do, the animal’s own movement can contribute to clearance.` },
+  { speaker:'Usman', text:`Here’s how we find out. [Select Carrot, then swap sides.] Both arms carry the same flow. We move the cue to the other side and ask whether the jellyfish’s choice follows it. We test the two cues alone, together, and against a blank. We subtract the water’s motion from the track so we can tell swimming from drifting.
+
+Then we keep the physical corridor identical and turn chemistry on or off. What counts is more animals clearing the exit, with recovery and non-target response measured alongside it.` },
+  { speaker:'Syed', text:`Four numbers changed what we designed. The offshore current averaged five centimetres per second, so the controller needs to handle weak flow and act on measured direction. ENEC mentoring reported a historical load of roughly two hundred tons in a day. A holding pocket is the wrong shape for that kind of event: the route has to keep clearing arrivals.
+
+The dredged elevations tell us to size diffusers section by section after surveying the water depth. The observed seasonal surface temperatures give us two useful ends for testing whether the cue persists and the animal responds.` },
+  { speaker:'Syed', text:`One outlet leaves you tied to one direction. [Reverse cross-flow.] When the current reverses, the model mirrors the corridor to the other side. It turns on the sections near incoming tracks, plus their immediate neighbors. Then we watch whether the animals actually clear the route or come back.
+
+At Barakah, we’d evaluate this upstream of the intake. A surveyed outlet and measured local flow tell us which route we can use.` },
+  { speaker:'Syed', text:`Here are three runs with the same nine hundred arrivals and a reversal halfway through. Without diversion, 338 reach the intake. With controlled sections, 78 reach it and 266 are outside at the finish. Fixed bubbles get intake entries to zero in this run but leave 722 inside. So if you only score intake entries, you can pick the option that leaves the biggest backlog.
+
+[Select Return current if time permits.] When we add a return current, outside-at-finish drops to 71. That makes the return route one of the first things we need to measure. These runs compare physical transport; the lab is where the chemical effect gets measured.` },
+  { speaker:'Syed', text:`We have the controller and the transport comparison today. Next we build the flume and measure the baseline, then test whether the two cues can improve it. We’re asking ENEC for shareable flow and bloom-load records and an introduction to a marine lab. We want to give the bloom a way out, and show exactly where it went.` },
 ];
-window.HighTideContent = { links, source, label, slides, gates, stats, talkTrack };
+window.HighTideContent = { links, source, label, slides, talkTrack };
 })();

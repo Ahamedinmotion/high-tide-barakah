@@ -1,6 +1,6 @@
 /* Full-screen deck navigation, interactive exhibits and presenter tools. */
 window.addEventListener('DOMContentLoaded', () => {
-  const { slides, gates, stats, source, label, talkTrack } = window.HighTideContent;
+  const { slides, source, talkTrack } = window.HighTideContent;
   const $ = (id) => document.getElementById(id);
   const stage = $('stage');
   const evidence = $('evidence');
@@ -15,23 +15,22 @@ window.addEventListener('DOMContentLoaded', () => {
     ['What about fish, larvae, corals and other species?', 'We have no local dose-response margin yet. A marine partner would select non-target endpoints and test at measured exposures in a contained system. A repeatable target response, recovery, no unacceptable non-target effects and proven effluent containment are gates for any next stage.', ['chemistry', 'faq']],
     ['Is the chemistry necessary for the physical corridor?', 'The physical corridor has its own controls, tests and stop conditions. If the cue fails on direction, selectivity or containment, the chemical workstream stops and physical development can continue.', []],
     ['Where exactly does it go?', 'The first candidate zone is the marine approach before stronger intake capture. A breakwater edge may support a route if the current carries animals clear across operating states. ENEC bathymetry, permitted work areas and exit recirculation measurements would determine placement.', ['dredge', 'cooling', 'faq']],
-    ['How much air does the curtain need?', 'We size from active length times measured air flow per metre, at the pressure needed for water depth plus line and diffuser losses. A published basin reference implies about 0.33–1.00 m³/min for an illustrative 10 m active length. The engineering brief shows the assumptions. A measured plume and vendor free-air delivery curve determine the actual selection.', ['air','bubble']],
-    ['How will you measure animal survival?', 'The mentoring discussion identified survival as a design objective alongside clearance. We would compare handling and diversion with agreed measures for damage, recovery and delayed survival in an appropriate trial. Fish and turtles are non-target receptors. The simulation tracks only positions.', []],
+    ['How much air does the curtain need?', 'We size from active length times measured air flow per metre, at the pressure needed for water depth plus line and diffuser losses. Measure the airflow per metre in the flume, then size from verified active length, water depth, line losses and vendor free-air delivery curves.', ['air','bubble']],
+    ['How will you measure animal survival?', 'Compare body condition, pulsation, recovery and delayed survival in matched handling and diversion trials. Include a separate non-target assessment with a marine partner.', []],
     ['What happens when the current reverses or an exit closes?', 'Use only an independently checked route within the tested operating envelope. Compare a delayed switch, closed exit and power loss in the simulator. If clearance cannot be verified, stop actuation and leave the response to existing operator procedures.', []],
-    ['What is the source for 200 tons per day?', 'An ENEC mentor cited around 200 tons in one day in the 30 October discussion. The event date and weighing basis remain open. Assuming metric wet tonnes, the average is 2.31 kg/s over 24 hours or 27.78 kg/s over two hours. We use 300 tonnes as an illustrative margin case, with measured capacity still to establish.', []],
+    ['What is the source for 200 tons per day?', 'An ENEC mentor cited a historical load of around 200 tons per day in the 30 October discussion. The figure motivates continuous clearance and logging retention alongside arrivals. Hourly records and a confirmed weighing basis would let us size the physical test.', []],
     ['Can we use temperature to steer them?', 'First distinguish preference from changes in movement or survival and from density-driven currents. Temperature belongs in a controlled assay matrix. A 1 °C change at 1 m³/s would take about 4.1 MW thermal before losses, which gives the scale of the open-water idea.', ['water', 'currents']],
-    ['What is physically built?', 'The submitted High Tide prototype is a runnable transport simulation with reproducible scenario outputs. A measured flume and a species-specific behavioral trial are separate next stages. Current figures in the visual model are assumptions.', ['original']],
-    ['What will it cost?', 'A demo-only bench allowance is AED 2,160–8,640 including 20% reserve. A contained feasibility study and preliminary non-target screens are AED 35,625–125,000 including 25% reserve. These are planning assumptions. The technical brief also works through an illustrative small marine trial at a non-operational test area, AED 105,950–486,200 with reserve. A Barakah field estimate needs surveyed geometry, operating scope and vendor quotes.', []],
-    ['How do you know the Barakah jellyfish species?', 'We use the challenge brief’s name and size as a design case. Gulf records include a related Catostylus species. Before testing, confirm local vouchers and morphology with a marine partner and use suitable molecular identification for ambiguous specimens.', ['brief', 'taxonomy']],
+    ['What is physically built?', 'The submitted High Tide prototype is a runnable transport simulation with reproducible scenario outputs. A measured flume and a species-specific behavioral trial are separate next stages. The comparison uses common flow settings and seeds; the CSV includes all 165 runs.', ['original']],
+    ['What will it cost?', 'We’d price the instrumented flume and contained lab work separately with partners. A marine estimate would use measured air duty, actual deployment length and quotes for equipment, marine work, maintenance and recovery.', []],
+    ['What species does High Tide target?', 'The ENEC brief names blue blubber jellyfish, Catostylus mosaicus, with a 30–45 cm bell. We size the test for that target; a marine partner documents the specimens used.', ['brief', 'taxonomy']],
     ['How do you prove performance to ENEC?', 'Agree an operating envelope and minimum acceptable improvement first. Compare no actuation, the physical options, and eventually cue plus physical against physical alone in containment. Score verified exits, returns, intake entries, retention, water supply, welfare, energy and maintenance.', ['bubble', 'original']],
     ['What is the failure condition for a site trial?', 'An unsuitable exit, accumulation, rising return or intake entry, harmful exposure, unacceptable impact on water supply, or operation outside the tested envelope. Proposed thresholds need ENEC and marine partner agreement.', ['faq']],
   ];
-  const tabs = [['questions','Judge Q&A'],['stress','Stress calculator'],['sources','Research & sources'],['credits','Image credits']];
+  const tabs = [['questions','Judge Q&A'],['sources','Research & sources'],['credits','Image credits']];
 
   const tabContent = {
-    questions: () => `<p>Pick a question to open a short answer. The linked technical brief has the assumptions and references.</p>${questions.map(([q,a,refs])=>`<details><summary>${q}</summary><p>${a}</p><p>${refs.map(source).join('')}</p></details>`).join('')}`,
-    stress: () => `<p>Illustrative screening arithmetic. Values apply to the scenario you enter and should not be presented as Barakah measurements.</p><h3>Wet-mass arrival</h3><div class="stress-grid"><label>Wet tonnes<input id="mass" type="number" min="0" max="100000" step="1" value="200"></label><label>Arrival window, h<input id="hours" type="number" min="0.25" max="168" step="0.25" value="24"></label></div><div class="stress-result"><div><strong id="tonnes-hour">8.33</strong><span>tonnes per hour</span></div><div><strong id="kg-second">2.31</strong><span>kilograms per second</span></div></div><h3>Time available to divert</h3><div class="stress-grid"><label>Available reach, m<input id="reach" type="number" min="1" max="10000" value="50"></label><label>Sideways travel, m<input id="lateral" type="number" min="0" max="10000" value="10"></label><label>Along-flow speed, m/s<input id="along" type="number" min="0.01" max="5" step="0.01" value="0.15"></label></div><div class="stress-result"><div><strong id="travel-time">333.33</strong><span>seconds available</span></div><div><strong id="side-speed">0.030</strong><span>net sideways speed, m/s</span></div></div><p>Mass rate = mass ÷ time. Time available = reach ÷ along-flow speed. Required average sideways speed = lateral distance ÷ time. Shear, eddies and animal behavior require measured profiles and controlled testing.</p><h3>What would a measured cue need to add?</h3><div class="stress-grid"><label>Physical sideways speed, m/s<input id="physical" type="number" min="0" max="5" step="0.001" value="0.02"></label><label>Hypothetical cue bias, m/s<input id="cue" type="number" min="-5" max="5" step="0.001" value="0.00"></label><label>Time before cue response, s<input id="latency" type="number" min="0" max="6000" step="1" value="20"></label></div><div class="stress-result"><div><strong id="physical-distance">6.67</strong><span>physical travel, m</span></div><div><strong id="cue-distance">6.67</strong><span>combined travel, m</span></div></div><p id="cue-margin" role="status"></p><p>Set the cue to zero for the physical baseline. A signed bias is a hypothetical measured swim velocity added after latency. This simple screen assigns no effect to the named molecule and does not model concentration, shear or animal interactions.</p>`,
-    sources: () => `<p>Public data, study results and model assumptions have separate provenance in the technical brief.</p><a class="article-link" href="./evidence.html">Open the complete technical brief ↗</a><p>${Object.keys(window.HighTideContent.links).map(source).join('')}</p><a class="source-link" href="./assets/scenario-results.csv" download>Submitted 165 scenario results ↓</a><a class="source-link" href="./assets/barakah-data.csv" download>Barakah data register ↓</a>`,
+    questions: () => `<p>Pick a question to open a short answer. Open the linked studies or technical brief for methods and results.</p>${questions.map(([q,a,refs])=>`<details><summary>${q}</summary><p>${a}</p><p>${refs.map(source).join('')}</p></details>`).join('')}`,
+    sources: () => `<p>Open the site measurements, primary studies and full simulation archive.</p><a class="article-link" href="./evidence.html">Open the complete technical brief ↗</a><p>${Object.keys(window.HighTideContent.links).map(source).join('')}</p><a class="source-link" href="./assets/scenario-results.csv" download>Submitted 165 scenario results ↓</a><a class="source-link" href="./assets/barakah-data.csv" download>Barakah data register ↓</a>`,
     credits: () => `<p>Opening and closing imagery is illustrative.</p><p>Aquarium footage by Eline SUN via Pexels. Macroscopic jellyfish photograph by Jen Theodore via Unsplash.</p><p><a class="source-link" href="https://www.pexels.com/video/jellyfish-in-the-dark-blue-water-16482908/" target="_blank" rel="noopener">Pexels footage ↗</a><a class="source-link" href="https://unsplash.com/pt-br/fotografias/um-close-up-de-uma-agua-viva-na-agua--Yq9bahmNSc" target="_blank" rel="noopener">Unsplash photograph ↗</a></p><a class="article-link" href="./assets-credits.html">Full credits and licenses ↗</a>`,
   };
   function showTab(key) {
@@ -40,12 +39,6 @@ window.addEventListener('DOMContentLoaded', () => {
     $('evidence-body').innerHTML = tabContent[id]();
     for (const button of $('evidence-tabs').children) button.setAttribute('aria-pressed',String(button.dataset.tab===id));
     $('evidence-body').scrollTop=0;
-    if(id==='stress') {
-      const val=(id)=>{const i=$(id);return i.value!=='' && i.validity.valid ? i.valueAsNumber : NaN;};
-      const out=(id,v,places)=>{$(id).textContent=Number.isFinite(v)?v.toLocaleString('en',{minimumFractionDigits:places,maximumFractionDigits:places}):'—';};
-      const update=()=>{out('tonnes-hour',val('mass')/val('hours'),2);out('kg-second',val('mass')/val('hours')/3.6,2);const time=val('reach')/val('along');out('travel-time',time,2);out('side-speed',val('lateral')/time,3);const physical=val('physical')*time, combined=physical+val('cue')*Math.max(0,time-val('latency'));out('physical-distance',physical,2);out('cue-distance',combined,2);const margin=combined-val('lateral');$('cue-margin').textContent=Number.isFinite(margin)?`Illustrative clearance margin: ${margin.toFixed(2)} m relative to the assumed exit distance.`:'';};
-      $('evidence-body').oninput=update;update();
-    }
   }
   function openEvidence(key='questions', invoker=document.activeElement) {
     evidenceInvoker=invoker;showTab(key);
@@ -93,13 +86,13 @@ window.addEventListener('DOMContentLoaded', () => {
     Array.from($('slide-nav').children).forEach((b,i)=>{if(i===n)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current');b.classList.toggle('past',i<n);});
     $('prev').disabled=n===0;$('next').disabled=n===slides.length-1;
     showNotes();
-    if(slide.id==='opening'||slide.id==='outro') {
+    if(slide.id==='opening') {
       const film=stage.querySelector('.hero-film');
       if(!motion.matches){const video=document.createElement('video');video.src='./assets/jelly-motion.mp4';video.poster='./assets/jelly-motion-poster.webp';video.autoplay=true;video.muted=true;video.loop=true;video.playsInline=true;video.setAttribute('aria-hidden','true');film.append(video);video.play().catch(()=>{});}
     }
     if(slide.id==='molecule')mountMolecule();
-    if(slide.id==='gates')mountGates();
-    if(slide.id==='barakah')mountStats();
+    if(slide.id==='gates')mountAssay();
+    if(slide.id==='corridor')mountRoute();
     if(slide.id==='simulation')window.HighTideSimulator.mount($('simulator'));
     if(!options.initial){window.scrollTo(0,0);$('slide-title').focus({preventScroll:true});}
   }
@@ -119,16 +112,26 @@ window.addEventListener('DOMContentLoaded', () => {
     const resize=new ResizeObserver(draw);resize.observe(canvas);
     destroyMolecule=()=>{active=false;cancelAnimationFrame(loop);resize.disconnect();};
   }
-  function mountGates(){
-    const assayView = `<div class="assay-view" id="assay-view"><div class="assay-branches" aria-label="Matched-flow, two-arm chamber schematic"><span id="assay-arm-a">Arm A · Vehicle blank</span><i aria-hidden="true">→</i><span id="assay-arm-b">Arm B · Candidate cue</span></div><button id="assay-swap" class="mini-button">Swap cue side ⇄</button><small>Equal flow · Track motion relative to water</small></div>`;
-    $('gate-choices').innerHTML=gates.map((g,i)=>`<button class="gate-choice" data-i="${i}" aria-pressed="false"><small>${pad(i+1)}</small>${g.title}</button>`).join('');
-    const show=(i)=>{const gate=gates[i];for(const button of $('gate-choices').children)button.setAttribute('aria-pressed',String(+button.dataset.i===i));$('gate-detail').innerHTML=`${label(gate.code,'green')}<h2>${gate.claim}</h2><p>${gate.detail}</p><strong class="measure">${gate.measure}</strong>${i===1?assayView:''}${gate.sources.map(source).join('')}`;if(i===1){let side=false;$('assay-swap').onclick=()=>{side=!side;$('assay-arm-a').textContent=side?'Arm A · Candidate cue':'Arm A · Vehicle blank';$('assay-arm-b').textContent=side?'Arm B · Vehicle blank':'Arm B · Candidate cue';$('assay-view').classList.toggle('swapped',side);};}};
-    $('gate-choices').onclick=e=>{const b=e.target.closest('[data-i]');if(b)show(+b.dataset.i);};show(0);
+  function mountAssay(){
+    const pairs={carrot:['blank','carrot'],stick:['stick','blank'],combined:['stick','carrot'],blank:['blank','blank']};
+    const names={blank:'Matched blank',carrot:'Prey-conditioned water',stick:'(E)-2-nonenal'};
+    const box=$('assay-console'), controls=$('assay-presets');
+    let trial='combined', swapped=false;
+    function paint(){
+      const arms=swapped?[...pairs[trial]].reverse():pairs[trial];
+      box.dataset.armA=arms[0];box.dataset.armB=arms[1];
+      $('assay-arm-a').textContent=names[arms[0]];$('assay-arm-b').textContent=names[arms[1]];
+      for(const btn of controls.children)btn.setAttribute('aria-pressed',String(btn.dataset.trial===trial));
+    }
+    controls.onclick=e=>{const btn=e.target.closest('[data-trial]');if(btn){trial=btn.dataset.trial;paint();}};
+    $('assay-swap').onclick=()=>{swapped=!swapped;paint();};paint();
   }
-  function mountStats(){
-    $('stats').innerHTML=stats.map((s,i)=>`<button class="stat-choice" data-i="${i}" aria-pressed="false"><small>${s.tag}</small><strong>${s.value}<i>${s.unit}</i></strong><span>${s.key}</span></button>`).join('');
-    const show=(i)=>{const s=stats[i];for(const b of $('stats').children)b.setAttribute('aria-pressed',String(+b.dataset.i===i));$('stat-detail').innerHTML=`${label(s.tag,s.color)}<h2>${s.title}</h2><p>${s.detail}</p>${s.sources.map(source).join('')}${i===4?'<button class="mini-button" data-evidence="stress">Stress calculator ↗</button>':''}${i===2?'<div class="temp-chart" aria-label="Regional Barakah grid cell seasonal sea surface means 2003 to 2019">'+[['Winter','21.6'],['Spring','25.3'],['Summer','32.7'],['Autumn','30.6']].map(([n,v])=>`<span>${n} <b>${v}°C</b></span>`).join('')+'</div>'+source('buoy'):''}`;};
-    $('stats').onclick=e=>{const b=e.target.closest('[data-i]');if(b)show(+b.dataset.i);};show(0);
+  function mountRoute(){
+    let reversed=false;
+    $('route-reverse').onclick=()=>{
+      reversed=!reversed;$('route-console').classList.toggle('reverse',reversed);
+      $('route-state').innerHTML=reversed?'Cross-flow toward A ↑ <b>Route A active</b>':'Cross-flow toward B ↓ <b>Route B active</b>';
+    };
   }
   stage.addEventListener('click',e=>{const jump=e.target.closest('[data-jump]');if(jump)go(slides.findIndex(s=>s.id===jump.dataset.jump));const item=e.target.closest('[data-evidence]');if(item)openEvidence(item.dataset.evidence,item);});
   function sync(){const n=slides.findIndex(s=>`#${s.id}`===location.hash);go(n<0?0:n,{fromHash:true});}
