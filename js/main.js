@@ -4,6 +4,8 @@
 import { createOcean } from './ocean.js';
 import { createMolecule } from './molecule.js';
 import { createSim } from './sim/sim.js';
+import { createSiteMap } from './site-map.js';
+import { buildCharts } from './charts.js';
 
 const { gsap, ScrollTrigger, SplitText, Lenis } = window;
 gsap.registerPlugin(ScrollTrigger, SplitText);
@@ -20,7 +22,12 @@ if (ocean) ocean.setAnchor($('.animal__viz'));
 else root.classList.add('no-webgl');
 const molecule = createMolecule($('#molecule'));
 const sim = createSim($('#sim-stage'));
-window.highTide = { ocean, sim, get lenis() { return lenis; } };       // handy in the console
+buildCharts();
+const siteMap = createSiteMap($('#site-map'), $('#site-labels'), {
+  scale: $('#site-scale'), scaleBar: $('#site-scale-bar'), coords: $('#site-coords'), stepName: $('#site-step-name'),
+  legend: $('#site-legend'), progress: $('#site-progress'), cards: [...document.querySelectorAll('.scard')],
+});
+window.highTide = { ocean, sim, siteMap, get lenis() { return lenis; } };       // handy in the console
 
 // ───────────── Smooth scroll ─────────────
 let lenis = null;
@@ -90,20 +97,10 @@ function build() {
 
   // Ocean progress probes (order matters: created top to bottom, pins included)
   const probe = (trigger, start, end) => ScrollTrigger.create({ trigger, start, end });
-  const pLoadIn = probe('#load', 'top bottom', 'top top');
-  const pLoad = probe('#load', 'top 55%', 'bottom bottom');
+  const pLoadIn = probe('#approach', 'top bottom', 'top top');
+  const pLoad = probe('#approach', 'top 55%', 'bottom bottom');
 
-  // 02 · Load
-  if (!reduce) {
-    gsap.from('#load-title', { yPercent: 28, autoAlpha: 0, duration: 1.4, ease: 'expo.out', scrollTrigger: { trigger: '#load-title', start: 'top 86%' } });
-    gsap.fromTo('.plate__img', { clipPath: 'inset(9% 14% 9% 14% round 10px)' }, { clipPath: 'inset(0% 0% 0% 0% round 0px)', ease: 'none', scrollTrigger: { trigger: '#plate', start: 'top 85%', end: 'top 8%', scrub: true } });
-    gsap.fromTo('.plate__img img', { scale: 1.22, yPercent: -4 }, { scale: 1, yPercent: 4, ease: 'none', scrollTrigger: { trigger: '#plate', start: 'top bottom', end: 'bottom top', scrub: true } });
-    gsap.from('.plate__cross', { scale: 2.2, autoAlpha: 0, duration: 1.2, ease: 'expo.out', scrollTrigger: { trigger: '#plate', start: 'top 30%' } });
-    gsap.from('.season__bar i', { scaleY: 0, duration: 1.2, ease: 'expo.out', stagger: 0.1, scrollTrigger: { trigger: '#season', start: 'top 88%' } });
-    gsap.from('.season__bar b, .season__bar span', { autoAlpha: 0, duration: 0.8, stagger: 0.05, delay: 0.5, scrollTrigger: { trigger: '#season', start: 'top 88%' } });
-  }
-
-  // 03 · Animal (pinned while the specimen turns)
+  // 02 · Animal (pinned while the specimen turns)
   const pAnimalIn = probe('#animal', 'top bottom', 'top top');
   let pAnimalPin = null;
   mm.add(desktop, () => {
@@ -118,7 +115,7 @@ function build() {
   if (!reduce) {
     gsap.fromTo('.frame--wide img', { yPercent: -19 }, { yPercent: 0, ease: 'none', scrollTrigger: { trigger: '.frame--wide', start: 'top bottom', end: 'bottom top', scrub: true } });
   }
-  const pCuesIn = probe('#cues', 'top bottom', 'top 15%');
+  const pCuesIn = probe('#steering', 'top bottom', 'top 15%');
 
   // 05 · System — horizontal run
   mm.add(desktop, () => {
@@ -141,24 +138,27 @@ function build() {
     gsap.from('.panel--intro > *', { y: 40, autoAlpha: 0, duration: 1, ease: 'power3.out', stagger: 0.1, scrollTrigger: { trigger: '#system', start: 'top 70%' } });
   });
 
-  // 06 · Results
-  const pResults = probe('#results', 'top bottom', 'top top');
+  // 05 · Site — pinned zoom
+  const pResults = probe('#site', 'top bottom', 'top top');
+  if (!reduce) {
+    ScrollTrigger.create({
+      trigger: '#site-pin', start: 'top top', end: () => `+=${innerHeight * 6.5}`, pin: true, scrub: 0.6,
+      onUpdate: (self) => siteMap.setProgress(self.progress),
+      onToggle: (self) => siteMap.setLive(self.isActive),
+    });
+  } else { siteMap.setProgress(1); siteMap.setLive(true); }
+
+  // 06B · Results
   if (!reduce) {
     gsap.fromTo('.chart__bar', { clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)', duration: 1.7, ease: 'expo.inOut', stagger: 0.22, scrollTrigger: { trigger: '#chart', start: 'top 72%' } });
     gsap.from('.chart__label', { autoAlpha: 0, x: -24, duration: 1, ease: 'power3.out', stagger: 0.22, scrollTrigger: { trigger: '#chart', start: 'top 72%' } });
-    gsap.from('.seg b', { autoAlpha: 0, duration: 0.6, delay: 1.2, stagger: 0.06, scrollTrigger: { trigger: '#chart', start: 'top 72%' } });
+    gsap.from('.beaker i', { scaleY: 0, duration: 1.6, ease: 'expo.out', stagger: 0.25, scrollTrigger: { trigger: '.beakers', start: 'top 85%' } });
+    gsap.from('.adds .hbar__t i', { scaleX: 0, transformOrigin: 'left', duration: 1.3, ease: 'expo.out', stagger: 0.04, scrollTrigger: { trigger: '#steering .adds', start: 'top 80%' } });
+    ScrollTrigger.batch('.f2__bar i, .hwline i, .prow__t i, .energy .hbar__t i', { start: 'top 92%', once: true, onEnter: (els) => gsap.fromTo(els, { scaleX: 0 }, { scaleX: 1, transformOrigin: 'left', duration: 1.2, ease: 'expo.out', stagger: 0.05 }) });
+    gsap.from('.g-bar', { scaleX: 0, transformOrigin: 'left', duration: 1.1, ease: 'expo.out', stagger: 0.08, scrollTrigger: { trigger: '#gantt', start: 'top 80%' } });
   }
 
-  // 07 · Plan
-  mm.add(`(min-width: 901px) and ${motion}`, () => {
-    gsap.to('.phases__line i', { scaleX: 1, ease: 'none', scrollTrigger: { trigger: '#phases', start: 'top 80%', end: 'top 30%', scrub: 0.5 } });
-  });
-  mm.add(`(max-width: 900px) and ${motion}`, () => {
-    gsap.to('.phases__line i', { scaleY: 1, ease: 'none', scrollTrigger: { trigger: '#phases', start: 'top 75%', end: 'bottom 60%', scrub: 0.5 } });
-  });
-  if (reduce) gsap.set('.phases__line i', { scaleX: 1, scaleY: 1 });
-
-  // 08 · Simulation: clear the chrome, park the ocean
+  // 06 · Simulation: clear the chrome
   const nav = $('#nav'), gauge = $('#gauge');
   ScrollTrigger.create({
     trigger: '#sim-stage', start: 'top 62%', end: 'bottom 38%',
@@ -166,7 +166,7 @@ function build() {
   });
   if (ocean) {
     ScrollTrigger.create({
-      trigger: '#plan', start: 'center top',
+      trigger: '#site', start: 'top top',
       onEnter: () => { ocean.state.active = false; },
       onLeaveBack: () => { ocean.state.active = true; },
     });
@@ -200,7 +200,7 @@ function build() {
     el.textContent = (0).toFixed(dec);
     gsap.to(o, {
       v: end, duration: 2.1, ease: 'expo.out',
-      onUpdate: () => { el.textContent = o.v.toFixed(dec); },
+      onUpdate: () => { el.textContent = o.v.toLocaleString('en', { minimumFractionDigits: dec, maximumFractionDigits: dec }); },
       scrollTrigger: { trigger: el, start: 'top 90%', once: true },
     });
   });

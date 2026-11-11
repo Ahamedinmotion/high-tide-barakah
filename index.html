@@ -4,12 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#03080c">
-<meta name="description" content="High Tide — a post-alert response that steers blue blubber jellyfish away from the Barakah cooling-water intake. 42 Abu Dhabi · ENEC challenge · Advanced Technology Pioneers 2026.">
+<meta name="description" content="High Tide — a three-pronged, post-alert response that steers blue blubber jellyfish away from the four Barakah cooling-water intakes: a controlled bubble corridor, a chemical stick and a food-cue carrot. 42 Abu Dhabi · ENEC challenge · Advanced Technology Pioneers 2026.">
 <title>HIGH TIDE — Give the bloom a way out</title>
 <link rel="preload" href="./assets/fonts/vg5000.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./assets/fonts/jost-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="./vendor/lenis/lenis.css">
 <link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/v2.css">
 <script type="importmap">
 { "imports": { "three": "./vendor/three/three.module.min.js", "three/addons/": "./vendor/three/addons/" } }
 </script>
@@ -39,7 +40,7 @@
   </a>
   <div class="nav__topic mono">ADVANCED TECHNOLOGY PIONEERS 2026 <b>/</b> ENEC CHALLENGE</div>
   <nav class="nav__links mono" aria-label="Chapters">
-    <a href="#load">Load</a><a href="#animal">Animal</a><a href="#cues">Cues</a><a href="#system">System</a><a href="#results">Model</a><a href="#plan">Plan</a>
+    <a href="#approach">Approach</a><a href="#animal">Animal</a><a href="#steering" class="nav__hot">Steering</a><a href="#system">System</a><a href="#site">Site</a><a href="#data">Numbers</a><a href="#plan">Plan</a>
     <a href="#sim-stage" class="nav__cta"><i class="dot"></i> Live simulation</a>
   </nav>
 </header>
@@ -51,11 +52,11 @@
 
 <main id="main">
 
-<!-- ───────────── 01 · Hero ───────────── -->
+<!-- ───────────── 00 · Hero ───────────── -->
 <section id="hero" class="hero">
   <div class="hero__fade hero__top"><div class="hero__meta mono hero__intro">
-    <span><i class="dot"></i> 01 / THE ENEC CHALLENGE</span>
-    <span>23.96° N · 52.23° E — BARAKAH, AL DHAFRA, UAE</span>
+    <span><i class="dot"></i> THE ENEC CHALLENGE · AFTER THE ALERT</span>
+    <span>23.97° N · 52.23° E — BARAKAH, AL DHAFRA, UAE</span>
   </div></div>
   <h1 class="hero__title" id="hero-title" aria-label="Give the bloom a way out.">
     <span class="l">Give the</span>
@@ -63,65 +64,90 @@
     <span class="l">way <em>out.</em></span>
   </h1>
   <div class="hero__fade"><div class="hero__foot hero__intro">
-    <p class="hero__lede">Steering blue blubber jellyfish away from the Barakah cooling-water intake.</p>
+    <p class="hero__lede">Air to route them. A <b class="t-coral">stick</b> to push them. A <b class="t-violet">carrot</b> to pull them. Steering blue blubber jellyfish away from Barakah’s four cooling-water intakes — without killing a single one.</p>
     <div class="hero__cta">
       <a href="#sim-stage" class="btn btn--solid"><span>Watch it run</span><i>↘</i></a>
-      <a href="#load" class="btn btn--ghost"><span>Descend</span><i>↓</i></a>
+      <a href="#approach" class="btn btn--ghost"><span>Descend</span><i>↓</i></a>
     </div>
   </div></div>
-  <div class="hero__index mono hero__fade"><span class="hero__intro">FIG. 01 — LIVE RENDER<br>PROCEDURAL MEDUSAE · MOVE YOUR CURSOR</span></div>
-  <div class="hero__scroll mono" aria-hidden="true"><i></i>SCROLL</div>
+  <div class="hero__index mono hero__fade"><span class="hero__intro">FIG. 00 — LIVE RENDER<br>PROCEDURAL MEDUSAE · MOVE YOUR CURSOR</span></div>
 </section>
 
-<!-- ───────────── 02 · The load ───────────── -->
-<section id="load" class="ch load">
+<!-- ───────────── 01 · The approach (three prongs) ───────────── -->
+<section id="approach" class="ch approach">
   <div class="wrap">
-    <div class="ch__head">
-      <span class="eyebrow mono">02 / THE LOAD</span>
-      <h2 class="display" id="load-title"><span class="approx">≈</span><span class="count" data-count="200">200</span> tons.<br><em>In one day.</em></h2>
-      <p class="src mono">HISTORIC DAILY JELLYFISH LOAD · CITED IN ENEC MENTORING, 30 OCTOBER</p>
+    <div class="ch__head approach__head">
+      <span class="eyebrow mono">01 / THE APPROACH</span>
+      <h2 class="display" data-split>Three prongs.<br><em>One way out.</em></h2>
+      <div class="approach__lede reveal">
+        <p class="lead">ENEC already sees blooms coming offshore. The open problem is the next twelve hours: what you do once the alert fires, without crews, boats and nets working through the night.</p>
+        <p>High Tide answers with three forces acting on the same animal at the same time, plus a controller that decides where the way out is and checks that it worked.</p>
+      </div>
     </div>
-    <div class="stats">
-      <article class="stat reveal"><b><span data-count="690">690</span><u>m³/s</u></b><h3>Cooling flow</h3><p>Seawater the plant can draw.</p><a class="cite" href="https://doi.org/10.1016/j.ocemod.2023.102274" target="_blank" rel="noopener">Ocean Modelling, 2023 ↗</a></article>
-      <article class="stat reveal"><b>30–45<u>cm</u></b><h3>Bell diameter</h3><p>The animal in the ENEC brief.</p><a class="cite" href="https://challengeon.atrc.ae/en/challenges/atp2026/pages/enec-challenge-statement?lang=en" target="_blank" rel="noopener">ENEC challenge statement ↗</a></article>
-      <article class="stat reveal"><b><span data-count="0.05" data-decimals="2">0.05</span><u>m/s</u></b><h3>Mean offshore current</h3><p>Slow water. Direction matters.</p><a class="cite" href="https://bibliotekanauki.pl/articles/2078874.pdf" target="_blank" rel="noopener">Nesterov et al. ↗</a></article>
-      <article class="stat reveal"><b>5.5–9.5<u>m</u></b><h3>Dredged depth</h3><p>Dredged intake channel.</p><a class="cite" href="https://www.nmdc-dredgingmarine.com/ar/projects/barakah-npp-marine-works/" target="_blank" rel="noopener">NMDC marine works ↗</a></article>
+
+    <div class="prongs">
+      <article class="prong prong--air reveal">
+        <span class="prong__n mono">PRONG 01 · PHYSICAL</span>
+        <div class="prong__viz" aria-hidden="true">
+          <svg viewBox="0 0 240 160"><g class="pv-bubbles" fill="none" stroke="currentColor">
+            <circle cx="40" cy="140" r="3"/><circle cx="60" cy="130" r="4"/><circle cx="80" cy="120" r="2.5"/><circle cx="100" cy="110" r="4"/><circle cx="120" cy="100" r="3"/><circle cx="140" cy="90" r="5"/><circle cx="160" cy="80" r="3"/><circle cx="180" cy="70" r="4"/><circle cx="200" cy="60" r="3"/><circle cx="70" cy="120" r="2"/><circle cx="130" cy="90" r="2"/><circle cx="190" cy="58" r="2"/></g>
+            <path d="M20 150L220 50" stroke="currentColor" stroke-width="2" stroke-dasharray="2 6" opacity=".7"/>
+            <g class="pv-path" fill="none" stroke="#5cffb0" stroke-width="1.6"><path d="M10 40C70 40 100 70 120 96S170 150 230 150"/></g>
+          </svg>
+        </div>
+        <h3>Bubble corridor</h3>
+        <p>A seabed hose releases a wall of rising air. At the surface it throws water sideways at <b>0.30–0.43 m/s</b> — about ten times what a blue blubber can swim. Sections switch on only where tracked animals are, and the wall mirrors when the tide turns.</p>
+        <ul class="prong__facts mono"><li><b>≈10×</b> swim speed</li><li><b>194</b> × 50 m sections</li><li><b>0</b> contact</li></ul>
+      </article>
+
+      <article class="prong prong--stick reveal">
+        <span class="prong__n mono">PRONG 02 · CHEMICAL — THE STICK</span>
+        <div class="prong__viz" aria-hidden="true">
+          <svg viewBox="0 0 240 160"><defs><radialGradient id="pvS" cx="70%" cy="50%" r="60%"><stop offset="0" stop-color="#ff5a3c" stop-opacity=".7"/><stop offset="1" stop-color="#ff5a3c" stop-opacity="0"/></radialGradient></defs>
+            <rect x="80" y="10" width="160" height="140" fill="url(#pvS)" class="pv-pulse"/>
+            <g class="pv-push" fill="#e9f6ff"><path d="M-16 0C-16 -18 16 -18 16 0Q8 5 0 2Q-8 5 -16 0Z"/><path d="M-9 4Q-8 14 -10 20M0 4Q0 16 -1 22M9 4Q9 14 11 20" stroke="#e9f6ff" stroke-width="2" fill="none" opacity=".6"/></g>
+            <text x="150" y="84" class="mono" font-size="9" fill="#ffb3a3" text-anchor="middle">C₉H₁₆O</text>
+          </svg>
+        </div>
+        <h3>(E)-2-nonenal</h3>
+        <p>The molecule that floods the water when a jellyfish is injured — a natural “danger here” signal. Dosed as a thin, pulsed band in front of the intake approach, it is meant to make animals swim <i>away</i> on their own.</p>
+        <ul class="prong__facts mono"><li><b>23×</b> more near injury</li><li><b>5 µg/L</b> design band</li><li><b>1,092×</b> below fish LC₅₀ est.</li></ul>
+      </article>
+
+      <article class="prong prong--carrot reveal">
+        <span class="prong__n mono">PRONG 03 · CHEMICAL — THE CARROT</span>
+        <div class="prong__viz" aria-hidden="true">
+          <svg viewBox="0 0 240 160"><defs><radialGradient id="pvC" cx="90%" cy="50%" r="70%"><stop offset="0" stop-color="#a97bff" stop-opacity=".8"/><stop offset="1" stop-color="#730fff" stop-opacity="0"/></radialGradient></defs>
+            <rect width="240" height="160" fill="url(#pvC)" class="pv-pulse"/>
+            <g fill="none" stroke="#cdbcff" stroke-dasharray="4 7" class="pv-flow"><path d="M240 70C180 70 150 80 110 80S40 90 0 90"/><path d="M240 92C180 92 150 100 110 104S40 116 0 118" opacity=".6"/><path d="M240 50C180 46 150 56 110 58S40 62 0 62" opacity=".6"/></g>
+            <g class="pv-pull" fill="#e9f6ff"><path d="M-16 0C-16 -18 16 -18 16 0Q8 5 0 2Q-8 5 -16 0Z"/><path d="M-9 4Q-8 14 -10 20M0 4Q0 16 -1 22M9 4Q9 14 11 20" stroke="#e9f6ff" stroke-width="2" fill="none" opacity=".6"/></g>
+          </svg>
+        </div>
+        <h3>Brine-shrimp water</h3>
+        <p>Water that has held live <i>Artemia</i> smells like food. Released only at the exit the controller has chosen, it gives animals that slipped past the wall a reason to head for the door instead of the pumps.</p>
+        <ul class="prong__facts mono"><li><b>1</b> exit dosed at a time</li><li><b>0.5–5.4</b> m³/h</li><li><b>5–54 kg</b> live culture</li></ul>
+      </article>
+    </div>
+
+    <div class="brain reveal">
+      <div class="brain__core"><span class="mono">+ THE CONTROLLER</span><h3 class="display display--s">Sense <em>·</em> Decide <em>·</em> Steer <em>·</em> Verify</h3></div>
+      <p>Cameras, sonar and current meters track the bloom. Software picks the exit the tide will carry them out of, fires only the wall sections and cue valves that matter, and counts what clears and what comes back. Power cut, blocked exit or bad data: everything fails <b>off</b>, and the plant’s existing screens remain the backstop.</p>
     </div>
   </div>
-
-  <figure class="plate" id="plate">
-    <div class="plate__img"><img src="./assets/img/uae-coast-landsat.webp" alt="Landsat satellite view of the UAE coast west of Abu Dhabi: pale sand flats, turquoise shallows and dark open water" loading="lazy" decoding="async"></div>
-    <div class="plate__hud mono">
-      <span class="plate__tl">PLATE 02 — UAE COAST, ARABIAN GULF</span>
-      <span class="plate__tr">LANDSAT · 18 SEP 2001</span>
-      <span class="plate__bl">HISTORICAL REGIONAL CONTEXT<br>BARAKAH LIES WEST ALONG THIS SHORE</span>
-      <span class="plate__br">NASA EARTH OBSERVATORY / USGS</span>
-      <i class="plate__cross"></i>
-    </div>
-    <figcaption class="plate__cap">
-      <h3 class="display display--s">Warm, salty,<br><em>shallow water.</em></h3>
-      <div class="season" id="season">
-        <div class="season__bar" style="--v:21.6"><b>21.6°</b><i></i><span>Winter</span></div>
-        <div class="season__bar" style="--v:25.3"><b>25.3°</b><i></i><span>Spring</span></div>
-        <div class="season__bar" style="--v:32.7"><b>32.7°</b><i></i><span>Summer</span></div>
-        <div class="season__bar" style="--v:30.6"><b>30.6°</b><i></i><span>Autumn</span></div>
-      </div>
-      <p class="mono season__note">BARAKAH SEA-SURFACE °C · 2003–2019 · SALINITY 44–45 PSU</p>
-    </figcaption>
-  </figure>
 </section>
 
-<!-- ───────────── 03 · The animal ───────────── -->
+<!-- ───────────── 02 · The animal ───────────── -->
 <section id="animal" class="ch animal">
   <div class="animal__stage" id="animal-stage">
     <div class="wrap animal__grid">
       <div class="animal__copy">
-        <span class="eyebrow mono">03 / THE ANIMAL</span>
+        <span class="eyebrow mono">02 / THE ANIMAL</span>
         <h2 class="display" data-split><i>Catostylus</i><br><em>mosaicus.</em></h2>
         <ul class="spec">
-          <li class="reveal"><b>30–45 cm</b><span>Bell diameter</span></li>
-          <li class="reveal"><b><span class="approx">≈</span>36 mm/s</b><span>Swim speed. Slower than the current.</span></li>
-          <li class="reveal"><b>Oct–Nov</b><span>Peak season on the Abu Dhabi coast</span></li>
+          <li class="reveal"><b>30–45 cm</b><span>Bell diameter in the ENEC brief</span></li>
+          <li class="reveal"><b>2–8 kg</b><span>Wet mass per animal at that size (our estimate, see Numbers)</span></li>
+          <li class="reveal"><b><span class="approx">≈</span>36 mm/s</b><span>Swim speed. Slower than most of the water around it.</span></li>
+          <li class="reveal"><b>Oct–Nov</b><span>Aggregations reported on the Abu Dhabi coast</span></li>
         </ul>
       </div>
       <div class="animal__viz" aria-hidden="true">
@@ -129,7 +155,7 @@
         <div class="callout callout--b mono"><i></i><span>8 ORAL ARMS<br><b>NO LONG TENTACLES</b></span></div>
         <div class="callout callout--c mono"><i></i><span>PULSE-AND-GLIDE<br><b>~36 MM/S</b></span></div>
         <div class="animal__ring"></div>
-        <div class="animal__tag mono">FIG. 03 — PROCEDURAL SPECIMEN, NOT TO SCALE</div>
+        <div class="animal__tag mono">FIG. 02 — PROCEDURAL SPECIMEN, NOT TO SCALE</div>
       </div>
     </div>
   </div>
@@ -142,6 +168,7 @@
         <figcaption class="mono">AQUARIUM FOOTAGE, ILLUSTRATIVE · ELINE SUN / PEXELS</figcaption>
       </figure>
       <div class="animal__text">
+        <p class="lead">No brain, but eight sense organs around the bell rim, each carrying gravity sensors and light-sensing eyespots. Lab studies show medusae choosing the side of a tank that smells of food, and dropping food laced with a chemical released by injured jellyfish. Our whole bet is that a nudge they already respond to is enough — <em>if</em> you apply it where the water isn’t already winning.</p>
         <figure class="frame frame--wide reveal">
           <img src="./assets/img/catostylus-reference.webp" alt="A blue blubber jellyfish, Catostylus mosaicus, swimming in green coastal water" loading="lazy" decoding="async" data-parallax>
           <figcaption class="mono">BLUE BLUBBER JELLY · ANDREW HARVEY, CC BY 4.0, RE-ENCODED · OBSERVED IN AUSTRALIA</figcaption>
@@ -151,70 +178,156 @@
   </div>
 </section>
 
-<!-- ───────────── 04 · Carrot & stick ───────────── -->
-<section id="cues" class="ch cues">
-  <div class="wrap">
-    <div class="ch__head">
-      <span class="eyebrow mono">04 / BIOCHEMICAL STEERING</span>
-      <h2 class="display" data-split>Push away.<br><em>Pull toward the exit.</em></h2>
+<!-- ───────────── 03 · Biochemical steering (the differentiator) ───────────── -->
+<section id="steering" class="steer">
+  <div class="steer__bg" aria-hidden="true"><i class="steer__orb steer__orb--a"></i><i class="steer__orb steer__orb--b"></i><i class="steer__orb steer__orb--c"></i></div>
+  <div class="wrap steer__wrap">
+    <div class="steer__head">
+      <span class="eyebrow mono steer__eyebrow">03 / BIOCHEMICAL STEERING · THE DIFFERENTIATOR</span>
+      <h2 class="steer__title" data-split>Don’t just block them.<br><span class="grad">Make them want to leave.</span></h2>
+      <p class="lead reveal">Every jellyfish defence in use today is physical: screens, nets, boats, shredders, bubbles. Nobody is steering the animal’s own behaviour. That is the gap High Tide is built to test.</p>
     </div>
 
-    <div class="cues__grid">
-      <article class="cue cue--stick reveal">
-        <header><b class="cue__sign">−</b><div><small class="mono">THE STICK</small><h3>(E)-2-nonenal</h3></div></header>
-        <div class="cue__viz">
-          <canvas id="molecule" aria-label="Rotating 3D model of (E)-2-nonenal, a nine-carbon aldehyde" role="img"></canvas>
-          <span class="mono cue__tag">C₉H₁₆O · PUBCHEM CID 5283335 · DRAG TO ROTATE</span>
-          <span class="mono cue__legend"><i class="k k--o"></i>O <i class="k k--c"></i>C <i class="k k--h"></i>H</span>
+    <!-- Why chemistry matters at this site -->
+    <div class="pull reveal" id="pull">
+      <div class="pull__copy">
+        <span class="mono pull__k">WHY IT CAN WORK HERE</span>
+        <h3 class="display display--s">At the mouth of Barakah’s intake basin, the pumps pull at <em class="t-cyan">3 cm/s</em>.<br>A blue blubber swims at <em class="t-mint">3.6 cm/s</em>.</h3>
+        <p>Out there, a jellyfish that <i>decides</i> to leave still can. A few kilometres closer, the channel runs ten times faster and nothing it does matters. So the cues go where the animal can still win — and the bubbles do the heavy lifting everywhere else.</p>
+      </div>
+      <figure class="pull__chart">
+        <svg id="pull-chart" viewBox="0 0 640 330" role="img" aria-label="Chart: mean intake-driven water speed rises from 3 centimetres per second at the basin mouth, 6 kilometres from the intakes, to 27 centimetres per second in the channel. The jellyfish swim speed of 3.6 centimetres per second is crossed about 4.3 kilometres out."></svg>
+        <figcaption class="mono">MEAN INTAKE-DRIVEN SPEED ALONG THE APPROACH · 690 M³/S ÷ CROSS-SECTION (TRACED WIDTH × ASSUMED DEPTH) · TIDES ADD ± ON TOP</figcaption>
+      </figure>
+    </div>
+
+    <div class="cues2">
+      <!-- STICK -->
+      <article class="cue2 cue2--stick reveal">
+        <header class="cue2__head">
+          <b class="cue2__sign">−</b>
+          <div><small class="mono">THE STICK · PUSH AWAY FROM THE INTAKE</small><h3>(E)-2-nonenal</h3><span class="mono cue2__id">C₉H₁₆O · 140.22 g/mol · CAS 18829-56-6 · FEMA 3213</span></div>
+        </header>
+        <div class="cue2__grid">
+          <div class="cue2__viz">
+            <canvas id="molecule" aria-label="Rotating 3D model of (E)-2-nonenal, a nine-carbon aldehyde" role="img"></canvas>
+            <span class="mono cue__tag">PUBCHEM CID 5283335 · DRAG TO ROTATE</span>
+            <span class="mono cue__legend"><i class="k k--o"></i>O <i class="k k--c"></i>C <i class="k k--h"></i>H</span>
+          </div>
+          <div class="evid">
+            <span class="mono evid__k">WHAT THE EVIDENCE SAYS, IN PLAIN WORDS</span>
+            <div class="beakers" aria-label="Uninjured: 1 times. Injured: 23 times.">
+              <div class="beaker"><i style="--h:4%"></i><b>1×</b><span>Water around an <u>unhurt</u> jellyfish</span></div>
+              <div class="beaker beaker--hot"><i style="--h:92%"></i><b>23×</b><span>Water around an <u>injured</u> one</span></div>
+            </div>
+            <ol class="evid__list">
+              <li><b>It’s a real alarm signal.</b> Japanese researchers measured the water around injured and unhurt jellyfish. This one molecule was 23 times more concentrated near injury.</li>
+              <li><b>It isn’t luck.</b> Ten samples each side. The odds of a gap that size appearing by chance are under 1 in 1,000 <span class="mono">(p = 0.00094)</span>.</li>
+              <li><b>Jellyfish react to it.</b> In feeding tests, a sea nettle let go of food treated with it faster than untreated food.</li>
+              <li><b>What’s not proven:</b> that an adult blue blubber swims <i>away</i> from it in open water. That is experiment #1 in our plan.</li>
+            </ol>
+            <a class="cite" href="https://doi.org/10.1007/s10886-026-01740-4" target="_blank" rel="noopener">Miura et al. 2026 · J. Chemical Ecology · Figs 3–5 ↗</a>
+          </div>
         </div>
-        <h4>Push away from the intake</h4>
-        <dl class="facts mono"><div><dt>23×</dt><dd>injured vs sham</dd></div><div><dt>n = 10</dt><dd>per group</dd></div><div><dt>p = 0.00094</dt><dd>Miura Fig. 4</dd></div></dl>
-        <a class="cite" href="https://doi.org/10.1007/s10886-026-01740-4" target="_blank" rel="noopener">Miura et al. · J. Chemical Ecology ↗</a>
+        <div class="dose">
+          <div class="dose__cell"><b>5<u>µg/L</u></b><span>Design band in front of the gate. About <i>a teaspoon in a 25 m pool</i>.</span></div>
+          <div class="dose__cell"><b>648<u>g/h</u></b><span>While pulsing (40 % duty, 300 m band, 0.1 m/s water). 7.8 kg per 12 h event.</span></div>
+          <div class="dose__cell"><b>0.26<u>µg/L</u></b><span>Left by the time it reaches the pumps — 21,000× below the fish LC₅₀ estimate.</span></div>
+          <div class="dose__cell"><b>1,092×</b><span>Margin in the band itself vs the 5.5 mg/L fish LC₅₀ screening estimate.</span></div>
+        </div>
       </article>
 
-      <article class="cue cue--carrot reveal">
-        <header><b class="cue__sign">+</b><div><small class="mono">THE CARROT</small><h3>Brine shrimp <i>(Artemia)</i></h3></div></header>
-        <div class="cue__viz cue__viz--plume">
-          <svg viewBox="0 0 520 300" role="img" aria-label="Diagram: a cue gradient spreading from the exit arm of a two-inflow chamber, with a jellyfish turning toward it">
-            <defs>
-              <radialGradient id="plumeG" cx="88%" cy="30%" r="80%"><stop offset="0" stop-color="#a97bff" stop-opacity=".85"/><stop offset=".45" stop-color="#730fff" stop-opacity=".28"/><stop offset="1" stop-color="#730fff" stop-opacity="0"/></radialGradient>
-            </defs>
-            <rect x="0" y="0" width="520" height="300" fill="url(#plumeG)" class="plume__haze"/>
-            <g class="plume__lines" fill="none" stroke="#b99aff" stroke-width="1.2">
-              <path d="M500 82C410 84 352 96 292 130S170 176 40 178"/>
-              <path d="M500 62C400 60 330 70 262 112S150 150 40 148" opacity=".7"/>
-              <path d="M500 104C420 108 372 124 322 152S200 204 40 210" opacity=".7"/>
-              <path d="M500 40C380 36 300 44 232 92S130 118 40 116" opacity=".4"/>
-              <path d="M500 128C430 134 392 150 352 174S230 232 40 242" opacity=".4"/>
-            </g>
-            <g class="plume__arm mono" font-size="11" fill="#cdbcff"><text x="408" y="30">EXIT ARM · CUE</text><text x="408" y="282" opacity=".5">BLANK ARM</text></g>
-            <path d="M500 218H330L250 178" fill="none" stroke="#5d7480" stroke-dasharray="3 7"/>
-            <g class="plume__jelly">
-              <path d="M-26 0C-26 -30 26 -30 26 0Q13 8 0 3Q-13 8 -26 0Z" fill="#e9f6ff" opacity=".92"/>
-              <path d="M-14 6Q-12 22 -16 34M-4 6Q-3 26 -6 40M6 6Q7 26 4 40M15 6Q14 22 18 34" stroke="#e9f6ff" stroke-width="3" stroke-linecap="round" fill="none" opacity=".6"/>
-            </g>
-          </svg>
-          <span class="mono cue__tag">CONCEPT · CUE GRADIENT FROM THE EXIT ARM</span>
+      <!-- CARROT -->
+      <article class="cue2 cue2--carrot reveal">
+        <header class="cue2__head">
+          <b class="cue2__sign">+</b>
+          <div><small class="mono">THE CARROT · PULL TOWARD THE EXIT</small><h3>Brine-shrimp water <i>(Artemia)</i></h3><span class="mono cue2__id">A FOOD SMELL · NO SINGLE MOLECULE · CONDITIONED ON SITE</span></div>
+        </header>
+        <div class="cue2__grid">
+          <div class="cue2__viz cue2__viz--plume">
+            <svg viewBox="0 0 520 300" role="img" aria-label="Diagram: a food-cue plume spreading from the active exit, with a jellyfish turning toward it">
+              <defs><radialGradient id="plumeG" cx="88%" cy="30%" r="80%"><stop offset="0" stop-color="#a97bff" stop-opacity=".85"/><stop offset=".45" stop-color="#730fff" stop-opacity=".28"/><stop offset="1" stop-color="#730fff" stop-opacity="0"/></radialGradient></defs>
+              <rect x="0" y="0" width="520" height="300" fill="url(#plumeG)" class="plume__haze"/>
+              <g class="plume__lines" fill="none" stroke="#b99aff" stroke-width="1.2">
+                <path d="M500 82C410 84 352 96 292 130S170 176 40 178"/><path d="M500 62C400 60 330 70 262 112S150 150 40 148" opacity=".7"/><path d="M500 104C420 108 372 124 322 152S200 204 40 210" opacity=".7"/><path d="M500 40C380 36 300 44 232 92S130 118 40 116" opacity=".4"/><path d="M500 128C430 134 392 150 352 174S230 232 40 242" opacity=".4"/>
+              </g>
+              <g class="plume__arm mono" font-size="11" fill="#cdbcff" text-anchor="end"><text x="506" y="30">ACTIVE EXIT · DOSED</text><text x="506" y="282" opacity=".5">OTHER EXIT · OFF</text></g>
+              <g class="plume__jelly"><path d="M-26 0C-26 -30 26 -30 26 0Q13 8 0 3Q-13 8 -26 0Z" fill="#e9f6ff" opacity=".92"/><path d="M-14 6Q-12 22 -16 34M-4 6Q-3 26 -6 40M6 6Q7 26 4 40M15 6Q14 22 18 34" stroke="#e9f6ff" stroke-width="3" stroke-linecap="round" fill="none" opacity=".6"/></g>
+            </svg>
+          </div>
+          <div class="evid">
+            <span class="mono evid__k">WHAT THE EVIDENCE SAYS, IN PLAIN WORDS</span>
+            <ol class="evid__list">
+              <li><b>Jellyfish go where food smells are.</b> In a two-inlet tank, moon jellies chose the side carrying water that had held brine shrimp.</li>
+              <li><b>The test was fair.</b> Both sides got the same water flow and the sides were swapped, so the jellies weren’t just drifting with the current.</li>
+              <li><b>Why only one exit at a time:</b> pulling animals toward an exit is only useful if that exit actually clears. The controller doses the exit the tide is flowing out of — never both.</li>
+              <li><b>What’s not proven:</b> the threshold dilution for adult blue blubbers. The bench series (0 / 10 / 50 / 100 % stock) finds it.</li>
+            </ol>
+            <a class="cite" href="https://link.springer.com/chapter/10.1007/978-94-011-3240-4_52" target="_blank" rel="noopener">Arai 1991 · chemical-side preference in medusae ↗</a>
+          </div>
         </div>
-        <h4>Pull toward the exit</h4>
-        <dl class="facts mono"><div><dt>2 inflows</dt><dd>1 central outflow</dd></div><div><dt><i>Aurelia</i></dt><dd>moon jellies</dd></div><div><dt>Side swap</dt><dd>controls for bias</dd></div></dl>
-        <a class="cite" href="https://link.springer.com/chapter/10.1007/978-94-011-3240-4_52" target="_blank" rel="noopener">Arai · Chemical-side preference in medusae ↗</a>
+        <div class="dose dose--violet">
+          <div class="dose__cell"><b>10k–100k<u>×</u></b><span>Dilution of the stock at the exit window — the bracket (50 m × 3 m window, 0.1 m/s).</span></div>
+          <div class="dose__cell"><b>0.5–5.4<u>m³/h</u></b><span>Conditioned water released while the exit is active.</span></div>
+          <div class="dose__cell"><b>5–54<u>kg</u></b><span>Standing live Artemia culture. The shrimp aren’t used up — only their water.</span></div>
+          <div class="dose__cell"><b>1–8<u>m³</u></b><span>Culture tank volume on shore. A shipping container, not a factory.</span></div>
+        </div>
       </article>
     </div>
 
-    <p class="zero mono reveal"><b>FIRST MARINE TRIAL:</b> ZERO CHEMICAL RELEASE. CUES STAY IN THE LAB UNTIL PROVEN.</p>
+    <!-- What the cues add (model) -->
+    <div class="adds reveal">
+      <div class="adds__head">
+        <span class="mono t-violet">WHAT THE CUES ADD · SAME 900 ARRIVALS · 3 SEEDS · CUE LAYER = HYPOTHESIS</span>
+        <h3 class="display display--s">Bubbles route the bloom.<br><em class="t-violet">Cues close the gap.</em></h3>
+        <p>We ran the team’s transport model with and without a cue response capped at the animal’s own swim speed (36 mm/s). Nothing stronger is assumed.</p>
+      </div>
+      <div class="adds__grid">
+        <figure class="adds__card">
+          <span class="mono">TIDE TURNS MID-EVENT · REACHED THE INTAKE</span>
+          <div class="hbars" id="adds-rev"></div>
+          <figcaption><b class="t-violet">−86 %</b> further intake entries once cues are on, after the corridor has already done its work.</figcaption>
+        </figure>
+        <figure class="adds__card">
+          <span class="mono">WEAK CURRENT · CLEARED OUTSIDE</span>
+          <div class="hbars" id="adds-weak"></div>
+          <figcaption><b class="t-violet">7×</b> more animals cleared when the water itself isn’t moving them — exactly where bubbles alone stall.</figcaption>
+        </figure>
+        <figure class="adds__card">
+          <span class="mono">WEAK CURRENT · AIR THE WALL USED</span>
+          <div class="hbars" id="adds-air"></div>
+          <figcaption><b class="t-violet">−50 %</b> compressor energy: animals that steer themselves don’t need the wall switched on.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- Differentiator table -->
+    <div class="vs reveal">
+      <span class="mono vs__k">HOW EVERYONE ELSE DOES IT</span>
+      <div class="vs__table" role="table" aria-label="Comparison of jellyfish defences">
+        <div class="vs__row vs__row--h" role="row"><span role="columnheader">Approach</span><span role="columnheader">Who uses it</span><span role="columnheader">Animals</span><span role="columnheader">People at sea</span><span role="columnheader">Fails how</span></div>
+        <div class="vs__row" role="row"><span role="cell"><b>Screens & racks</b></span><span role="cell">Every plant (last line)</span><span role="cell" class="bad">Killed / disposed</span><span role="cell">Crews clear by hand</span><span role="cell">Clog → plant trips (Gravelines 2025 & 2026)</span></div>
+        <div class="vs__row" role="row"><span role="cell"><b>Nets & booms</b></span><span role="cell">Gulf desal & power</span><span role="cell" class="bad">Pile up, die</span><span role="cell">Cleaning boats</span><span role="cell">Load blocks the water too</span></div>
+        <div class="vs__row" role="row"><span role="cell"><b>Boats collecting</b></span><span role="cell">EDF Gravelines: 7 boats, 24/7</span><span role="cell" class="mid">Released offshore</span><span role="cell" class="bad">Round the clock</span><span role="cell">Night, weather, scale</span></div>
+        <div class="vs__row" role="row"><span role="cell"><b>Shredder robots</b></span><span role="cell">KAIST JEROS (0.9 t/h per 3)</span><span role="cell" class="bad">Shredded</span><span role="cell">Supervision</span><span role="cell">Would need 28 at Barakah’s mean load</span></div>
+        <div class="vs__row" role="row"><span role="cell"><b>Fixed bubble curtain</b></span><span role="cell">Diablo Canyon, Ringhals</span><span role="cell" class="good">Unharmed</span><span role="cell" class="good">None</span><span role="cell">One direction, always on: in our model, a pile-up when the tide turns</span></div>
+        <div class="vs__row vs__row--us" role="row"><span role="cell"><b>High Tide</b></span><span role="cell">Barakah concept</span><span role="cell" class="good">Unharmed, routed out</span><span role="cell" class="good">None in normal ops</span><span role="cell">Fails off → existing screens</span></div>
+      </div>
+    </div>
+
+    <p class="zero mono reveal"><b>FIRST MARINE TRIAL:</b> ZERO CHEMICAL RELEASE. CUES STAY IN THE LAB UNTIL FOUR GATES ARE PASSED — DIRECTIONAL RESPONSE, ADDED VALUE OVER BUBBLES ALONE, NON-TARGET SAFETY, CONTAINMENT.</p>
   </div>
 </section>
 
-<!-- ───────────── 05 · The system (horizontal) ───────────── -->
+<!-- ───────────── 04 · The system (horizontal) ───────────── -->
 <section id="system" class="system">
   <div class="system__pin" id="system-pin">
     <div class="system__track" id="system-track">
 
       <div class="panel panel--intro">
-        <span class="eyebrow mono">05 / THE SYSTEM</span>
+        <span class="eyebrow mono">04 / THE SYSTEM</span>
         <h2 class="display">Sense. Decide.<br><em>Steer. Verify.</em></h2>
-        <p class="lead">Four steps, from the alert to a clear intake.</p>
+        <p class="lead">From ENEC’s alert to a clear intake, in four steps that loop every few seconds.</p>
         <span class="panel__hint mono">KEEP SCROLLING <i>→</i></span>
       </div>
 
@@ -223,7 +336,8 @@
         <div class="panel__body">
           <h3 class="display display--m">Sense</h3>
           <p class="lead">It starts with the alert ENEC already has.</p>
-          <ul class="chips mono"><li>OFFSHORE ALERT</li><li>OVERHEAD TRACKING</li><li>CURRENT VECTOR</li></ul>
+          <p>Two camera masts on the breakwater track individual bells by day, imaging sonar by night. Three current profilers tell the controller which way the water is going at the gate, in the basin and in the channel.</p>
+          <ul class="chips mono"><li>ENEC OFFSHORE ALERT</li><li>2 CAMERA MASTS</li><li>2 SONARS</li><li>3 ADCP</li></ul>
         </div>
         <div class="panel__viz">
           <svg viewBox="0 0 420 320" class="dg dg--sense" aria-hidden="true">
@@ -242,19 +356,20 @@
         <div class="panel__num">02</div>
         <div class="panel__body">
           <h3 class="display display--m">Decide</h3>
-          <p class="lead">Choose a side. Choose sections.</p>
-          <ul class="chips mono"><li>6 SECTIONS</li><li>13 M TRIGGER</li><li>10 S SWITCH DELAY</li></ul>
+          <p class="lead">Choose the exit. Choose the sections.</p>
+          <p>Flood tide: route north past the breakwater head. Ebb: route west along the shore. Fire only the 50 m sections within 13 m of a tracked animal and their neighbours; switch sides 10 s after the current reverses.</p>
+          <ul class="chips mono"><li>EXIT N / EXIT W</li><li>13 M TRIGGER</li><li>10 S SWITCH DELAY</li></ul>
         </div>
         <div class="panel__viz">
           <svg viewBox="0 0 420 320" class="dg dg--decide" aria-hidden="true">
-            <text x="210" y="24" class="mono dg__exitA" font-size="11" fill="#5cffb0" text-anchor="middle">EXIT A</text>
-            <text x="210" y="310" class="mono dg__exitB" font-size="11" fill="#5cffb0" text-anchor="middle">EXIT B</text>
+            <text x="210" y="24" class="mono dg__exitA" font-size="11" fill="#5cffb0" text-anchor="middle">EXIT N</text>
+            <text x="210" y="310" class="mono dg__exitB" font-size="11" fill="#5cffb0" text-anchor="middle">EXIT W</text>
             <path d="M30 40H390M30 286H390" stroke="#5cffb0" stroke-dasharray="3 8" opacity=".5"/>
             <g class="dg__wall"><g class="dg__segs" stroke-width="9" stroke-linecap="round">
               <path d="M150 52L166 86"/><path d="M171 96L187 130"/><path d="M192 140L208 174"/><path d="M213 184L229 218"/><path d="M234 228L250 262"/><path d="M255 272L259 280"/>
             </g></g>
             <g class="dg__flow" fill="none" stroke="#e9f6ff" stroke-width="1.6"><path d="M330 120V200"/><path d="M322 190L330 202L338 190"/></g>
-            <text x="346" y="164" class="mono" font-size="10" fill="#9fb3bb">CROSS-FLOW</text>
+            <text x="346" y="164" class="mono" font-size="10" fill="#9fb3bb">TIDE</text>
             <g fill="#e9f6ff" class="dg__tracks"><circle cx="70" cy="120" r="4"/><circle cx="96" cy="176" r="4"/><circle cx="58" cy="206" r="4"/><circle cx="118" cy="144" r="4"/></g>
           </svg>
         </div>
@@ -264,21 +379,24 @@
         <div class="panel__num">03</div>
         <div class="panel__body">
           <h3 class="display display--m">Steer</h3>
-          <p class="lead">A wall made of air.</p>
-          <ul class="chips mono"><li>30° TO THE FLOW</li><li>0.33–1.00 M³/MIN AIR · 10 M</li><li>0.7–2.2 KW AT 8 M</li></ul>
+          <p class="lead">A wall made of air, a push, a pull.</p>
+          <p>Oil-free air at 1.1 L/s per metre of hose, 6 m down. The stick band pulses behind the wall; the carrot runs at the active exit. Guard line at the channel mouth fires only on breach.</p>
+          <ul class="chips mono"><li>0.30–0.43 M/S SURFACE JET</li><li>≈290 M³/MIN PER LINE</li><li>442 KW TYPICAL</li></ul>
         </div>
         <div class="panel__viz">
           <svg viewBox="0 0 420 320" class="dg dg--steer" aria-hidden="true">
             <rect x="352" y="118" width="60" height="84" fill="none" stroke="#ff5a3c"/><text x="382" y="164" class="mono" font-size="10" fill="#ff5a3c" text-anchor="middle">INTAKE</text>
+            <rect x="282" y="70" width="40" height="180" fill="#ff5a3c" opacity=".12" class="dg__stick"/>
             <path d="M150 40L262 280" stroke="#00ebff" stroke-width="2" opacity=".5"/>
             <g class="dg__bubbles" fill="none" stroke="#bff8ff"><circle cx="160" cy="62" r="4"/><circle cx="176" cy="96" r="6"/><circle cx="188" cy="122" r="3"/><circle cx="204" cy="156" r="5"/><circle cx="216" cy="182" r="7"/><circle cx="230" cy="212" r="4"/><circle cx="244" cy="242" r="6"/><circle cx="254" cy="262" r="3"/><circle cx="168" cy="80" r="3"/><circle cx="196" cy="140" r="4"/><circle cx="224" cy="198" r="3"/></g>
+            <circle cx="262" cy="300" r="22" fill="#a97bff" opacity=".18" class="dg__carrot"/>
             <g fill="none" stroke-width="2" class="dg__paths">
               <path d="M20 130C110 130 150 150 190 210S232 300 250 316" stroke="#5cffb0"/>
               <path d="M20 170C100 170 150 190 186 236S224 300 236 316" stroke="#5cffb0" opacity=".65"/>
               <path d="M20 96C116 96 170 112 206 168S250 300 262 316" stroke="#5cffb0" opacity=".4"/>
             </g>
             <text x="20" y="84" class="mono" font-size="10" fill="#9fb3bb">ARRIVALS →</text>
-            <text x="268" y="310" class="mono" font-size="11" fill="#5cffb0">EXIT</text>
+            <text x="276" y="310" class="mono" font-size="11" fill="#5cffb0">EXIT</text>
           </svg>
         </div>
       </article>
@@ -288,6 +406,7 @@
         <div class="panel__body">
           <h3 class="display display--m">Verify</h3>
           <p class="lead">Count what clears. Count what comes back.</p>
+          <p>Every track ends as one of four outcomes. Returns are logged separately because a returning animal is the first sign an exit is not really an exit.</p>
           <ul class="chips mono"><li>INTAKE ENTRIES</li><li>CLEARED</li><li>RETURNS</li><li>FAIL-SAFE OFF</li></ul>
         </div>
         <div class="panel__viz">
@@ -307,78 +426,39 @@
   </div>
 </section>
 
-<!-- ───────────── 06 · Results ───────────── -->
-<section id="results" class="ch results">
-  <div class="wrap">
-    <div class="ch__head">
-      <span class="eyebrow mono">06 / SAME 900 ARRIVALS · REVERSAL RUN</span>
-      <h2 class="display" data-split>The exit moves.<br><em>Does the bloom?</em></h2>
-      <p class="lead reveal">900 arrivals. The current flips halfway.</p>
+<!-- ───────────── 05 · The site (scroll-zoom map) ───────────── -->
+<section id="site" class="site">
+  <div class="site__pin" id="site-pin">
+    <div class="site__map" id="site-map" role="img" aria-label="Zooming map: from the Arabian Gulf to the Barakah intake basin, showing the four intakes, the bubble gate, the cue stations and the sensors."></div>
+    <div class="site__labels mono" id="site-labels" aria-hidden="true"></div>
+    <div class="site__hud mono" aria-hidden="true">
+      <span class="site__tl">05 / THE SITE · <b id="site-step-name">ARABIAN GULF</b></span>
+      <span class="site__tr" id="site-coords">23.97° N · 52.23° E</span>
+      <span class="site__bl"><i class="site__scale"><u id="site-scale-bar"></u></i><b id="site-scale">100 km</b></span>
+      <span class="site__br">TRACED FROM PUBLIC IMAGERY · LAYOUT INDICATIVE, TO BE SITED WITH ENEC SURVEY</span>
     </div>
-
-    <div class="chart" id="chart">
-      <div class="chart__legend mono"><span class="lg lg--intake">Reached the intake</span><span class="lg lg--out">Outside at finish</span><span class="lg lg--ret">Still in approach</span><span class="lg lg--other">Left by another boundary</span></div>
-      <div class="chart__row" data-row="none">
-        <div class="chart__label"><h3>No diversion</h3><span class="mono">OBSERVE ONLY</span></div>
-        <div class="chart__bar"><i class="seg seg--intake" style="--n:338"><b>338</b></i><i class="seg seg--out" style="--n:0"></i><i class="seg seg--ret" style="--n:456"><b>456</b></i><i class="seg seg--other" style="--n:106"><b>106</b></i></div>
-      </div>
-      <div class="chart__row" data-row="fixed">
-        <div class="chart__label"><h3>Fixed bubbles</h3><span class="mono">ALL SECTIONS, ONE SIDE</span></div>
-        <div class="chart__bar"><i class="seg seg--intake" style="--n:0"></i><i class="seg seg--out" style="--n:33"><b>33</b></i><i class="seg seg--ret" style="--n:722"><b>722</b></i><i class="seg seg--other" style="--n:145"><b>145</b></i></div>
-      </div>
-      <div class="chart__row chart__row--hero" data-row="controlled">
-        <div class="chart__label"><h3>Controlled sections</h3><span class="mono">SWITCHES WITH THE CURRENT</span></div>
-        <div class="chart__bar"><i class="seg seg--intake" style="--n:78"><b>78</b></i><i class="seg seg--out" style="--n:266"><b>266</b></i><i class="seg seg--ret" style="--n:390"><b>390</b></i><i class="seg seg--other" style="--n:166"><b>166</b></i></div>
-      </div>
+    <div class="site__cards" id="site-cards">
+      <article class="scard" data-step="0"><span class="mono">STEP 1 / 7</span><h3>The Arabian Gulf.</h3><p>One of the warmest, saltiest seas on Earth: 21.6 °C in winter, 32.7 °C in summer, 44–45 PSU at Barakah. Jellyfish blooms here have already halved a desalination plant’s output (Ghubra, Oman: 300 t).</p></article>
+      <article class="scard" data-step="1"><span class="mono">STEP 2 / 7</span><h3>Al Dhafra coast.</h3><p>Barakah sits in a shallow bay about 220 km west of Abu Dhabi city, with reef flats just east of the plant. To the north-east lies the Marawah Marine Biosphere Reserve — home to the world’s second-largest dugong population. Anything we put in the water has to respect both.</p></article>
+      <article class="scard" data-step="2"><span class="mono">STEP 3 / 7</span><h3>Four units, one basin.</h3><p>A 15 km breakwater system splits the sea in two. Water is drawn in on the west through a dredged channel (5.5–9.5 m); warm water leaves on the east, far from the intake, so it doesn’t recirculate. Up to <b>690 m³/s</b> — 59.6 million m³ a day.</p></article>
+      <article class="scard" data-step="3"><span class="mono">STEP 4 / 7</span><h3>Intakes 1 – 4.</h3><p>Four stepped pump-house intakes, each about 300 m of frontage, line the channel in front of the four reactor units. On a 200 t day, that’s <b>≈50 t per intake</b> — about 12,500 animals each — arriving at screens built to stop debris, not living mass.</p></article>
+      <article class="scard" data-step="4"><span class="mono">STEP 5 / 7</span><h3>The point of no return.</h3><p>Water speeds up as the basin narrows: 3 cm/s at the mouth, 27 cm/s in the channel. <b>4.3 km out</b>, the pull equals a blue blubber’s swim speed. Inside that line, every animal is on a one-way trip — unless something moves it.</p></article>
+      <article class="scard" data-step="5"><span class="mono">STEP 6 / 7</span><h3>The gate.</h3><p>Two mirrored, segmented bubble lines span the 4.2 km basin mouth — <b>4.4 km</b> and <b>4.5 km</b> of hose in 50 m sections. Flood tide: line A walks animals north round the breakwater head (<b class="t-mint">Exit N</b>). Ebb: line B walks them west along the shore (<b class="t-mint">Exit W</b>).</p></article>
+      <article class="scard" data-step="6"><span class="mono">STEP 7 / 7</span><h3>Everything in place.</h3><p><b class="t-coral">Stick</b>: 600 m pulsed band behind the gate. <b class="t-violet">Carrot</b>: one station per exit. Guard: 2 × 375 m double curtain at the channel mouth. 2 camera masts, 2 sonars, 3 current profilers. One shore station: 5 × 250 kW compressors, dosing skid, culture tanks — 20 km of feeders.</p></article>
     </div>
-
-    <div class="takeaways">
-      <article class="reveal"><b class="display display--m"><span data-count="260">260</span></b><p>fewer reach the intake</p></article>
-      <article class="reveal"><b class="display display--m"><span data-count="266">266</span></b><p>more cleared outside</p></article>
-      <article class="reveal"><b class="display display--m">0–42<u>%</u></b><p>cleared across 11 scenarios</p></article>
+    <div class="site__legend mono" id="site-legend" aria-hidden="true">
+      <span><i class="lg-i lg-i--intake"></i>Intakes 1–4</span><span><i class="lg-i lg-i--gate"></i>Bubble gate</span><span><i class="lg-i lg-i--stick"></i>Stick band</span><span><i class="lg-i lg-i--carrot"></i>Carrot</span><span><i class="lg-i lg-i--sense"></i>Sensors</span><span><i class="lg-i lg-i--exit"></i>Exits</span>
     </div>
-    <p class="fine mono reveal">HIGH TIDE V1.0 TRANSPORT MODEL · SEED 42 · NOT CFD</p>
+    <div class="site__progress"><i id="site-progress"></i></div>
   </div>
 </section>
 
-<!-- ───────────── 07 · Plan ───────────── -->
-<section id="plan" class="ch plan">
-  <div class="wrap">
-    <div class="ch__head">
-      <span class="eyebrow mono">07 / DELIVERY AND BUDGET</span>
-      <h2 class="display" data-split>Six months to<br><em>a pilot decision.</em></h2>
-    </div>
-
-    <div class="phases" id="phases">
-      <div class="phases__line"><i></i></div>
-      <article class="phase reveal"><span class="mono">FIRST 5 DAYS</span><h3>Lock the test</h3><b class="phase__cost mono">PROTOCOL · DATA REQUEST · QUOTES</b></article>
-      <article class="phase reveal"><span class="mono">MONTHS 1–3</span><h3>Measure the effect</h3><b class="phase__cost">AED 38k–134k</b></article>
-      <article class="phase reveal"><span class="mono">MONTHS 4–6</span><h3>Cost the marine trial</h3><b class="phase__cost">AED 106k–486k</b></article>
-    </div>
-
-    <div class="ask reveal">
-      <span class="eyebrow mono">THE ASK</span>
-      <p class="display display--s">A marine-lab partner and <em>bloom-load data.</em></p>
-    </div>
-
-    <div class="team">
-      <span class="eyebrow mono">THE CREW · 42 ABU DHABI</span>
-      <div class="team__grid">
-        <article class="reveal"><b>Syed Ahamed</b><span>Founder &amp; President<br>42 Abu Dhabi Robotics</span></article>
-        <article class="reveal"><b>Usman Mohammad</b><span>Applied Computer Science &amp; AI<br>Molecular Biology background</span></article>
-        <article class="reveal"><b>Randall Lutuciri</b><span>Embedded Systems &amp; Controls Director<br>42 Abu Dhabi Robotics</span></article>
-        <article class="reveal"><b>Mustafa Muhammed</b><span>Director of Software Engineering<br>42 Abu Dhabi Robotics</span></article>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ───────────── 08 · Live simulation (finale) ───────────── -->
+<!-- ───────────── 06 · Live simulation ───────────── -->
 <section id="sim" class="sim">
   <div class="wrap sim__intro">
-    <span class="eyebrow mono">08 / FINALE · THE WHOLE OPERATION, LIVE</span>
-    <h2 class="display" data-split>Barakah<br><em>sea-waters.</em></h2>
-    <p class="lead reveal">The whole operation, running live on our model.</p>
+    <span class="eyebrow mono">06 / THE SIMULATION · RUNNING LIVE</span>
+    <h2 class="display" data-split>Zoom into<br><em>one section.</em></h2>
+    <p class="lead reveal">One 60 m slice of the gate, 900 animals, 15 minutes, the tide turning half way. Every position below comes from the team’s transport engine, running in your browser. Switch the cues off and on and watch the difference.</p>
   </div>
 
   <div class="sim__stage" id="sim-stage">
@@ -479,6 +559,174 @@
 
     <p class="sim__fine mono">HIGH TIDE V1.0 ENGINE · CUE LAYER IS A HYPOTHESIS · STRUCTURES SCHEMATIC</p>
   </div>
+
+  <!-- Results across the archive -->
+  <div class="wrap results2" id="results">
+    <div class="ch__head">
+      <span class="eyebrow mono">06B / WHAT 165 RUNS SAY · REVERSAL RUN, SEED 42</span>
+      <h2 class="display display--m" data-split>The exit moves.<br><em>Does the bloom?</em></h2>
+    </div>
+    <div class="chart" id="chart">
+      <div class="chart__legend mono"><span class="lg lg--intake">Reached the intake</span><span class="lg lg--out">Outside at finish</span><span class="lg lg--ret">Still in approach</span><span class="lg lg--other">Left by another boundary</span></div>
+      <div class="chart__row" data-row="none">
+        <div class="chart__label"><h3>No diversion</h3><span class="mono">OBSERVE ONLY</span></div>
+        <div class="chart__bar"><i class="seg seg--intake" style="--n:338" title="Reached the intake: 338"><b>338</b></i><i class="seg seg--out" style="--n:0"></i><i class="seg seg--ret" style="--n:456" title="Still in approach: 456"><b>456</b></i><i class="seg seg--other" style="--n:106" title="Other boundary: 106"><b>106</b></i></div>
+      </div>
+      <div class="chart__row" data-row="fixed">
+        <div class="chart__label"><h3>Fixed bubbles</h3><span class="mono">ALL SECTIONS, ONE SIDE</span></div>
+        <div class="chart__bar"><i class="seg seg--intake" style="--n:0"></i><i class="seg seg--out" style="--n:33" title="Outside at finish: 33"><b>33</b></i><i class="seg seg--ret" style="--n:722" title="Still in approach: 722"><b>722</b></i><i class="seg seg--other" style="--n:145" title="Other boundary: 145"><b>145</b></i></div>
+      </div>
+      <div class="chart__row chart__row--hero" data-row="controlled">
+        <div class="chart__label"><h3>Controlled sections</h3><span class="mono">SWITCHES WITH THE CURRENT</span></div>
+        <div class="chart__bar"><i class="seg seg--intake" style="--n:78" title="Reached the intake: 78"><b>78</b></i><i class="seg seg--out" style="--n:266" title="Outside at finish: 266"><b>266</b></i><i class="seg seg--ret" style="--n:390" title="Still in approach: 390"><b>390</b></i><i class="seg seg--other" style="--n:166" title="Other boundary: 166"><b>166</b></i></div>
+      </div>
+      <div class="chart__row chart__row--cue" data-row="cues">
+        <div class="chart__label"><h3>Controlled + cues</h3><span class="mono">CUE LAYER = HYPOTHESIS</span></div>
+        <div class="chart__bar"><i class="seg seg--intake" style="--n:8" title="Reached the intake: 8"><b>8</b></i><i class="seg seg--out" style="--n:311" title="Outside at finish: 311"><b>311</b></i><i class="seg seg--ret" style="--n:320" title="Still in approach: 320"><b>320</b></i><i class="seg seg--other" style="--n:261" title="Other boundary: 261"><b>261</b></i></div>
+      </div>
+    </div>
+    <div class="takeaways">
+      <article class="reveal"><b class="display display--m"><span data-count="260">260</span></b><p>fewer reach the intake with controlled sections</p></article>
+      <article class="reveal"><b class="display display--m"><span data-count="330">330</span></b><p>fewer if the cues work as hypothesised</p></article>
+      <article class="reveal"><b class="display display--m">0<u>%</u></b><p>when the exit is blocked or animals don’t respond — we show those too</p></article>
+    </div>
+    <p class="note2 reveal"><b>Why does “fixed bubbles” show zero intake entries?</b> Because it never lets go: 722 animals stay trapped in the approach and bounce back 7,875 times. That is a pile-up waiting for the next tide, not a clear intake. Controlled sections trade a few entries for animals actually leaving.</p>
+    <p class="fine mono reveal">HIGH TIDE V1.0 TRANSPORT MODEL · 11 SCENARIOS × 5 CONFIGURATIONS × 3 SEEDS · DEPTH-AVERAGED, NOT CFD · NO BIOLOGICAL CALIBRATION</p>
+  </div>
+</section>
+
+<!-- ───────────── 07 · The numbers ───────────── -->
+<section id="data" class="ch data">
+  <div class="wrap">
+    <div class="ch__head">
+      <span class="eyebrow mono">07 / THE NUMBERS</span>
+      <h2 class="display" data-split>200 tonnes.<br><em>Let’s do the maths.</em></h2>
+      <p class="lead reveal">ENEC’s mentors gave us one hard number: about 200 tonnes of jellyfish on a peak day. Everything below starts from it. Every figure is reproducible from <span class="mono">model/design.py</span>.</p>
+    </div>
+
+    <!-- A. the load -->
+    <div class="dblock">
+      <div class="dblock__k mono"><b>A</b> THE LOAD ON A PEAK DAY</div>
+      <div class="tiles">
+        <div class="tile tile--hero"><b><span data-count="50000">50,000</span></b><span>animals in a day <em>(25,000–100,000 at 8–2 kg each)</em></span></div>
+        <div class="tile"><b>8.3<u>t/h</u></b><span>average, all day</span></div>
+        <div class="tile"><b>25<u>t/h</u></b><span>peak hour (×3, arrivals bunch on the tide)</span></div>
+        <div class="tile"><b>1.7<u>/s</u></b><span>animals per second at peak</span></div>
+        <div class="tile"><b>50<u>t</u></b><span>per intake per day · ≈12,500 animals</span></div>
+        <div class="tile"><b>20</b><span>10-tonne truckloads to dispose of</span></div>
+        <div class="tile"><b>28</b><span>JEROS shredder robots to match the average (83 at peak)</span></div>
+        <div class="tile"><b>59.6<u>M m³</u></b><span>of seawater pumped that day at the 690 m³/s design maximum</span></div>
+        <div class="tile"><b>1 per<u>1,192 m³</u></b><span>of cooling water, on average — they come in patches, not evenly</span></div>
+      </div>
+    </div>
+
+    <!-- B. where 200 t goes -->
+    <div class="dblock">
+      <div class="dblock__k mono"><b>B</b> WHERE 200 TONNES ENDS UP · MODEL-SCALED, PER SCENARIO</div>
+      <div class="flow2" id="flow2"></div>
+      <p class="dnote">Tonnes reaching the screens if each model run’s intake fraction applied to a 200 t day. Steady tides: 0 t with any corridor. When the tide turns mid-event: 51 t with the corridor, 7 t with cues. Power cut: 119 t. Blocked exit or animals that don’t respond: all 200 t — which is why the plant’s screens stay.</p>
+    </div>
+
+    <!-- C. hardware -->
+    <div class="dblock">
+      <div class="dblock__k mono"><b>C</b> WHAT GETS BUILT · CONCEPT BILL OF MATERIALS</div>
+      <div class="hw">
+        <div class="hw__lines">
+          <div class="hwline"><span class="mono">GATE LINE A · FLOOD → EXIT N</span><b>4,366 m</b><i style="--w:96%"></i><small>88 sections · 291 m³/min air · 520 kW if all on</small></div>
+          <div class="hwline"><span class="mono">GATE LINE B · EBB → EXIT W</span><b>4,542 m</b><i style="--w:100%"></i><small>91 sections · 303 m³/min · 541 kW if all on</small></div>
+          <div class="hwline hwline--guard"><span class="mono">GUARD · CHANNEL MOUTH (DOUBLE)</span><b>749 m</b><i style="--w:16.5%"></i><small>15 sections · 3.8 L/s·m to beat 0.29 m/s · 393 kW</small></div>
+          <div class="hwline hwline--stick"><span class="mono">STICK DIFFUSER BAND</span><b>600 m</b><i style="--w:13.2%"></i><small>pulsed, behind the gate</small></div>
+          <div class="hwline hwline--feed"><span class="mono">AIR & DOSING FEEDERS</span><b>20,359 m</b><i style="--w:100%"></i><small>HDPE DN50–200, routed along seabed and breakwater crest</small></div>
+        </div>
+        <div class="bom" id="bom"></div>
+      </div>
+    </div>
+
+    <!-- D. energy -->
+    <div class="dblock">
+      <div class="dblock__k mono"><b>D</b> ENERGY</div>
+      <div class="tiles tiles--4">
+        <div class="tile"><b>913<u>kW</u></b><span>worst case: a full gate line + guard at once</span></div>
+        <div class="tile"><b>0.016<u>%</u></b><span>of Barakah’s 5,600 MW at that worst case</span></div>
+        <div class="tile"><b>442<u>kW</u></b><span>typical (85 % of sections active in the model)</span></div>
+        <div class="tile"><b>5.8<u>MWh</u></b><span>per 12 h event · ≈ AED 1,700 at AED 0.30/kWh</span></div>
+      </div>
+      <div class="energy" id="energy"></div>
+    </div>
+
+    <!-- E. chemicals -->
+    <div class="dblock">
+      <div class="dblock__k mono"><b>E</b> HOW MUCH CHEMISTRY · DESIGN ENVELOPE, NOT A VALIDATED DOSE</div>
+      <div class="chem">
+        <div class="chem__table" id="chem-table"></div>
+        <div class="chem__side">
+          <div class="tile tile--coral"><b>7.8<u>kg</u></b><span>(E)-2-nonenal per 12 h event, mid case · AED 8,600–28,800 at bulk flavour-grade prices</span></div>
+          <div class="tile"><b>16<u>m³/h</u></b><span>seawater carrier while dosing (pre-diluted to 100 mg/L, half its solubility)</span></div>
+          <div class="tile tile--violet"><b>5.4<u>m³/h</u></b><span>max carrot water from a 54 kg culture · 0.5 m³/h at the lean end</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- F. money -->
+    <div class="dblock">
+      <div class="dblock__k mono"><b>F</b> MONEY · CLASS-5 ESTIMATE (−50 % / +100 %)</div>
+      <div class="money">
+        <div class="money__big reveal"><span class="mono">ONE BARAKAH UNIT OFFLINE FOR ONE DAY</span><b>33,600<u>MWh</u></b><em>≈ AED 6.2–9.9 M of output at USD 50–80/MWh</em></div>
+        <div class="money__big reveal"><span class="mono">FULL-SCALE HIGH TIDE, INSTALLED</span><b>AED 18–67<u>M</u></b><em>9.7 km of hose, 1,250 kW of compressors, sensors, dosing, controls</em></div>
+        <div class="money__big money__big--mint reveal"><span class="mono">PAYS BACK AFTER AVOIDING</span><b>2–11<u>unit-days</u></b><em>Torness lost ~£1 M a day in 2011. Oman LNG put a jellyfish stop at ~USD 7 M a day.</em></div>
+      </div>
+      <div class="pilot">
+        <span class="mono">BEFORE ANY OF THAT · THE PILOT LADDER</span>
+        <div class="pilot__rows" id="pilot-rows"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── 08 · The plan ───────────── -->
+<section id="plan" class="ch plan">
+  <div class="wrap">
+    <div class="ch__head">
+      <span class="eyebrow mono">08 / THE NEXT 26 WEEKS</span>
+      <h2 class="display" data-split>Six months to<br><em>a pilot decision.</em></h2>
+      <p class="lead reveal">Four objectives, eleven deliverables, five go/no-go gates. Each gate has a number attached, so ENEC can say yes or no on evidence, not enthusiasm.</p>
+    </div>
+
+    <div class="objs">
+      <article class="obj reveal"><span class="mono">O1</span><h3>Prove the wall</h3><p>Show in a flume that a segmented curtain deflects surrogate jellies at Barakah-like currents, and measure the air it needs.</p></article>
+      <article class="obj reveal"><span class="mono">O2</span><h3>Prove the nudge</h3><p>Show whether adult Gulf <i>Catostylus</i> swim away from nonenal and toward <i>Artemia</i> water — direction, not just agitation.</p></article>
+      <article class="obj reveal"><span class="mono">O3</span><h3>Prove it adds up</h3><p>Measure what cues add over bubbles alone, and show no harm to the jellyfish or to non-target species.</p></article>
+      <article class="obj reveal"><span class="mono">O4</span><h3>Site it</h3><p>With ENEC data, fix the real gate line, exits and costs, and write the marine trial plan.</p></article>
+    </div>
+
+    <div class="gantt" id="gantt" role="table" aria-label="26-week plan"></div>
+
+    <div class="gates">
+      <span class="mono gates__k">GO / NO-GO GATES</span>
+      <div class="gates__grid" id="gates"></div>
+    </div>
+
+    <div class="ask reveal">
+      <span class="eyebrow mono">THE ASK</span>
+      <p class="display display--s">Four things from ENEC: <em>bloom-load records, current data, a marine-lab partner, and a test site.</em></p>
+      <ol class="ask__list mono">
+        <li>Timestamped bloom load at the screens (even percentiles)</li>
+        <li>ADCP / current ranges at the basin mouth, spring–neap</li>
+        <li>Introduction to a contained marine-lab partner</li>
+        <li>A non-operational area for one recoverable 50 m curtain</li>
+      </ol>
+    </div>
+
+    <div class="team">
+      <span class="eyebrow mono">THE CREW · 42 ABU DHABI</span>
+      <div class="team__grid">
+        <article class="reveal"><b>Syed Ahamed</b><span>Founder &amp; President<br>42 Abu Dhabi Robotics</span></article>
+        <article class="reveal"><b>Usman Mohammad</b><span>Applied Computer Science &amp; AI<br>Molecular Biology background</span></article>
+        <article class="reveal"><b>Randall Lutuciri</b><span>Embedded Systems &amp; Controls Director<br>42 Abu Dhabi Robotics</span></article>
+        <article class="reveal"><b>Mustafa Muhammed</b><span>Director of Software Engineering<br>42 Abu Dhabi Robotics</span></article>
+      </div>
+    </div>
+  </div>
 </section>
 
 </main>
@@ -497,9 +745,10 @@
       <a href="https://link.springer.com/chapter/10.1007/978-94-011-3240-4_52" target="_blank" rel="noopener">Arai · Chemical-side preference in medusae ↗</a>
       <a href="https://pubchem.ncbi.nlm.nih.gov/compound/5283335" target="_blank" rel="noopener">PubChem · CID 5283335 ↗</a>
       <a href="https://doi.org/10.1007/s00348-022-03568-6" target="_blank" rel="noopener">Beelen et al. · Bubble-curtain air flux ↗</a>
-      <a href="https://doi.org/10.1016/j.aquaculture.2020.735915" target="_blank" rel="noopener">Haberlin et al. · Field and flume experiments ↗</a>
-      <a href="https://doi.org/10.1016/j.ocemod.2023.102274" target="_blank" rel="noopener">Barakah mooring comparison · Ocean Modelling ↗</a>
+      <a href="https://repository.tudelft.nl/file/File_7ee55ff5-e849-4542-b4f7-d3f3d596446f" target="_blank" rel="noopener">Bulson relation for bubble surface currents ↗</a>
+      <a href="https://doi.org/10.1016/j.ocemod.2023.102274" target="_blank" rel="noopener">Barakah hydrodynamics · Ocean Modelling ↗</a>
       <a href="https://doi.org/10.1242/jeb.191148" target="_blank" rel="noopener">Neil &amp; Askew · Blue blubber swimming ↗</a>
+      <a href="https://www.neimagazine.com/news/second-jellyfish-swarm-disrupts-gravelines/" target="_blank" rel="noopener">NEI · Gravelines 2026 ↗</a>
     </div>
     <div class="foot__col">
       <h4 class="mono">EVIDENCE DOSSIERS</h4>
@@ -507,11 +756,12 @@
       <a href="./dist/barakah-research.html">Barakah data and site fit</a>
       <a href="./dist/biochemistry-research.html">Chemical ecology and validation</a>
       <a href="./dist/assets/scenario-results.csv">Run archive · 11 scenarios (CSV)</a>
+      <a href="./model/design.py">Design numbers · model/design.py</a>
       <a href="./dist/assets-credits.html">Media credits and licences</a>
     </div>
   </div>
   <div class="wrap foot__fine mono">
-    <span>AQUARIUM FOOTAGE BY ELINE SUN VIA PEXELS · BLUE BLUBBER JELLY BY ANDREW HARVEY, CC BY 4.0, RE-ENCODED · UAE COAST BY NASA EARTH OBSERVATORY / USGS LANDSAT, 2001, RESIZED · VG5000 BY JUSTIN BIHAN / VELVETYNE AND JOST, SIL OFL 1.1</span>
+    <span>AQUARIUM FOOTAGE BY ELINE SUN VIA PEXELS · BLUE BLUBBER JELLY BY ANDREW HARVEY, CC BY 4.0, RE-ENCODED · GULF COASTLINE: NATURAL EARTH (PUBLIC DOMAIN) · SITE GEOMETRY TRACED BY THE TEAM FROM PUBLIC SATELLITE IMAGERY, INDICATIVE ONLY · VG5000 BY JUSTIN BIHAN / VELVETYNE AND JOST, SIL OFL 1.1</span>
     <a href="#hero">BACK TO THE SURFACE ↑</a>
   </div>
 </footer>
