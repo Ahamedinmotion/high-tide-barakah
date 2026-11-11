@@ -1,0 +1,1101 @@
+{
+ "geo": {
+  "shore": [
+   [
+    -19051.9,
+    -697.4
+   ],
+   [
+    -17271.8,
+    -918.8
+   ],
+   [
+    -15481.5,
+    -697.4
+   ],
+   [
+    -13477.7,
+    -387.4
+   ],
+   [
+    -12806.3,
+    -697.4
+   ],
+   [
+    -11026.3,
+    -1051.6
+   ],
+   [
+    -8351.1,
+    -1029.5
+   ],
+   [
+    -6469.3,
+    -885.6
+   ],
+   [
+    -5340.2,
+    -830.3
+   ],
+   [
+    -4211.1,
+    -763.8
+   ],
+   [
+    -3082.1,
+    -675.3
+   ],
+   [
+    -2176.8,
+    -586.7
+   ],
+   [
+    -1607.2,
+    -453.9
+   ],
+   [
+    -1047.7,
+    -254.6
+   ],
+   [
+    -651.0,
+    -99.6
+   ],
+   [
+    762.9,
+    44.3
+   ],
+   [
+    1444.4,
+    265.7
+   ],
+   [
+    2573.5,
+    376.4
+   ],
+   [
+    3702.5,
+    520.3
+   ],
+   [
+    5035.1,
+    1073.8
+   ],
+   [
+    6825.3,
+    1516.6
+   ],
+   [
+    8605.4,
+    2402.2
+   ],
+   [
+    9500.5,
+    3287.8
+   ],
+   [
+    11280.6,
+    4173.4
+   ],
+   [
+    13070.8,
+    5944.6
+   ],
+   [
+    14850.9,
+    7273.0
+   ],
+   [
+    15746.0,
+    7937.2
+   ]
+  ],
+  "bwW": [
+   [
+    -5116.4,
+    3254.6
+   ],
+   [
+    -4211.1,
+    3398.5
+   ],
+   [
+    -3641.5,
+    3376.3
+   ],
+   [
+    -3082.1,
+    3121.7
+   ],
+   [
+    -2624.3,
+    2612.5
+   ],
+   [
+    -2176.8,
+    1992.6
+   ],
+   [
+    -1719.0,
+    1195.6
+   ],
+   [
+    -1271.5,
+    520.3
+   ],
+   [
+    -823.9,
+    243.5
+   ],
+   [
+    -478.1,
+    188.2
+   ],
+   [
+    874.8,
+    276.8
+   ]
+  ],
+  "bwE": [
+   [
+    874.8,
+    210.3
+   ],
+   [
+    1607.2,
+    1505.5
+   ],
+   [
+    3641.5,
+    2557.2
+   ]
+  ],
+  "feature": [
+   [
+    -3305.8,
+    2047.9
+   ],
+   [
+    -2064.9,
+    -719.5
+   ]
+  ],
+  "intakes": [
+   {
+    "id": 1,
+    "a": [
+     -640.8,
+     -132.8
+    ],
+    "b": [
+     -325.5,
+     -99.6
+    ]
+   },
+   {
+    "id": 2,
+    "a": [
+     -325.5,
+     -77.5
+    ],
+    "b": [
+     -30.5,
+     -44.3
+    ]
+   },
+   {
+    "id": 3,
+    "a": [
+     -30.5,
+     -22.1
+    ],
+    "b": [
+     244.1,
+     11.1
+    ]
+   },
+   {
+    "id": 4,
+    "a": [
+     244.1,
+     33.2
+    ],
+    "b": [
+     518.8,
+     66.4
+    ]
+   }
+  ],
+  "outfall": [
+   661.2,
+   -33.2
+  ],
+  "plant": [
+   [
+    -915.5,
+    -166.1
+   ],
+   [
+    813.7,
+    77.5
+   ],
+   [
+    813.7,
+    -963.1
+   ],
+   [
+    -915.5,
+    -996.3
+   ]
+  ],
+  "station": [
+   -1271.5,
+   -520.3
+  ]
+ },
+ "geo_origin": {
+  "lon": 52.2325,
+  "lat": 23.9715,
+  "mx": 101718.4,
+  "my": 110700
+ },
+ "layout": {
+  "gateA": [
+   [
+    -5340.2,
+    -819.2
+   ],
+   [
+    -4211.1,
+    3398.5
+   ]
+  ],
+  "gateB": [
+   [
+    -3082.1,
+    3121.7
+   ],
+   [
+    -5340.2,
+    -819.2
+   ]
+  ],
+  "mid": [
+   -4211.1,
+   1900.3
+  ],
+  "guard": [
+   [
+    -864.6,
+    210.3
+   ],
+   [
+    -742.5,
+    -143.9
+   ]
+  ],
+  "stick": [
+   [
+    -3511.1,
+    2200.3
+   ],
+   [
+    -3511.1,
+    1600.3
+   ]
+  ],
+  "carrotN": [
+   -4461.1,
+   3548.5
+  ],
+  "carrotW": [
+   -5899.7,
+   -719.5
+  ],
+  "cams": [
+   [
+    -4211.1,
+    3398.5
+   ],
+   [
+    -1719.0,
+    1195.6
+   ]
+  ],
+  "adcp": [
+   [
+    -4211.1,
+    1900.3
+   ],
+   [
+    -1719.0,
+    498.2
+   ],
+   [
+    -254.3,
+    77.5
+   ]
+  ],
+  "sonar": [
+   [
+    -5340.2,
+    -819.2
+   ],
+   [
+    -4211.1,
+    1900.3
+   ]
+  ]
+ },
+ "lengths_m": {
+  "gateA": 4366,
+  "gateB": 4542,
+  "guard": 749,
+  "stick": 600
+ },
+ "gate_span_m": 4162,
+ "feeders_m": {
+  "gate": 4108,
+  "guard": 699,
+  "stick": 3724,
+  "carrotN": 6995,
+  "carrotW": 4832
+ },
+ "dist_gate_to_intake_m": 4620,
+ "pull_profile": [
+  {
+   "dist_km": 5.99,
+   "width_m": 4162,
+   "depth_m": 5.5,
+   "u_m_s": 0.03
+  },
+  {
+   "dist_km": 5.42,
+   "width_m": 4090,
+   "depth_m": 5.5,
+   "u_m_s": 0.031
+  },
+  {
+   "dist_km": 4.8,
+   "width_m": 3797,
+   "depth_m": 5.5,
+   "u_m_s": 0.033
+  },
+  {
+   "dist_km": 4.12,
+   "width_m": 3230,
+   "depth_m": 5.8,
+   "u_m_s": 0.037
+  },
+  {
+   "dist_km": 3.36,
+   "width_m": 2512,
+   "depth_m": 6.3,
+   "u_m_s": 0.044
+  },
+  {
+   "dist_km": 2.44,
+   "width_m": 1598,
+   "depth_m": 6.9,
+   "u_m_s": 0.063
+  },
+  {
+   "dist_km": 1.63,
+   "width_m": 807,
+   "depth_m": 7.4,
+   "u_m_s": 0.115
+  },
+  {
+   "dist_km": 1.1,
+   "width_m": 384,
+   "depth_m": 7.8,
+   "u_m_s": 0.231
+  },
+  {
+   "dist_km": 0.6,
+   "width_m": 300,
+   "depth_m": 8.5,
+   "u_m_s": 0.271
+  }
+ ],
+ "load": {
+  "peak_t_day": 200,
+  "animals_day": {
+   "low": 100000,
+   "mid": 50000,
+   "high": 25000
+  },
+  "t_per_h_mean": 8.33,
+  "peak_factor": 3.0,
+  "t_per_h_peak": 25.0,
+  "animals_h_peak_mid": 6250,
+  "animals_s_peak_mid": 1.74,
+  "per_intake_t_day": 50.0,
+  "per_intake_animals_day_mid": 12500,
+  "water_m3_day": 59.6,
+  "mean_conc_g_m3": 3.35,
+  "water_per_animal_m3": 1192,
+  "jeros_equiv": 28,
+  "jeros_equiv_peak": 83,
+  "truckloads_10t": 20
+ },
+ "outcomes": [
+  {
+   "scenario": "normal",
+   "arrivals": 900,
+   "none": 295.7,
+   "fixed": {
+    "intake": 0,
+    "exit": 389,
+    "retained": 399.3,
+    "returned": 122.7,
+    "act": 900,
+    "reduction": 100.0,
+    "t_at_screens": 0.0
+   },
+   "ctrl": {
+    "intake": 0,
+    "exit": 389,
+    "retained": 399.3,
+    "returned": 122.7,
+    "act": 771.8,
+    "reduction": 100.0,
+    "t_at_screens": 0.0
+   },
+   "ctrl_cues": {
+    "intake": 0,
+    "exit": 392.3,
+    "retained": 333,
+    "returned": 0,
+    "act": 753.5,
+    "reduction": 100.0,
+    "t_at_screens": 0.0
+   },
+   "t_none": 200.0
+  },
+  {
+   "scenario": "reversal",
+   "arrivals": 900,
+   "none": 338.7,
+   "fixed": {
+    "intake": 0,
+    "exit": 31.7,
+    "retained": 725,
+    "returned": 354,
+    "act": 900,
+    "reduction": 100.0,
+    "t_at_screens": 0.0
+   },
+   "ctrl": {
+    "intake": 86,
+    "exit": 253,
+    "retained": 395.7,
+    "returned": 123.7,
+    "act": 766,
+    "reduction": 74.6,
+    "t_at_screens": 50.8
+   },
+   "ctrl_cues": {
+    "intake": 12.3,
+    "exit": 300.7,
+    "retained": 326.7,
+    "returned": 113.3,
+    "act": 748.1,
+    "reduction": 96.4,
+    "t_at_screens": 7.3
+   },
+   "t_none": 200.0
+  },
+  {
+   "scenario": "delayed",
+   "arrivals": 900,
+   "none": 338.7,
+   "fixed": {
+    "intake": 0,
+    "exit": 31.7,
+    "retained": 725,
+    "returned": 354,
+    "act": 900,
+    "reduction": 100.0,
+    "t_at_screens": 0.0
+   },
+   "ctrl": {
+    "intake": 97,
+    "exit": 197.7,
+    "retained": 394.7,
+    "returned": 163.3,
+    "act": 766.8,
+    "reduction": 71.4,
+    "t_at_screens": 57.3
+   },
+   "ctrl_cues": {
+    "intake": 13.7,
+    "exit": 234.7,
+    "retained": 392,
+    "returned": 168,
+    "act": 749.2,
+    "reduction": 96.0,
+    "t_at_screens": 8.1
+   },
+   "t_none": 200.0
+  },
+  {
+   "scenario": "weak",
+   "arrivals": 900,
+   "none": 0,
+   "fixed": {
+    "intake": 0,
+    "exit": 32.7,
+    "retained": 867.3,
+    "returned": 4.3,
+    "act": 900,
+    "reduction": null,
+    "t_at_screens": null
+   },
+   "ctrl": {
+    "intake": 0,
+    "exit": 32.3,
+    "retained": 867.7,
+    "returned": 5,
+    "act": 328.1,
+    "reduction": null,
+    "t_at_screens": null
+   },
+   "ctrl_cues": {
+    "intake": 0,
+    "exit": 234.3,
+    "retained": 665.7,
+    "returned": 0,
+    "act": 161.9,
+    "reduction": null,
+    "t_at_screens": null
+   },
+   "t_none": 0
+  },
+  {
+   "scenario": "surge",
+   "arrivals": 1800,
+   "none": 379.3,
+   "fixed": {
+    "intake": 0,
+    "exit": 517.7,
+    "retained": 1170.7,
+    "returned": 149.3,
+    "act": 900,
+    "reduction": 100.0,
+    "t_at_screens": 0.0
+   },
+   "ctrl": {
+    "intake": 0,
+    "exit": 517.7,
+    "retained": 1170.7,
+    "returned": 149.3,
+    "act": 771.8,
+    "reduction": 100.0,
+    "t_at_screens": 0.0
+   },
+   "ctrl_cues": {
+    "intake": 0,
+    "exit": 638,
+    "retained": 987.3,
+    "returned": 0,
+    "act": 758.8,
+    "reduction": 100.0,
+    "t_at_screens": 0.0
+   },
+   "t_none": 200.0
+  },
+  {
+   "scenario": "disturbance",
+   "arrivals": 900,
+   "none": 309.7,
+   "fixed": {
+    "intake": 0,
+    "exit": 387.7,
+    "retained": 404.7,
+    "returned": 282.3,
+    "act": 900,
+    "reduction": 100.0,
+    "t_at_screens": 0.0
+   },
+   "ctrl": {
+    "intake": 0,
+    "exit": 387.7,
+    "retained": 404.7,
+    "returned": 282.3,
+    "act": 773.6,
+    "reduction": 100.0,
+    "t_at_screens": 0.0
+   },
+   "ctrl_cues": {
+    "intake": 0,
+    "exit": 397.7,
+    "retained": 331.7,
+    "returned": 219.7,
+    "act": 752,
+    "reduction": 100.0,
+    "t_at_screens": 0.0
+   },
+   "t_none": 200.0
+  },
+  {
+   "scenario": "capture",
+   "arrivals": 900,
+   "none": 339,
+   "fixed": {
+    "intake": 0,
+    "exit": 369.7,
+    "retained": 399.3,
+    "returned": 122.7,
+    "act": 900,
+    "reduction": 100.0,
+    "t_at_screens": 0.0
+   },
+   "ctrl": {
+    "intake": 0,
+    "exit": 369.7,
+    "retained": 399.3,
+    "returned": 122.7,
+    "act": 771.8,
+    "reduction": 100.0,
+    "t_at_screens": 0.0
+   },
+   "ctrl_cues": {
+    "intake": 0,
+    "exit": 385,
+    "retained": 333,
+    "returned": 0,
+    "act": 753.5,
+    "reduction": 100.0,
+    "t_at_screens": 0.0
+   },
+   "t_none": 200.0
+  },
+  {
+   "scenario": "power_loss",
+   "arrivals": 900,
+   "none": 295.7,
+   "fixed": {
+    "intake": 175.7,
+    "exit": 6,
+    "retained": 447,
+    "returned": 24,
+    "act": 450,
+    "reduction": 40.6,
+    "t_at_screens": 118.8
+   },
+   "ctrl": {
+    "intake": 175.7,
+    "exit": 6,
+    "retained": 447,
+    "returned": 24,
+    "act": 322.5,
+    "reduction": 40.6,
+    "t_at_screens": 118.8
+   },
+   "ctrl_cues": {
+    "intake": 155.7,
+    "exit": 11.3,
+    "retained": 447.7,
+    "returned": 5.7,
+    "act": 313.9,
+    "reduction": 47.3,
+    "t_at_screens": 105.3
+   },
+   "t_none": 200.0
+  },
+  {
+   "scenario": "return_flow",
+   "arrivals": 900,
+   "none": 338.7,
+   "fixed": {
+    "intake": 0,
+    "exit": 101.3,
+    "retained": 753,
+    "returned": 357.7,
+    "act": 900,
+    "reduction": 100.0,
+    "t_at_screens": 0.0
+   },
+   "ctrl": {
+    "intake": 86,
+    "exit": 66.3,
+    "retained": 582.3,
+    "returned": 319.7,
+    "act": 766,
+    "reduction": 74.6,
+    "t_at_screens": 50.8
+   },
+   "ctrl_cues": {
+    "intake": 12.3,
+    "exit": 67.7,
+    "retained": 559.7,
+    "returned": 447.3,
+    "act": 748.1,
+    "reduction": 96.4,
+    "t_at_screens": 7.3
+   },
+   "t_none": 200.0
+  },
+  {
+   "scenario": "blocked_exit",
+   "arrivals": 900,
+   "none": 295.7,
+   "fixed": {
+    "intake": 295.7,
+    "exit": 0,
+    "retained": 452.7,
+    "returned": 0,
+    "act": 0,
+    "reduction": 0.0,
+    "t_at_screens": 200.0
+   },
+   "ctrl": {
+    "intake": 295.7,
+    "exit": 0,
+    "retained": 452.7,
+    "returned": 0,
+    "act": 0,
+    "reduction": 0.0,
+    "t_at_screens": 200.0
+   },
+   "ctrl_cues": {
+    "intake": 295.7,
+    "exit": 0,
+    "retained": 452.7,
+    "returned": 0,
+    "act": 0,
+    "reduction": 0.0,
+    "t_at_screens": 200.0
+   },
+   "t_none": 200.0
+  },
+  {
+   "scenario": "zero_response",
+   "arrivals": 900,
+   "none": 295.7,
+   "fixed": {
+    "intake": 295.7,
+    "exit": 6,
+    "retained": 447,
+    "returned": 2.7,
+    "act": 900,
+    "reduction": 0.0,
+    "t_at_screens": 200.0
+   },
+   "ctrl": {
+    "intake": 295.7,
+    "exit": 6,
+    "retained": 447,
+    "returned": 2.7,
+    "act": 773.4,
+    "reduction": 0.0,
+    "t_at_screens": 200.0
+   },
+   "ctrl_cues": {
+    "intake": 295.7,
+    "exit": 6,
+    "retained": 447,
+    "returned": 2.7,
+    "act": 773.4,
+    "reduction": 0.0,
+    "t_at_screens": 200.0
+   },
+   "t_none": 200.0
+  }
+ ],
+ "air": {
+  "gateA": {
+   "length_m": 4366,
+   "depth_m": 6.0,
+   "q_L_s_m": 1.11,
+   "free_air_m3_min": 290.8,
+   "kw_all_on": 520,
+   "sections_50m": 88
+  },
+  "gateB": {
+   "length_m": 4542,
+   "depth_m": 6.0,
+   "q_L_s_m": 1.11,
+   "free_air_m3_min": 302.5,
+   "kw_all_on": 541,
+   "sections_50m": 91
+  },
+  "guard": {
+   "length_m": 749,
+   "depth_m": 9.0,
+   "q_L_s_m": 3.78,
+   "free_air_m3_min": 170.0,
+   "kw_all_on": 393,
+   "sections_50m": 15
+  }
+ },
+ "ops": {
+  "kw_max_simultaneous": 913,
+  "kw_gate_typical": 442,
+  "kw_gate_weak": 187,
+  "kw_gate_weak_cues": 94,
+  "event_hours": 12,
+  "mwh_event_typical": 5.8,
+  "share_of_plant_pct": 0.0163,
+  "installed_kw_n_plus_1": 1250,
+  "compressors": "5 \u00d7 250 kW oil-free screw (N+1)",
+  "act_frac": {
+   "typical": 0.85,
+   "weak_flow": 0.36,
+   "with_cues_typical": 0.83,
+   "with_cues_weak": 0.18
+  }
+ },
+ "stick": [
+  {
+   "c_ug_L": 1,
+   "u": 0.05,
+   "g_per_h": 65,
+   "kg_per_event": 0.78,
+   "intake_ug_L": 0.026,
+   "margin_band_vs_fish_LC50": 5461
+  },
+  {
+   "c_ug_L": 1,
+   "u": 0.1,
+   "g_per_h": 130,
+   "kg_per_event": 1.56,
+   "intake_ug_L": 0.052,
+   "margin_band_vs_fish_LC50": 5461
+  },
+  {
+   "c_ug_L": 1,
+   "u": 0.2,
+   "g_per_h": 259,
+   "kg_per_event": 3.11,
+   "intake_ug_L": 0.104,
+   "margin_band_vs_fish_LC50": 5461
+  },
+  {
+   "c_ug_L": 5,
+   "u": 0.05,
+   "g_per_h": 324,
+   "kg_per_event": 3.89,
+   "intake_ug_L": 0.13,
+   "margin_band_vs_fish_LC50": 1092
+  },
+  {
+   "c_ug_L": 5,
+   "u": 0.1,
+   "g_per_h": 648,
+   "kg_per_event": 7.78,
+   "intake_ug_L": 0.261,
+   "margin_band_vs_fish_LC50": 1092
+  },
+  {
+   "c_ug_L": 5,
+   "u": 0.2,
+   "g_per_h": 1296,
+   "kg_per_event": 15.55,
+   "intake_ug_L": 0.522,
+   "margin_band_vs_fish_LC50": 1092
+  },
+  {
+   "c_ug_L": 10,
+   "u": 0.05,
+   "g_per_h": 648,
+   "kg_per_event": 7.78,
+   "intake_ug_L": 0.261,
+   "margin_band_vs_fish_LC50": 546
+  },
+  {
+   "c_ug_L": 10,
+   "u": 0.1,
+   "g_per_h": 1296,
+   "kg_per_event": 15.55,
+   "intake_ug_L": 0.522,
+   "margin_band_vs_fish_LC50": 546
+  },
+  {
+   "c_ug_L": 10,
+   "u": 0.2,
+   "g_per_h": 2592,
+   "kg_per_event": 31.1,
+   "intake_ug_L": 1.043,
+   "margin_band_vs_fish_LC50": 546
+  }
+ ],
+ "stick_mid": {
+  "c_ug_L": 5,
+  "u": 0.1,
+  "g_per_h": 648,
+  "kg_per_event": 7.78,
+  "intake_ug_L": 0.261,
+  "margin_band_vs_fish_LC50": 1092
+ },
+ "stick_carrier_m3_h": 16.2,
+ "stick_constants": {
+  "LC50_fish_ug_L": 5461,
+  "EC50_algae_ug_L": 8030,
+  "solubility_ug_L": 204900,
+  "logP": 3.2,
+  "MW": 140.22,
+  "bp_C": 189,
+  "FEMA": 3213,
+  "flavour_use_ppm": "0.1\u201310"
+ },
+ "carrot": [
+  {
+   "dilution": "1:99,999",
+   "stock_L_s": 0.15,
+   "stock_m3_h": 0.54,
+   "standing_artemia_kg": 5.4,
+   "tank_m3": 1
+  },
+  {
+   "dilution": "1:10,000",
+   "stock_L_s": 1.5,
+   "stock_m3_h": 5.4,
+   "standing_artemia_kg": 54.0,
+   "tank_m3": 8.1
+  }
+ ],
+ "bom": [
+  {
+   "item": "Diffuser hose / perforated HDPE (EPDM slit sleeves)",
+   "qty": "9,657 m",
+   "note": "All bubble lines incl. double guard"
+  },
+  {
+   "item": "Ballast clump anchors (60\u2013100 kg, every 5 m)",
+   "qty": "1,932",
+   "note": "Weak-link tethers, recoverable"
+  },
+  {
+   "item": "Section valves (pneumatic, shore valve house)",
+   "qty": "194",
+   "note": "50 m sections"
+  },
+  {
+   "item": "Air feeder bundles HDPE DN50\u2013DN200",
+   "qty": "20,359 m",
+   "note": "Trunk + section cores"
+  },
+  {
+   "item": "Oil-free screw compressors",
+   "qty": "5 \u00d7 250 kW oil-free screw (N+1)",
+   "note": "1250 kW installed"
+  },
+  {
+   "item": "Air receivers + dryers + aftercoolers",
+   "qty": "2 sets",
+   "note": "Gulf ambient 45 \u00b0C design"
+  },
+  {
+   "item": "ADCP current profilers",
+   "qty": "3",
+   "note": "Gate, basin, channel"
+  },
+  {
+   "item": "Overhead camera masts (EO/IR)",
+   "qty": "2",
+   "note": "Breakwater bend + head"
+  },
+  {
+   "item": "Imaging sonar on gate",
+   "qty": "2",
+   "note": "Night / turbid tracking"
+  },
+  {
+   "item": "Water-quality sondes (T, S, DO, pH, turbidity)",
+   "qty": "3",
+   "note": "Gate, exit N, intake"
+  },
+  {
+   "item": "Stick dosing skid (tank, metering pump, mixer)",
+   "qty": "1",
+   "note": "~16.2 m\u00b3/h carrier while dosing"
+  },
+  {
+   "item": "Stick diffuser manifold",
+   "qty": "600 m",
+   "note": "Behind gate, pulsed"
+  },
+  {
+   "item": "Carrot culture + conditioning tanks",
+   "qty": "8.1 m\u00b3",
+   "note": "2 release points (N, W)"
+  },
+  {
+   "item": "Controller (PLC + tracking PC + historian)",
+   "qty": "1 + hot spare",
+   "note": "Fail-safe: air off, dosing off"
+  }
+ ],
+ "sections_total": 194,
+ "diffuser_total_m": 9657,
+ "feeder_total_m": 20359,
+ "money": {
+  "capex_aed": [
+   18100000.0,
+   66800000.0
+  ],
+  "unit_day_mwh": 33600,
+  "unit_day_usd": [
+   1680000,
+   2688000
+  ],
+  "unit_day_aed": [
+   6170000.0,
+   9870000.0
+  ],
+  "event_energy_aed": 1700.0,
+  "stick_event_aed": [
+   8600.0,
+   28800.0
+  ],
+  "payback_unit_days": [
+   1.8,
+   10.8
+  ],
+  "torness_gbp_day": 1000000,
+  "oman_lng_usd_day": 7000000
+ },
+ "pilot_budget": [
+  {
+   "stage": "Bench flume + controller",
+   "lo": 2160,
+   "hi": 8640
+  },
+  {
+   "stage": "Contained biological feasibility",
+   "lo": 35625,
+   "hi": 125000
+  },
+  {
+   "stage": "One recoverable physical marine trial",
+   "lo": 105950,
+   "hi": 486200
+  }
+ ],
+ "phys": {
+  "surface_current_8m": {
+   "low": 0.31,
+   "mid": 0.39,
+   "high": 0.45
+  },
+  "surface_current_6m": {
+   "low": 0.3,
+   "mid": 0.38,
+   "high": 0.43
+  },
+  "check_pilot_kw_10m_8m": {
+   "low": 0.71,
+   "mid": 1.43,
+   "high": 2.15
+  },
+  "guard_q_for_0p6": 3.78,
+  "channel_velocity": 0.29,
+  "gate_velocity": 0.03,
+  "swim_speed": 0.0362,
+  "ratio_surface_to_swim": 10.5
+ },
+ "drift_hours_gate_to_screens": 19.3,
+ "no_return_km": 4.26
+}
