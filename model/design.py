@@ -5,7 +5,8 @@ arithmetic can be re-run and challenged. Inputs are tagged:
   SRC  = published / ENEC-stated value
   ASM  = engineering assumption (replace with ENEC or lab data)
 """
-import json, math
+import json, math, os
+HERE = os.path.dirname(os.path.abspath(__file__))
 
 out = {}
 # ───────────────────────── Site geometry (traced from public imagery) ─────────────────────────
@@ -127,7 +128,7 @@ load['truckloads_10t'] = round(PEAK_T / 10)
 out['load'] = load
 
 # ───────────────────────── 2. Model-informed outcomes at 200 t ─────────────────────────
-cues = json.load(open('/home/claude/work/cues.json'))
+cues = json.load(open(os.path.join(HERE, 'cues.json')))
 def g(sc, mode, c): return next(r for r in cues if r['scenario'] == sc and r['mode'] == mode and r['cues'] == c)
 outcomes = []
 for sc in ['normal', 'reversal', 'delayed', 'weak', 'surge', 'disturbance', 'capture', 'power_loss', 'return_flow', 'blocked_exit', 'zero_response']:
@@ -277,14 +278,14 @@ out['pilot_budget'] = [
   {'stage': 'One recoverable physical marine trial', 'lo': 105950, 'hi': 486200},
 ]
 
-json.dump(out, open('/home/claude/work/design.json', 'w'), indent=1)
+json.dump(out, open(os.path.join(HERE, 'design.json'), 'w'), indent=1)
 # Quick printout
 print('layout', out['layout']); print('profile', out['pull_profile'])
 for k in ['lengths_m', 'gate_span_m', 'feeders_m', 'dist_gate_to_intake_m', 'load', 'air', 'ops', 'stick_mid', 'stick_carrier_m3_h', 'carrot', 'money', 'sections_total', 'diffuser_total_m', 'feeder_total_m']:
   print(k, json.dumps(out[k]))
 print('phys', json.dumps(phys))
 out['phys'] = phys
-json.dump(out, open('/home/claude/work/design.json', 'w'), indent=1)
+json.dump(out, open(os.path.join(HERE, 'design.json'), 'w'), indent=1)
 for r in outcomes:
   print(r['scenario'], r['none'], {k: (r[k]['intake'], r[k]['reduction'], r[k]['t_at_screens']) for k in ['fixed', 'ctrl', 'ctrl_cues']})
 # Drift time from gate to screens on intake-driven mean flow alone (tides ignored)
@@ -298,5 +299,5 @@ out['drift_hours_gate_to_screens'] = round(t / 3600, 1)
 for a, b in zip(pp, pp[1:]):
   if a['u_m_s'] <= 0.0362 <= b['u_m_s']:
     f = (0.0362 - a['u_m_s']) / (b['u_m_s'] - a['u_m_s']); out['no_return_km'] = round(a['dist_km'] + f * (b['dist_km'] - a['dist_km']), 2)
-json.dump(out, open('/home/claude/work/design.json', 'w'), indent=1)
+json.dump(out, open(os.path.join(HERE, 'design.json'), 'w'), indent=1)
 print('drift h', out['drift_hours_gate_to_screens'], 'no-return km', out['no_return_km'])

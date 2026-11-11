@@ -1,5 +1,5 @@
-import { scenarios } from '/home/claude/high-tide-barakah/js/sim/engine.mjs';
-import { CueModel } from '/tmp/cue-model.mjs';
+import { scenarios } from '../js/sim/engine.mjs';
+import { CueModel } from '../js/sim/cue-model.js';
 const out=[];
 for (const [name,sc] of Object.entries(scenarios)) for (const mode of ['none','fixed','controlled']) for (const cues of [false,true]) {
   const r={intake:0,exit:0,retained:0,other:0,returned:0,arrivals:0,actuation:0};
